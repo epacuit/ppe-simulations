@@ -6,8 +6,7 @@ Week 1: Introduction
 * Course Overview
 * Brief Introduction to Python and Jupyter
 * Schelling's Model of Segregation
-    * Networks
-    * Homophily
+    * Networks and Homophily
     * Implementing Schelling's model in mesa
 
 Week 2-3: (Iterated) Prisoner's Dilemma

@@ -31,6 +31,7 @@
 import networkx as nx
 import random
 import matplotlib.pyplot as plt
+
 grid = nx.grid_2d_graph(3,3)
 color_map=list()
 for node in grid:
@@ -73,7 +74,7 @@ plt.show()
 # In[2]:
 
 
-from mesa import  Agent
+from mesa import Agent
 
 class SchellingAgent(Agent):
     '''
@@ -94,6 +95,7 @@ class SchellingAgent(Agent):
         print("Inside step function. Agent type is ", self.type)
 
 a=SchellingAgent((0,0),1)
+print(a)
 print(a.type)
 print(a.pos)
 a.step()
@@ -213,10 +215,11 @@ density = 0.1
 minority_percent = 0.2
 homophily = 4
 model = SchellingModel(height, width, density, minority_percent, homophily)
-for a in model.schedule.agents: 
-    print("Unique id ", a.unique_id)
-    print("Type ", a.type)
-    print("Pos ", a.pos)
+print("Display the first 5 agents:\n")
+for a in model.schedule.agents[0:5]: 
+    print(a)
+    print("type is ", a.type)
+    print(f"pos is {a.pos} \n")
 
 
 # Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times. 
@@ -237,7 +240,7 @@ print(f"The model ran for {model.schedule.steps} steps") # Show how many steps h
 
 # The DataCollector object checks and stores how many agents are happy at the end of each step. It can also generate a pandas DataFrame of the data it has collected:
 
-# In[25]:
+# In[8]:
 
 
 model_out = model.datacollector.get_model_vars_dataframe()
@@ -245,45 +248,17 @@ model_out = model.datacollector.get_model_vars_dataframe()
 model_out.head()
 
 
-# In[26]:
+# In[9]:
 
 
+import seaborn as sns
+sns.set()
 model_out.happy.plot();
-
-
-# ## Visualization
-
-# In[27]:
-
-
-from mesa.visualization.modules import CanvasGrid, ChartModule
-from mesa.visualization.ModularVisualization import ModularServer
-
-
-def agent_portrayal(agent):
-    portrayal = {"Shape": "circle",
-                 "Filled": "true",
-                 "Layer": 0,
-                 "Color": "red" if agent.type == 0 else "blue",
-                 "r": 0.5}
-    return portrayal
-
-grid = CanvasGrid(agent_portrayal, 50, 50, 500, 500)
-server = ModularServer(SchellingModel,
-                       [grid],
-                       "SchellingModel Model",
-                       {"height":50, 
-                        "width":50, 
-                        "density":0.6, 
-                        "minority_percent": 0.2, 
-                        "homophily": 4})
-server.port = 8524 # The default
-server.launch()
 
 
 # ## Exploring the Parameter Space
 
-# In[11]:
+# In[10]:
 
 
 from mesa.batchrunner import BatchRunner
@@ -304,7 +279,7 @@ def get_segregation(model):
     return segregated_agents / model.schedule.get_agent_count()
 
 
-# In[12]:
+# In[11]:
 
 
 variable_params = {"homophily": range(1,9)}
@@ -315,23 +290,24 @@ param_sweep = BatchRunner(SchellingModel,
                           fixed_params, 
                           iterations=10, 
                           max_steps=200, 
-                          model_reporters=model_reporters)
+                          model_reporters=model_reporters, 
+                          display_progress=False)
 
 
-# In[13]:
+# In[12]:
 
 
 param_sweep.run_all()
 
 
-# In[14]:
+# In[13]:
 
 
 df = param_sweep.get_model_vars_dataframe()
 df
 
 
-# In[15]:
+# In[14]:
 
 
 plt.scatter(df.homophily, df.Segregated_Agents)
@@ -350,4 +326,4 @@ plt.grid(True)
 # 
 # * David Easley and Jon Kleinberg, Section 4.5, [Networks, Crowds, and Markets: Reasoning about a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch04.pdf), Cambridge University Press, 2010
 # 
-# * [Parable of the Polygons](https://ncase.me/polygons/}
+# * [Parable of the Polygons](https://ncase.me/polygons/)

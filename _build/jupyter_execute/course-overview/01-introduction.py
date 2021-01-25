@@ -28,7 +28,7 @@
 # * Data science toolkit: scipy, numpy, pandas, ...
 # * Visualization: matplotlib, seaborn, altair, etc.
 # * Sharing models: [Colab](https://colab.research.google.com/), [Streamlit](https://www.streamlit.io/), [Voila](https://voila.readthedocs.io/en/stable/index.html),...
-# * Probabilistic programming: [lea](https://bitbucket.org/piedenis/lea/wiki/Home), [PYRO](http://pyro.ai/)
+# * Probabilistic programming: [lea](https://bitbucket.org/piedenis/lea/wiki/Home), [pyro](http://pyro.ai/)
 # * Special packages: [mesa](https://mesa.readthedocs.io/en/master/#), [axelrod](https://axelrod.readthedocs.io/en/stable/), [preflib tools](https://www.preflib.org/)
 
 # ## Mathematical Background
@@ -77,7 +77,7 @@
 # * Python is a standard tool used in AI, machine learning, and data science 
 # * Access to powerful packages for scientific and mathematical computing (scipy, numpy, etc.)
 # * Many different options for visualizing and sharing your simulations
-# * While Netlogo makes animating the model easier, we do not always need to visualize the dynamics of an agent-based model
+# * While NetLogo makes animating the model easier, we do not always need to visualize the dynamics of an agent-based model
 # 
 
 # ## A Brief Introduction to Python (as needed)
@@ -89,7 +89,7 @@
 # * Python is dynamically typed.
 # 
 
-# In[7]:
+# In[3]:
 
 
 x = "hello"
@@ -99,6 +99,10 @@ print(x)
 x = 7
 print(x)
 #print(x + " world")
+
+x = [5, 10, 15]
+print(x)
+#print(x + [20])
 
 
 # ## Tutorials on Python
