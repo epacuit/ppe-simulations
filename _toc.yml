@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+- file: intro
+
+- part: About the course
+  chapters:
+    - file: course-overview/schedule
+    - file: course-overview/01-introduction
+- part: Week 1
+  chapters: 
+    - file: course-content/01-schelling
