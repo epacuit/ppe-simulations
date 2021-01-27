@@ -19,6 +19,9 @@ import matplotlib.pyplot as plt
 from IPython.display import clear_output
 from ipywidgets import widgets, interact, interact_manual
 import seaborn as sns
+import numpy as np
+import pandas as pd
+
 sns.set()
 
 

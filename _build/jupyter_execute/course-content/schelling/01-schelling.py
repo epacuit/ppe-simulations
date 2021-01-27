@@ -168,7 +168,7 @@ print(b.param2) # produces an error since the base class hasn't been initialized
 # The first approach is to explicitly call the base class `__init__` method
 # 
 
-# In[139]:
+# In[5]:
 
 
 # 1. The first approach is to explicitly reference the base class __init__ function
@@ -192,7 +192,7 @@ print(f"b.A_parameter is {b.A_parameter}")
 
 # The second approach is the use the builtin `super()`:
 
-# In[140]:
+# In[6]:
 
 
 # 2. The second (preferable) approach is to use the builtin super()
@@ -215,12 +215,13 @@ print(f"b.B_parameter is {b.B_parameter}")
 print(f"b.A_parameter is {b.A_parameter}")
 
 
-# In[141]:
+# In[7]:
 
 
 from mesa.time import RandomActivation
 from mesa.space import SingleGrid
 from mesa.datacollection import DataCollector
+import random 
 
 class SchellingModel(Model):
     '''
@@ -271,7 +272,7 @@ class SchellingModel(Model):
 
 # Create a model instance: a 10x10 grid, a 10% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and each agent wants at least 3 similar neighbors.
 
-# In[142]:
+# In[8]:
 
 
 height, width = 10, 10
@@ -287,7 +288,7 @@ for a in model.schedule.agents[0:5]:
     print(f"unique id is {a.unique_id}\n")
 
 
-# In[143]:
+# In[9]:
 
 
 # execute one round of the models
@@ -313,7 +314,7 @@ for a in model.schedule.agents[0:5]:
 # See [the source code](https://mesa.readthedocs.io/en/stable/_modules/mesa/time.html#RandomActivation) for details. 
 # 
 
-# In[144]:
+# In[10]:
 
 
 # To illustrate the RandomAcitivation scheduler, note that running this
@@ -333,7 +334,7 @@ print([a.unique_id for a in model.schedule.agent_buffer(shuffled=True)])
 # See [the course code](https://mesa.readthedocs.io/en/master/_modules/space.html#SingleGrid) for details. 
 # 
 
-# In[145]:
+# In[11]:
 
 
 # create a simple Schelling model with a 3x3 grid
@@ -346,7 +347,7 @@ for cell in model2.grid.coord_iter():
     print(cell)
 
 
-# In[146]:
+# In[12]:
 
 
 a1 = SchellingAgent(0, (1, 1), model2, 0)
@@ -359,7 +360,7 @@ for cell in model2.grid.coord_iter():
 print(f"\na1 pos is {a1.pos}")
 
 
-# In[147]:
+# In[13]:
 
 
 
@@ -371,7 +372,7 @@ for cell in model2.grid.coord_iter():
 print(f"\na1 pos is {a1.pos}")
 
 
-# In[148]:
+# In[14]:
 
 
 model2 = SchellingModel(3, 3, 0, 0.2, 4)
@@ -413,7 +414,7 @@ for n in model2.grid.neighbor_iter(a3.pos):
 
 # Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times. 
 
-# In[149]:
+# In[15]:
 
 
 height, width = 50, 50
@@ -450,7 +451,7 @@ print(f"The model ran for {model.schedule.steps} steps") # Show how many steps h
 # 
 # To define a function in Python you need to use the `def` keyord, specify a name of the fucntion, list the parameters and the function body. The `lambda` builtin allows you to quickly define functions on the fly. 
 
-# In[150]:
+# In[16]:
 
 
 def f1(p):
@@ -469,7 +470,7 @@ print(f2(2))
 # 
 # Both returna a [Pandas dataframe](https://pandas.pydata.org/).  Pandas is a popular tool for data analysis and manipulation. 
 
-# In[151]:
+# In[17]:
 
 
 data = {
@@ -485,21 +486,21 @@ df
 
 # We will discuss Pandas in more detail later in the course.   For now, see the [10-minute introduction to Pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html).     
 
-# In[152]:
+# In[ ]:
 
 
 model_out = model.datacollector.get_model_vars_dataframe()
 model_out.head()
 
 
-# In[153]:
+# In[ ]:
 
 
 # use describe() to get basic statistics about the data
 model_out.describe()
 
 
-# In[154]:
+# In[ ]:
 
 
 import seaborn as sns
@@ -508,7 +509,7 @@ sns.set()
 model_out.happy.plot();
 
 
-# In[155]:
+# In[ ]:
 
 
 agent_out = model.datacollector.get_agent_vars_dataframe()
@@ -517,7 +518,7 @@ agent_out.head()
 
 # ## Exploring the Parameter Space
 
-# In[156]:
+# In[ ]:
 
 
 from mesa.batchrunner import BatchRunner
@@ -538,7 +539,7 @@ def get_segregation(model):
     return segregated_agents / model.schedule.get_agent_count()
 
 
-# In[157]:
+# In[ ]:
 
 
 variable_params = {"homophily": range(1,9)}
@@ -553,20 +554,20 @@ param_sweep = BatchRunner(SchellingModel,
                           display_progress=False)
 
 
-# In[158]:
+# In[ ]:
 
 
 param_sweep.run_all()
 
 
-# In[159]:
+# In[ ]:
 
 
 df = param_sweep.get_model_vars_dataframe()
 df
 
 
-# In[160]:
+# In[ ]:
 
 
 plt.scatter(df.homophily, df.Segregated_Agents)

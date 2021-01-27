@@ -338,10 +338,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x10fb8c190&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x1032f3190&gt;
 0
 (0, 1)
-self is  &lt;__main__.SchellingAgent object at 0x10fb8c190&gt;
+self is  &lt;__main__.SchellingAgent object at 0x1032f3190&gt;
 Inside step function. Agent type is  0
 </pre></div>
 </div>
@@ -366,17 +366,17 @@ Inside step function. Agent type is  0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  &lt;__main__.SchellingAgent object at 0x10fb86bb0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  &lt;__main__.SchellingAgent object at 0x1032ea130&gt;
 (0, 0)
 1
-self is  &lt;__main__.SchellingAgent object at 0x10fb86bb0&gt;
+self is  &lt;__main__.SchellingAgent object at 0x1032ea130&gt;
 Inside step function. Agent type is  1
 
 
-b  &lt;__main__.SchellingAgent object at 0x10fb86f10&gt;
+b  &lt;__main__.SchellingAgent object at 0x1032ead90&gt;
 (0, 1)
 0
-self is  &lt;__main__.SchellingAgent object at 0x10fb86f10&gt;
+self is  &lt;__main__.SchellingAgent object at 0x1032ead90&gt;
 Inside step function. Agent type is  0
 </pre></div>
 </div>
@@ -532,6 +532,7 @@ b.A_parameter is 7
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
 <span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">SingleGrid</span>
 <span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
+<span class="kn">import</span> <span class="nn">random</span> 
 
 <span class="k">class</span> <span class="nc">SchellingModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -602,29 +603,29 @@ b.A_parameter is 7
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Display the first 5 agents:
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4bbe0&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b5029fbe0&gt;
 type is  0
 pos is (2, 7)
 unique id is 0
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4bc40&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b5029f280&gt;
 type is  0
-pos is (2, 9)
+pos is (3, 0)
 unique id is 1
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4b4f0&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b203596a0&gt;
 type is  0
 pos is (3, 1)
 unique id is 2
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4ba60&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b606f05e0&gt;
 type is  0
-pos is (4, 0)
+pos is (5, 4)
 unique id is 3
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4b160&gt;
-type is  1
-pos is (4, 7)
+&lt;__main__.SchellingAgent object at 0x7f8b20359940&gt;
+type is  0
+pos is (8, 5)
 unique id is 4
 </pre></div>
 </div>
@@ -646,33 +647,33 @@ unique id is 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x7f8e5bc4bbe0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x7f8b5029fbe0&gt;
 type is  0
-pos is (2, 6)
+pos is (2, 8)
 unique id is 0
 model.happy = 0
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4bc40&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b5029f280&gt;
 type is  0
-pos is (4, 2)
+pos is (4, 1)
 unique id is 1
 model.happy = 0
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4b4f0&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b203596a0&gt;
 type is  0
-pos is (5, 7)
+pos is (6, 4)
 unique id is 2
 model.happy = 0
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4ba60&gt;
+&lt;__main__.SchellingAgent object at 0x7f8b606f05e0&gt;
 type is  0
-pos is (1, 2)
+pos is (5, 2)
 unique id is 3
 model.happy = 0
 
-&lt;__main__.SchellingAgent object at 0x7f8e5bc4b160&gt;
-type is  1
-pos is (3, 5)
+&lt;__main__.SchellingAgent object at 0x7f8b20359940&gt;
+type is  0
+pos is (5, 1)
 unique id is 4
 model.happy = 0
 </pre></div>
@@ -695,7 +696,7 @@ model.happy = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 8, 7, 0, 5, 3, 6, 1, 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 3, 2, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -751,7 +752,7 @@ model.happy = 0
 (None, 0, 1)
 (None, 0, 2)
 (None, 1, 0)
-(&lt;__main__.SchellingAgent object at 0x7f8e5bc4b880&gt;, 1, 1)
+(&lt;__main__.SchellingAgent object at 0x7f8b502a1a00&gt;, 1, 1)
 (None, 1, 2)
 (None, 2, 0)
 (None, 2, 1)
@@ -774,17 +775,17 @@ a1 pos is (1, 1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;__main__.SchellingAgent object at 0x7f8b502a1a00&gt;, 0, 0)
 (None, 0, 1)
 (None, 0, 2)
 (None, 1, 0)
 (None, 1, 1)
 (None, 1, 2)
-(&lt;__main__.SchellingAgent object at 0x7f8e5bc4b880&gt;, 2, 0)
+(None, 2, 0)
 (None, 2, 1)
 (None, 2, 2)
 
-a1 pos is (2, 0)
+a1 pos is (0, 0)
 </pre></div>
 </div>
 </div>
@@ -853,7 +854,7 @@ a1 at (1, 1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model ran for 243 steps
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model ran for 562 steps
 </pre></div>
 </div>
 </div>
@@ -911,63 +912,19 @@ a1 at (1, 1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">43</span><span class="n">aa764daed4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">}</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">df</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>var1</th>
-      <th>var2</th>
-      <th>var3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>a</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>b</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>c</td>
-      <td>a</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>d</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>e</td>
-      <td>c</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>We will discuss Pandas in more detail later in the course.   For now, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-minute introduction to Pandas</a>.</p>
 <div class="cell docutils container">
@@ -977,52 +934,6 @@ a1 at (1, 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1195</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1408</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1567</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1660</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1699</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1031,64 +942,6 @@ a1 at (1, 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>happy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>243.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>1959.078189</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>79.939014</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1195.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1969.500000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>1981.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1988.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>1990.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1099,9 +952,6 @@ a1 at (1, 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/01-schelling_41_0.png" src="../../_images/01-schelling_41_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1110,66 +960,6 @@ a1 at (1, 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-    <tr>
-      <th>Step</th>
-      <th>AgentID</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="5" valign="top">1</th>
-      <th>0</th>
-      <td>8</td>
-      <td>37</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>14</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>36</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>10</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="exploring-the-parameter-space">
@@ -1226,149 +1016,6 @@ a1 at (1, 1)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>homophily</th>
-      <th>Run</th>
-      <th>Segregated_Agents</th>
-      <th>height</th>
-      <th>width</th>
-      <th>density</th>
-      <th>minority_percent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0.282353</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0.217949</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2</td>
-      <td>0.289474</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>3</td>
-      <td>0.300000</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>4</td>
-      <td>0.439024</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>8</td>
-      <td>75</td>
-      <td>0.164706</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>8</td>
-      <td>76</td>
-      <td>0.164706</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>8</td>
-      <td>77</td>
-      <td>0.074074</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>8</td>
-      <td>78</td>
-      <td>0.180723</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>8</td>
-      <td>79</td>
-      <td>0.216867</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-  </tbody>
-</table>
-<p>80 rows × 7 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1376,9 +1023,6 @@ a1 at (1, 1)
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/01-schelling_48_0.png" src="../../_images/01-schelling_48_0.png" />
 </div>
 </div>
 </div>
