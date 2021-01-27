@@ -6,6 +6,9 @@
   chapters:
     - file: course-overview/schedule
     - file: course-overview/01-introduction
-- part: Week 1
+- part: Schelling's Segregation Model
   chapters: 
-    - file: course-content/01-schelling
+    - file: course-content/schelling/01-schelling 
+      title: Overview
+    - file: course-content/schelling/01a-schelling-implementation
+      title: Implementation
