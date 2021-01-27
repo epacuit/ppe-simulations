@@ -32,7 +32,7 @@ import networkx as nx
 import random
 import matplotlib.pyplot as plt
 
-grid = nx.grid_2d_graph(3,3)
+grid = nx.grid_2d_graph(4,4)
 color_map=list()
 for node in grid:
     color_map.append('blue' if random.random() < 0.5 else 'red')
@@ -78,23 +78,16 @@ from mesa import Agent
 
 class SchellingAgent(Agent):
     '''
-    Schelling segregation agent
+    Schelling segregation agent.
     '''
     def __init__(self, pos, agent_type):
-        '''
-         Create a new Schelling agent.
-
-         Args:
-            pos: Agent initial location.
-            agent_type: Indicator for the agent's type (minority=1, majority=0)
-        '''
         self.pos = pos
         self.type = agent_type
-    
     def step(self):
+        print("self is ", self)
         print("Inside step function. Agent type is ", self.type)
 
-a=SchellingAgent((0,0),1)
+a = SchellingAgent((0,1),0)
 print(a)
 print(a.type)
 print(a.pos)
@@ -107,13 +100,13 @@ a.step()
 a = SchellingAgent((0,0), 1)
 b = SchellingAgent((0,1), 0)
 
-print(a)
+print("a ", a)
 print(a.pos)
 print(a.type)
 a.step()
 
 print("\n")
-print(b)
+print("b ", b)
 print(b.pos)
 print(b.type)
 b.step()
@@ -128,14 +121,14 @@ class SchellingAgent(Agent):
     '''
     Schelling segregation agent
     '''
-    def __init__(self, pos, model, agent_type):
+    def __init__(self, unique_id, pos, model, agent_type):
         '''
          Create a new Schelling agent.
          Args:
             pos: Agent initial location.
             agent_type: Indicator for the agent's type (minority=1, majority=0)
         '''
-        super().__init__(pos, model)
+        super().__init__(unique_id, model)
         self.pos = pos
         self.type = agent_type
 
@@ -153,7 +146,88 @@ class SchellingAgent(Agent):
             self.model.happy += 1
 
 
+# Note that line 14 has the code 
+# 
+# ```python 
+# super().__init__(pos,model)
+# ```
+# 
+# First of all, note that `SchellingAgent` is a subclass of the mesa class `Agent`. 
+# 
+# `super()` is a builtin function that gives access to the base class. The use case of this function is illustrated below:   
+
 # In[5]:
+
+
+class A():
+    def __init__(self, param):
+        print("initializing A with ", param)
+        self.A_parameter = param
+        self.param2 = "Another parameter"
+        
+class B(A):
+    def __init__(self, param):
+        print("B is a subclass of A")
+        self.B_parameter = param
+        print("initializing A with ", param)
+
+b = B(7)
+print(b.param2) # produces an error since the base class hasn't been initialized
+
+
+# The problem with the above code is that when initializing the class B we didn't call the `__init__` method of the base class.   There are two ways to do this: 
+# 
+# The first approach is to explicitly call the base class `__init__` method
+# 
+
+# In[7]:
+
+
+# 1. The first approach is to explicitly reference the base class __init__ function
+class A():
+    def __init__(self, param):
+        print("Initializing A with ", param)
+        self.A_parameter = param
+        self.param2 = "Another parameter"
+        
+class B(A):
+    def __init__(self, param):
+        print("Initializing B with ", param)
+        self.B_parameter = param
+        A.__init__(self, param)
+
+b = B(7)
+print(f"b.param2 is {b.param2}") # now b can access the base class attributes
+print(f"b.B_parameter is {b.B_parameter}")
+print(f"b.A_parameter is {b.A_parameter}")
+
+
+# The second approach is the use the builtin `super()`:
+
+# In[8]:
+
+
+# 2. The second (preferable) approach is to use the builtin super()
+
+class A():
+    def __init__(self, param):
+        print("Initializing A with ", param)
+        self.A_parameter = param
+        self.param2 = "Another parameter"
+
+class B(A):
+    def __init__(self, param):
+        print("Initializing B with ", param)
+        self.B_parameter = param
+        super().__init__(param)
+
+b = B(7)
+print(f"b.param2 is {b.param2}") # now b can access the base class attributes
+print(f"b.B_parameter is {b.B_parameter}")
+print(f"b.A_parameter is {b.A_parameter}")
+
+
+# In[9]:
 
 
 from mesa.time import RandomActivation
@@ -165,7 +239,7 @@ class SchellingModel(Model):
     Model class for the Schelling segregation model.
     '''
     def __init__(self, height, width, density, minority_percent, homophily):
-
+        
         self.height = height
         self.width = width
         self.density = density
@@ -182,6 +256,7 @@ class SchellingModel(Model):
             {"x": lambda a: a.pos[0], "y": lambda a: a.pos[1]})
         self.running = True
         # Set up agents
+        agent_id = 0
         for cell in self.grid.coord_iter():
             #print(cell)
             _,x,y = cell
@@ -190,10 +265,11 @@ class SchellingModel(Model):
                     agent_type = 1
                 else:
                     agent_type = 0
-                agent = SchellingAgent((x, y), self, agent_type)
-                self.grid.position_agent(agent, (x, y))
+                agent = SchellingAgent(agent_id, (x, y), self, agent_type)
+                agent_id += 1
+                self.grid.position_agent(agent, x=x, y=y)
                 self.schedule.add(agent)
-
+        
     def step(self):
         '''
         Run one step of the model. If All agents are happy, halt the model.
@@ -207,7 +283,7 @@ class SchellingModel(Model):
 
 # Instatiate a model instance: a 10x10 grid, with an 10% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.
 
-# In[6]:
+# In[10]:
 
 
 height, width = 10, 10
@@ -219,12 +295,137 @@ print("Display the first 5 agents:\n")
 for a in model.schedule.agents[0:5]: 
     print(a)
     print("type is ", a.type)
-    print(f"pos is {a.pos} \n")
+    print(f"pos is {a.pos}")
+    print(f"unique id is {a.unique_id}\n")
 
+
+# In[11]:
+
+
+# execute one round of the models
+model.step()
+
+# some positions should change
+for a in model.schedule.agents[0:5]: 
+    print(a)
+    print("type is ", a.type)
+    print(f"pos is {a.pos}")
+    print(f"unique id is {a.unique_id}")
+    print(f"model.happy = {model.happy}\n")
+
+
+# Note that on line 17 of the definition of `SchellingModel` we have the following code: 
+# 
+# ```python
+# self.schedule = RandomActivation(self)
+# ```
+# 
+# This activates the agents one at a time in random order with the order reshuffled every step of the model. 
+# 
+# See [the source code](https://mesa.readthedocs.io/en/stable/_modules/mesa/time.html#RandomActivation) for details. 
+# 
+
+# In[12]:
+
+
+# To illustrate the RandomAcitivation schedulare, note that running this
+# multiplet times will produce different orders of the agents
+
+print([a.unique_id for a in model.schedule.agent_buffer(shuffled=True)])
+
+
+# Note that  line 18 of the definition of the `SchellingModel` has the following code: 
+#     
+# ```python
+# self.grid = SingleGrid(height, width, torus=True)
+# ```
+# 
+# This defines a grid to place the agents. 
+# 
+# See [the course code](https://mesa.readthedocs.io/en/master/_modules/space.html#SingleGrid) for details. 
+# 
+
+# In[13]:
+
+
+# create a simple Schelling model with a 3x3 grid
+model2 = SchellingModel(3, 3, 0, 0.2, 4)
+
+# each cell is a tuple where the first component is the agent, 
+# the second component is the x position and 
+# the 3rd component is the y position
+for cell in model2.grid.coord_iter():
+    print(cell)
+
+
+# In[14]:
+
+
+a1 = SchellingAgent(0, (1, 1), model2, 0)
+
+# initially position the agent at 1,1
+model2.grid.position_agent(a1, x=1, y=1)
+
+for cell in model2.grid.coord_iter():
+    print(cell)
+print(f"\na1 pos is {a1.pos}")
+
+
+# In[15]:
+
+
+
+# now move a1 to an empty location
+model2.grid.move_to_empty(a1)
+
+for cell in model2.grid.coord_iter():
+    print(cell)
+print(f"\na1 pos is {a1.pos}")
+
+
+# In[16]:
+
+
+model2 = SchellingModel(3, 3, 0, 0.2, 4)
+model2.grid = SingleGrid(3, 3, torus=True)
+
+a1 = SchellingAgent(1, (1, 1), model2, 0)
+a2 = SchellingAgent(2, (1, 0), model2, 0)
+a3 = SchellingAgent(3, (0, 0), model2, 0)
+a4 = SchellingAgent(4, (2, 2), model2, 0)
+
+model2.grid.position_agent(a1, x=1, y=1)
+model2.grid.position_agent(a2, x=1, y=0)
+model2.grid.position_agent(a3, x=0, y=0)
+model2.grid.position_agent(a4, x=2, y=2)
+
+print("The neighbors of a1 are: ")
+for n in model2.grid.neighbor_iter(a1.pos):
+    print(f"a{n.unique_id} at {n.pos}")
+    
+print("The neighbors of a3 are: ")
+for n in model2.grid.neighbor_iter(a3.pos):
+    print(f"a{n.unique_id} at {n.pos}")
+
+
+# Lines 31 - 35 of the `SchellingModel` has the following code: 
+# 
+# ```python
+# if random.random() < self.density:
+#     if random.random() < self.minority_percent:
+#         agent_type = 1
+#     else:
+#         agent_type = 0
+# ```
+# 
+
+# `random.random()` returns a random floating point number in the range $[0.0, 1.0)$.
+# 
+# With probability `density` create an agent at the position.  With probability `minority_percent` set the agent type to 1 (a minority agent) otherwise set the agent type to 0 (a majority agent). 
 
 # Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times. 
 
-# In[7]:
+# In[17]:
 
 
 height, width = 50, 50
@@ -238,9 +439,46 @@ while model.running and model.schedule.steps < 1000:
 print(f"The model ran for {model.schedule.steps} steps") # Show how many steps have actually run
 
 
-# The DataCollector object checks and stores how many agents are happy at the end of each step. It can also generate a pandas DataFrame of the data it has collected:
+# Lines 21 - 24 of the definition of the `SchellingModel` has the following code: 
+# 
+# ```python 
+# self.datacollector = DataCollector(
+# {"happy": lambda m: m.happy},  # Model-level count of happy agents
+# # For testing purposes, agent's individual x and y
+# {"x": lambda a: a.pos[0], "y": lambda a: a.pos[1]})
+# ```
+# 
+# This code is called in the `step()` method on line 47: 
+# 
+# ```python
+# self.datacollector.collect(self)
+# ```
 
-# In[8]:
+# The `DataCollector` is a simple, standard way to collect data generated by a Mesa model. It collects three types of data: model-level data, agent-level data, and tables.
+# 
+# See the [documentation for details](https://mesa.readthedocs.io/en/stable/apis/datacollection.html).
+
+# The code uses the builtin `lambda` to define a function.
+# 
+# To define a function in Python you need to use the `def` keyord, specify a name of the fucntion, list the parameters and the function body. The `lambda` builtin allows you to quickly define functions on the fly. 
+
+# In[18]:
+
+
+def f1(p):
+    return p + 2
+
+print(f1(2))
+
+f2 = lambda p: p + 2
+
+print(f2(2))
+
+
+# Use the method `get_model_vars_dataframe` to get the model-level data after running the model.
+
+# In[19]:
+
 
 
 model_out = model.datacollector.get_model_vars_dataframe()
@@ -248,7 +486,7 @@ model_out = model.datacollector.get_model_vars_dataframe()
 model_out.head()
 
 
-# In[9]:
+# In[20]:
 
 
 import seaborn as sns
@@ -256,9 +494,110 @@ sns.set()
 model_out.happy.plot();
 
 
+# ## Visualization
+
+# In[43]:
+
+
+
+import matplotlib.pyplot as plt
+from IPython.display import clear_output
+from ipywidgets import widgets, interact, interact_manual
+import pandas as pd
+
+max_rounds = 100
+
+def value(cell):
+    if cell is None: return 0
+    elif cell.type == 1: return 1
+    elif cell.type == 0: return 2
+
+def run_schelling_sim(height, width, density, minority_percent, homophily):
+    fig, ax = plt.subplots()
+    
+    # initialize the model
+    model = SchellingModel(height, width, density, minority_percent, homophily)
+    num_rounds = 0
+    while model.running and num_rounds < max_rounds:
+        num_rounds += 1
+        model.step()
+        data = np.array([[value(c) for c in row] for row in model.grid.grid])
+        df = pd.DataFrame(data)
+        sns.heatmap(df, cbar=False, linecolor='white', cmap=['white', 'blue', 'red'])
+        ax.axes.get_xaxis().set_visible(False)
+        ax.axes.get_yaxis().set_visible(False)
+
+        clear_output(wait=True)
+        display(fig);
+    plt.close()
+
+interact_manual(run_schelling_sim, 
+                height = widgets.IntSlider(
+                    value=50,
+                    min=0,
+                    max=100,
+                    step=1,
+                    description='height:',
+                    disabled=False,
+                    continuous_update=False,
+                    orientation='horizontal',
+                    readout=True,
+                    readout_format='d'
+                ), 
+                width = widgets.IntSlider(
+                    value=50,
+                    min=0,
+                    max=100,
+                    step=1,
+                    description='width:',
+                    disabled=False,
+                    continuous_update=False,
+                    orientation='horizontal',
+                    readout=True,
+                    readout_format='d'
+                ),  
+                density = widgets.FloatSlider(
+                    value=0.7,
+                    min=0,
+                    max=1.0,
+                    step=0.1,
+                    description='density:',
+                    disabled=False,
+                    continuous_update=False,
+                    orientation='horizontal',
+                    readout=True,
+                    readout_format='.1f'
+                ),
+                minority_percent = widgets.FloatSlider(
+                    value=0.2,
+                    min=0,
+                    max=1.0,
+                    step=0.1,
+                    description='minority %:',
+                    disabled=False,
+                    continuous_update=False,
+                    orientation='horizontal',
+                    readout=True,
+                    readout_format='.1f'
+                ), 
+                homophily = widgets.IntSlider(
+                    value=4,
+                    min=0,
+                    max=8,
+                    step=1,
+                    description='homophily:',
+                    disabled=False,
+                    continuous_update=False,
+                    orientation='horizontal',
+                    readout=True,
+                    readout_format='d'
+                ), 
+               );
+
+
 # ## Exploring the Parameter Space
 
-# In[10]:
+# In[ ]:
 
 
 from mesa.batchrunner import BatchRunner
@@ -279,7 +618,7 @@ def get_segregation(model):
     return segregated_agents / model.schedule.get_agent_count()
 
 
-# In[11]:
+# In[ ]:
 
 
 variable_params = {"homophily": range(1,9)}
@@ -294,20 +633,20 @@ param_sweep = BatchRunner(SchellingModel,
                           display_progress=False)
 
 
-# In[12]:
+# In[ ]:
 
 
 param_sweep.run_all()
 
 
-# In[13]:
+# In[ ]:
 
 
 df = param_sweep.get_model_vars_dataframe()
 df
 
 
-# In[14]:
+# In[ ]:
 
 
 plt.scatter(df.homophily, df.Segregated_Agents)

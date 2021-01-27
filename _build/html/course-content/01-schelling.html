@@ -234,6 +234,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exploring-the-parameter-space">
    Exploring the Parameter Space
   </a>
@@ -280,7 +285,7 @@
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">grid</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">grid_2d_graph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">grid_2d_graph</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">color_map</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
     <span class="n">color_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -330,23 +335,16 @@
 
 <span class="k">class</span> <span class="nc">SchellingAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Schelling segregation agent</span>
+<span class="sd">    Schelling segregation agent.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">         Create a new Schelling agent.</span>
-
-<span class="sd">         Args:</span>
-<span class="sd">            pos: Agent initial location.</span>
-<span class="sd">            agent_type: Indicator for the agent&#39;s type (minority=1, majority=0)</span>
-<span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">agent_type</span>
-    
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;self is &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside step function. Agent type is &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
 
-<span class="n">a</span><span class="o">=</span><span class="n">SchellingAgent</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
@@ -355,10 +353,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x104a509a0&gt;
-1
-(0, 0)
-Inside step function. Agent type is  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x11089beb0&gt;
+0
+(0, 1)
+self is  &lt;__main__.SchellingAgent object at 0x11089beb0&gt;
+Inside step function. Agent type is  0
 </pre></div>
 </div>
 </div>
@@ -368,13 +367,13 @@ Inside step function. Agent type is  1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b &quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
 <span class="n">b</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
@@ -382,15 +381,17 @@ Inside step function. Agent type is  1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x104a763a0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  &lt;__main__.SchellingAgent object at 0x16c367e50&gt;
 (0, 0)
 1
+self is  &lt;__main__.SchellingAgent object at 0x16c367e50&gt;
 Inside step function. Agent type is  1
 
 
-&lt;__main__.SchellingAgent object at 0x104a76ac0&gt;
+b  &lt;__main__.SchellingAgent object at 0x16c402a30&gt;
 (0, 1)
 0
+self is  &lt;__main__.SchellingAgent object at 0x16c402a30&gt;
 Inside step function. Agent type is  0
 </pre></div>
 </div>
@@ -404,14 +405,14 @@ Inside step function. Agent type is  0
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Schelling segregation agent</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">         Create a new Schelling agent.</span>
 <span class="sd">         Args:</span>
 <span class="sd">            pos: Agent initial location.</span>
 <span class="sd">            agent_type: Indicator for the agent&#39;s type (minority=1, majority=0)</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">agent_type</span>
 
@@ -431,6 +432,116 @@ Inside step function. Agent type is  0
 </div>
 </div>
 </div>
+<p>Note that line 14 has the code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>First of all, note that <code class="docutils literal notranslate"><span class="pre">SchellingAgent</span></code> is a subclass of the mesa class <code class="docutils literal notranslate"><span class="pre">Agent</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">super()</span></code> is a builtin function that gives access to the base class. The use case of this function is illustrated below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;initializing A with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param2</span> <span class="o">=</span> <span class="s2">&quot;Another parameter&quot;</span>
+        
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B is a subclass of A&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;initializing A with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">param2</span><span class="p">)</span> <span class="c1"># produces an error since the base class hasn&#39;t been initialized</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B is a subclass of A
+initializing A with  7
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">ecccfc784740</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">param2</span><span class="p">)</span> <span class="c1"># produces an error since the base class hasn&#39;t been initialized</span>
+
+<span class="ne">AttributeError</span>: &#39;B&#39; object has no attribute &#39;param2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The problem with the above code is that when initializing the class B we didn’t call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the base class.   There are two ways to do this:</p>
+<p>The first approach is to explicitly call the base class <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. The first approach is to explicitly reference the base class __init__ function</span>
+<span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initializing A with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param2</span> <span class="o">=</span> <span class="s2">&quot;Another parameter&quot;</span>
+        
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initializing B with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="n">A</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.param2 is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">param2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># now b can access the base class attributes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.B_parameter is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">B_parameter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.A_parameter is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">A_parameter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initializing B with  7
+Initializing A with  7
+b.param2 is Another parameter
+b.B_parameter is 7
+b.A_parameter is 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second approach is the use the builtin <code class="docutils literal notranslate"><span class="pre">super()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. The second (preferable) approach is to use the builtin super()</span>
+
+<span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initializing A with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param2</span> <span class="o">=</span> <span class="s2">&quot;Another parameter&quot;</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initializing B with &quot;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_parameter</span> <span class="o">=</span> <span class="n">param</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.param2 is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">param2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># now b can access the base class attributes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.B_parameter is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">B_parameter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.A_parameter is </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">A_parameter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initializing B with  7
+Initializing A with  7
+b.param2 is Another parameter
+b.B_parameter is 7
+b.A_parameter is 7
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
@@ -442,7 +553,7 @@ Inside step function. Agent type is  0
 <span class="sd">    Model class for the Schelling segregation model.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">):</span>
-
+        
         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="n">density</span>
@@ -459,6 +570,7 @@ Inside step function. Agent type is  0
             <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="c1"># Set up agents</span>
+        <span class="n">agent_id</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
             <span class="c1">#print(cell)</span>
             <span class="n">_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">cell</span>
@@ -467,10 +579,11 @@ Inside step function. Agent type is  0
                     <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">1</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">0</span>
-                <span class="n">agent</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+                <span class="n">agent</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="n">agent_id</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">)</span>
+                <span class="n">agent_id</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
-
+        
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Run one step of the model. If All agents are happy, halt the model.</span>
@@ -496,36 +609,249 @@ Inside step function. Agent type is  0
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pos is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pos is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unique id is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Display the first 5 agents:
 
-&lt;__main__.SchellingAgent object at 0x104a764c0&gt;
-type is  0
-pos is (7, 8) 
+&lt;__main__.SchellingAgent object at 0x7f8e59921d00&gt;
+type is  1
+pos is (0, 4)
+unique id is 0
 
-&lt;__main__.SchellingAgent object at 0x104a75430&gt;
+&lt;__main__.SchellingAgent object at 0x7f8e4859f0a0&gt;
 type is  0
-pos is (8, 5) 
+pos is (2, 5)
+unique id is 1
 
-&lt;__main__.SchellingAgent object at 0x104a75520&gt;
-type is  0
-pos is (6, 8) 
+&lt;__main__.SchellingAgent object at 0x7f8e4859f760&gt;
+type is  1
+pos is (3, 1)
+unique id is 2
 
-&lt;__main__.SchellingAgent object at 0x104a75040&gt;
+&lt;__main__.SchellingAgent object at 0x7f8e4859f040&gt;
 type is  0
-pos is (9, 5) 
+pos is (3, 3)
+unique id is 3
 
-&lt;__main__.SchellingAgent object at 0x104a753a0&gt;
+&lt;__main__.SchellingAgent object at 0x7f8e4859f190&gt;
 type is  0
-pos is (4, 9) 
+pos is (3, 9)
+unique id is 4
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute one round of the models</span>
+<span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+<span class="c1"># some positions should change</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pos is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unique id is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;model.happy = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">happy</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x7f8e59921d00&gt;
+type is  1
+pos is (3, 5)
+unique id is 0
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x7f8e4859f0a0&gt;
+type is  0
+pos is (7, 1)
+unique id is 1
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x7f8e4859f760&gt;
+type is  1
+pos is (6, 3)
+unique id is 2
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x7f8e4859f040&gt;
+type is  0
+pos is (9, 3)
+unique id is 3
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x7f8e4859f190&gt;
+type is  0
+pos is (1, 5)
+unique id is 4
+model.happy = 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that on line 17 of the definition of <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> we have the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This activates the agents one at a time in random order with the order reshuffled every step of the model.</p>
+<p>See <a class="reference external" href="https://mesa.readthedocs.io/en/stable/_modules/mesa/time.html#RandomActivation">the source code</a> for details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To illustrate the RandomAcitivation schedulare, note that running this</span>
+<span class="c1"># multiplet times will produce different orders of the agents</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agent_buffer</span><span class="p">(</span><span class="n">shuffled</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 1, 7, 6, 4, 5, 3, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that  line 18 of the definition of the <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> has the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This defines a grid to place the agents.</p>
+<p>See <a class="reference external" href="https://mesa.readthedocs.io/en/master/_modules/space.html#SingleGrid">the course code</a> for details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a simple Schelling model with a 3x3 grid</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># each cell is a tuple where the first component is the agent, </span>
+<span class="c1"># the second component is the x position and </span>
+<span class="c1"># the 3rd component is the y position</span>
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+(None, 0, 1)
+(None, 0, 2)
+(None, 1, 0)
+(None, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># initially position the agent at 1,1</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a1 pos is </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+(None, 0, 1)
+(None, 0, 2)
+(None, 1, 0)
+(&lt;__main__.SchellingAgent object at 0x7f8e184381f0&gt;, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+
+a1 pos is (1, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now move a1 to an empty location</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">move_to_empty</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a1 pos is </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+(None, 0, 1)
+(&lt;__main__.SchellingAgent object at 0x7f8e184381f0&gt;, 0, 2)
+(None, 1, 0)
+(None, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+
+a1 pos is (0, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a3</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a4</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The neighbors of a1 are: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a</span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The neighbors of a3 are: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="n">a3</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a</span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The neighbors of a1 are: 
+a3 at (0, 0)
+a2 at (1, 0)
+a4 at (2, 2)
+The neighbors of a3 are: 
+a4 at (2, 2)
+a2 at (1, 0)
+a1 at (1, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lines 31 - 35 of the <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> has the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">minority_percent</span><span class="p">:</span>
+        <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">random.random()</span></code> returns a random floating point number in the range <span class="math notranslate nohighlight">\([0.0, 1.0)\)</span>.</p>
+<p>With probability <code class="docutils literal notranslate"><span class="pre">density</span></code> create an agent at the position.  With probability <code class="docutils literal notranslate"><span class="pre">minority_percent</span></code> set the agent type to 1 (a minority agent) otherwise set the agent type to 0 (a majority agent).</p>
 <p>Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,12 +868,47 @@ pos is (4, 9)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model ran for 121 steps
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model ran for 1000 steps
 </pre></div>
 </div>
 </div>
 </div>
-<p>The DataCollector object checks and stores how many agents are happy at the end of each step. It can also generate a pandas DataFrame of the data it has collected:</p>
+<p>Lines 21 - 24 of the definition of the <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> has the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
+<span class="p">{</span><span class="s2">&quot;happy&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">happy</span><span class="p">},</span>  <span class="c1"># Model-level count of happy agents</span>
+<span class="c1"># For testing purposes, agent&#39;s individual x and y</span>
+<span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>This code is called in the <code class="docutils literal notranslate"><span class="pre">step()</span></code> method on line 47:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataCollector</span></code> is a simple, standard way to collect data generated by a Mesa model. It collects three types of data: model-level data, agent-level data, and tables.</p>
+<p>See the <a class="reference external" href="https://mesa.readthedocs.io/en/stable/apis/datacollection.html">documentation for details</a>.</p>
+<p>The code uses the builtin <code class="docutils literal notranslate"><span class="pre">lambda</span></code> to define a function.</p>
+<p>To define a function in Python you need to use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyord, specify a name of the fucntion, list the parameters and the function body. The <code class="docutils literal notranslate"><span class="pre">lambda</span></code> builtin allows you to quickly define functions on the fly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the method <code class="docutils literal notranslate"><span class="pre">get_model_vars_dataframe</span></code> to get the model-level data after running the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
@@ -581,23 +942,23 @@ pos is (4, 9)
   <tbody>
     <tr>
       <th>0</th>
-      <td>1077</td>
+      <td>1136</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1350</td>
+      <td>1378</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1475</td>
+      <td>1499</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1547</td>
+      <td>1610</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1613</td>
+      <td>1686</td>
     </tr>
   </tbody>
 </table>
@@ -612,8 +973,114 @@ pos is (4, 9)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01-schelling_18_0.png" src="../_images/01-schelling_18_0.png" />
+<img alt="../_images/01-schelling_38_0.png" src="../_images/01-schelling_38_0.png" />
 </div>
+</div>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">max_rounds</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cell</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">cell</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">cell</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">run_schelling_sim</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    
+    <span class="c1"># initialize the model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">)</span>
+    <span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">num_rounds</span> <span class="o">&lt;</span> <span class="n">max_rounds</span><span class="p">:</span>
+        <span class="n">num_rounds</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">value</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">grid</span><span class="p">])</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">interact_manual</span><span class="p">(</span><span class="n">run_schelling_sim</span><span class="p">,</span> 
+                <span class="n">height</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;height:&#39;</span><span class="p">,</span>
+                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+                    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;d&#39;</span>
+                <span class="p">),</span> 
+                <span class="n">width</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;width:&#39;</span><span class="p">,</span>
+                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+                    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;d&#39;</span>
+                <span class="p">),</span>  
+                <span class="n">density</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;density:&#39;</span><span class="p">,</span>
+                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+                    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.1f&#39;</span>
+                <span class="p">),</span>
+                <span class="n">minority_percent</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="nb">max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;minority %:&#39;</span><span class="p">,</span>
+                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+                    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;.1f&#39;</span>
+                <span class="p">),</span> 
+                <span class="n">homophily</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+                    <span class="n">value</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                    <span class="nb">max</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;homophily:&#39;</span><span class="p">,</span>
+                    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+                    <span class="n">readout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">readout_format</span><span class="o">=</span><span class="s1">&#39;d&#39;</span>
+                <span class="p">),</span> 
+               <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "244788964edc4f0484eb0003ddeec02f", "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 </div>
 <div class="section" id="exploring-the-parameter-space">
@@ -670,149 +1137,6 @@ pos is (4, 9)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>homophily</th>
-      <th>Run</th>
-      <th>Segregated_Agents</th>
-      <th>height</th>
-      <th>width</th>
-      <th>density</th>
-      <th>minority_percent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0.402597</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0.358025</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2</td>
-      <td>0.440476</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>3</td>
-      <td>0.220930</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>4</td>
-      <td>0.379747</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>75</th>
-      <td>8</td>
-      <td>75</td>
-      <td>0.348315</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>8</td>
-      <td>76</td>
-      <td>0.236111</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>77</th>
-      <td>8</td>
-      <td>77</td>
-      <td>0.170732</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>78</th>
-      <td>8</td>
-      <td>78</td>
-      <td>0.434211</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>79</th>
-      <td>8</td>
-      <td>79</td>
-      <td>0.293333</td>
-      <td>10</td>
-      <td>10</td>
-      <td>0.8</td>
-      <td>0.2</td>
-    </tr>
-  </tbody>
-</table>
-<p>80 rows × 7 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -820,9 +1144,6 @@ pos is (4, 9)
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/01-schelling_24_0.png" src="../_images/01-schelling_24_0.png" />
 </div>
 </div>
 </div>

@@ -89,20 +89,20 @@
 # * Python is dynamically typed.
 # 
 
-# In[3]:
+# In[7]:
 
 
 x = "hello"
 print(x)
-#print(x + " world")
+print(x + " world")
 
 x = 7
 print(x)
-#print(x + " world")
+print(str(x) + " world")
 
 x = [5, 10, 15]
 print(x)
-#print(x + [20])
+print(x + [20])
 
 
 # ## Tutorials on Python
