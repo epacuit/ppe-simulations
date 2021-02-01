@@ -142,7 +142,7 @@ def run_schelling_sim(height, width, density, minority_percent, homophily):
 interact_manual(run_schelling_sim, 
                 height = widgets.IntSlider(
                     value=50,
-                    min=0,
+                    min=1,
                     max=100,
                     step=1,
                     description='height:',
@@ -154,7 +154,7 @@ interact_manual(run_schelling_sim,
                 ), 
                 width = widgets.IntSlider(
                     value=50,
-                    min=0,
+                    min=1,
                     max=100,
                     step=1,
                     description='width:',

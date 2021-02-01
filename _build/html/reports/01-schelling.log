@@ -27,7 +27,6 @@ class B(A):
     def __init__(self, param):
         print("B is a subclass of A")
         self.B_parameter = param
-        print("initializing A with ", param)
 
 b = B(7)
 print(b.param2) # produces an error since the base class hasn't been initialized
@@ -35,10 +34,10 @@ print(b.param2) # produces an error since the base class hasn't been initialized
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m<ipython-input-4-ecccfc784740>[0m in [0;36m<module>[0;34m[0m
-[1;32m     12[0m [0;34m[0m[0m
-[1;32m     13[0m [0mb[0m [0;34m=[0m [0mB[0m[0;34m([0m[0;36m7[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 14[0;31m [0mprint[0m[0;34m([0m[0mb[0m[0;34m.[0m[0mparam2[0m[0;34m)[0m [0;31m# produces an error since the base class hasn't been initialized[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-4-6b3564991224>[0m in [0;36m<module>[0;34m[0m
+[1;32m     11[0m [0;34m[0m[0m
+[1;32m     12[0m [0mb[0m [0;34m=[0m [0mB[0m[0;34m([0m[0;36m7[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 13[0;31m [0mprint[0m[0;34m([0m[0mb[0m[0;34m.[0m[0mparam2[0m[0;34m)[0m [0;31m# produces an error since the base class hasn't been initialized[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mAttributeError[0m: 'B' object has no attribute 'param2'
 AttributeError: 'B' object has no attribute 'param2'

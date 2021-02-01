@@ -12,3 +12,7 @@
       title: Overview
     - file: course-content/schelling/01a-schelling-implementation
       title: Implementation
+- part: Introduction to Game Theory
+  chapters: 
+    - file: course-content/game-theory/02-intro-game-theory 
+      title: Introduction to Game Theory
