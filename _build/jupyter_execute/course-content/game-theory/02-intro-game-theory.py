@@ -35,7 +35,7 @@ sns.set()
 # 3. For each $i\in N$, $u_i:\times_iS_i \rightarrow\mathbb{R}$ is player $i$'s utility. 
 # 
 # 
-#  The elements of  $\Pi_{i\in N} S_i$ are the outcomes of the game and are called **strategy profiles**.  
+#  The elements of  $\times_{i\in N} S_i$ are the outcomes of the game and are called **strategy profiles**.  
 
 # In most games, no single player has total control over which outcome
 #  will be realized at the end of the interaction. The outcome of a game depends on the
@@ -104,7 +104,8 @@ sns.set()
 # 
 # The utilities for a mixed strategy profile $(p, q)$ is: 
 # 
-# $$(p(1-q) -pq - (1-p)(1-q)  + (1-p)q,\ -p(1-q) +pq + (1-p)(1-q)  - (1-p)q)$$
+# $$\mbox{Row}: p(1-q) -pq - (1-p)(1-q)  + (1-p)q$$
+# $$\mbox{Col}: -p(1-q) +pq + (1-p)(1-q)  - (1-p)q)$$
 
 # > We are reluctant to believe that our decisions are made at random.   We prefer to be able to point to a reason for each action we take.   Outside of Las Vegas we do not spin roulettes. (A. Rubinstein, Comments on the Interpretation of Game Theory, Econometrica 59, 909 - 924, 1991)
 # 
@@ -161,7 +162,7 @@ sns.set()
 # ## Game Theory in Python
 # 
 # * Gambit - [https://gambitproject.readthedocs.io/en/latest/index.html](https://gambitproject.readthedocs.io/en/latest/index.html):  a library of game theory software and tools for the construction and analysis of finite extensive and strategic games.
-# * Nashpy - [https://nashpy.readthedocs.io/en/latest/](https://nashpy.readthedocs.io/en/latest/): a simply library used for the computation of equilibria in 2 player strategic form games.
+# * Nashpy - [https://nashpy.readthedocs.io/en/latest/](https://nashpy.readthedocs.io/en/latest/): a simple library used for the computation of equilibria in 2 player strategic form games.
 # * Axelrod - [https://axelrod.readthedocs.io/en/stable/index.html](https://axelrod.readthedocs.io/en/stable/index.html): a library to study iterated prisoner's dilemma. 
 # 
 
@@ -179,6 +180,9 @@ B = np.array([[1, 0], [0, 1]])
 coord = nash.Game(A, B)
 
 print(coord)
+
+print([1,2])
+print(np.array([1,2]))
 
 
 # In[3]:
@@ -257,6 +261,23 @@ for ne in eqs:
 
 
 # ### Axelrod
+# 
+# [Axelrod](https://axelrod.readthedocs.io/en/stable/index.html) is a Python package to study repeated play of the Prisoner's Dilemma: 
+# 
+# | &nbsp;  |$S1$ | $S2$ |
+# |----|----|----|
+# |$S1$ |$(3, 3)$ | $(0, 4)$|
+# |$S2$ |$(4, 0)$ | $(1, 1)$|
+# 
+# There are different ways to repeat play of PD: 
+# 
+# 1. Two players repeatedly playing a PD 
+# 2. Multiple players repeatedly playing PD against each other 
+# 3. Multiple players repeatedly playing PD against their neighbors
+
+# #### Running a Match
+# 
+# In a Match, two player repeatedly play a PD.
 
 # In[8]:
 
@@ -279,7 +300,7 @@ print("Normalized Coperation: ", match.normalised_cooperation())
 
 
 players = (axl.Cooperator(),  axl.Random())
-match = axl.Match(players=players, turns=10, noise=0.2)
+match = axl.Match(players=players, turns=10, noise=0.0)
 match.play()  
 
 print("Match Scores: ", match.scores())
@@ -291,6 +312,8 @@ print("Normalized Coperation: ", match.normalised_cooperation())
 
 
 # #### Running a Tournament
+# 
+# In a tournament, each player plays every other player. 
 
 # In[10]:
 
@@ -393,6 +416,21 @@ plot.boxplot();
 # 
 # 
 
+# In[18]:
+
+
+players = [ axl.ZDExtort2(), axl.ZDSet2(), axl.TitForTat()]
+tournament = axl.Tournament(
+    players=players,
+    turns=200,
+    repetitions=5,
+)
+results = tournament.play(progress_bar=False)
+for name in results.ranked_names:
+    print(name)
+    
+
+
 # #### Moran Process
 # 
 # Given an initial population of players, the population is iterated in rounds consisting of:
@@ -402,7 +440,7 @@ plot.boxplot();
 # 3. a player is chosen at random to be replaced.
 # 
 
-# In[18]:
+# In[19]:
 
 
 players = [axl.Cooperator(), axl.Defector(), axl.TitForTat(), axl.Grudger()]
@@ -414,7 +452,7 @@ mp.populations_plot();
 
 # #### Moran Process with Mutation
 
-# In[19]:
+# In[20]:
 
 
 players = [axl.Cooperator(), axl.Defector(),
@@ -438,7 +476,7 @@ mp.populations_plot();
 #     * `imitation`: imitate the neighbor with the highest total score for that round
 #     * `prob_imitation`: select a neighbor to imitate proportional to the  average payouts
 
-# In[20]:
+# In[21]:
 
 
 from mesa import Model, Agent
@@ -455,7 +493,7 @@ import numpy as np
 import pandas
 
 
-# In[21]:
+# In[22]:
 
 
 # Create some games:
@@ -497,7 +535,7 @@ sh2 = nash.Game(A, B)
 #print(str(sh2))
 
 
-# In[22]:
+# In[23]:
 
 
 
@@ -526,7 +564,7 @@ class Player(Agent):
         return np.sum([self.model.game[self.strat, n.strat][0] for n in neighbors])
 
 
-# In[23]:
+# In[24]:
 
 
 class GameLatticeModel(Model):
@@ -547,7 +585,8 @@ class GameLatticeModel(Model):
         self.grid = SingleGrid(height, width, torus=True)
         
         self.datacollector = DataCollector(
-             {"Percent S1": lambda m: np.sum([1 for a in m.schedule.agents if  np.array_equal(a.strat, S1)]) / m.schedule.get_agent_count()}             )
+             {"Percent S1": lambda m: np.sum([1 for a in m.schedule.agents 
+                                              if  np.array_equal(a.strat, S1)]) / m.schedule.get_agent_count()}             )
         self.running = True
         
         # Set up agents
@@ -608,7 +647,7 @@ class GameLatticeModel(Model):
             
 
 
-# In[24]:
+# In[25]:
 
 
 ## Visualization
@@ -618,36 +657,17 @@ game = pd
 bias_S1 = 0.5
 mutation = 0.0
 update_type = 'prob_imitator'
-
 num_changes_per_step = 100
-
 model = GameLatticeModel(height, width, 
                          game, bias_S1, 
                          num_changes_per_step, 
                          mutation, update_type)
-
-def value(c):
-    if np.array_equal(c.strat, S1): return 0
-    elif np.array_equal(c.strat, S2): return 1
-
-fig, ax = plt.subplots()
 for i in range(50):
 # initialize the model
     model.step()
-    data = np.array([[value(c) for c in row] for row in model.grid.grid])
-    df = pandas.DataFrame(data)
-    sns.heatmap(df, cbar=False, linecolor='white', cmap=['blue', 'red'])
-    ax.axes.get_xaxis().set_visible(False)
-    ax.axes.get_yaxis().set_visible(False)
-    clear_output(wait=True)
     if not model.running:
         break
-    display(fig);
-
-
-# In[ ]:
-
-
+        
 model_out = model.datacollector.get_model_vars_dataframe()
 model_out.plot();
 

@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['## Visualization', '', 'height, width = 20, 20 ', 'game = pd', 'bias_S1 = 0.5']
 ...
-['    ax.axes.get_yaxis().set_visible(False)', '    clear_output(wait=True)', '    if not model.running:', '        break', '    display(fig);']
+['    if not model.running:', '        break', '        ', 'model_out = model.datacollector.get_model_vars_dataframe()', 'model_out.plot();']
 -------------------
 
