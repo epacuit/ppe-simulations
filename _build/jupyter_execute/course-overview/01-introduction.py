@@ -89,7 +89,7 @@
 # * Python is dynamically typed.
 # 
 
-# In[7]:
+# In[1]:
 
 
 x = "hello"

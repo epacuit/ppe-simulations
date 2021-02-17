@@ -9,15 +9,18 @@ Week 1: Introduction
     * Networks and Homophily
     * Implementing Schelling's model in mesa
 
-Week 2-3: (Iterated) Prisoner's Dilemma
-* Introduction to game theory and the Prisoner's Dilemma
-* Iterated Prisoner's Dilemma
-* Using axelrod to set up and study iterated prisoner's dilemma
-* Other computational tools to study game theory 
 
-Week 3-4: Opinion Dynamics
+Weeks 2-3: Game Theory
+* Introduction to game theory 
+* Using axelrod to set up and study iterated prisoner's dilemma
+* Games on a network
+* Bargaining with neighbors
+
+
+Week 4: Opinion Dynamics
 * The Hegselmann-Krause model
 * Variants of the Hegselmann-Krause model
+
 
 Week 4-5: Testimony 
 * Kevin Zollman, Modeling the social consequences of testimonial norms, Philosophy Studies.

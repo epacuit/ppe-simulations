@@ -167,7 +167,7 @@ print(b.param2) # produces an error since the base class hasn't been initialized
 # The first approach is to explicitly call the base class `__init__` method
 # 
 
-# In[17]:
+# In[5]:
 
 
 # 1. The first approach is to explicitly reference the base class __init__ function
@@ -191,7 +191,7 @@ print(f"b.A_parameter is {b.A_parameter}")
 
 # The second approach is the use the builtin `super()`:
 
-# In[18]:
+# In[6]:
 
 
 # 2. The second (preferable) approach is to use the builtin super()
@@ -214,7 +214,7 @@ print(f"b.B_parameter is {b.B_parameter}")
 print(f"b.A_parameter is {b.A_parameter}")
 
 
-# In[19]:
+# In[7]:
 
 
 from mesa.time import RandomActivation
@@ -271,7 +271,7 @@ class SchellingModel(Model):
 
 # Create a model instance: a 10x10 grid, a 10% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and each agent wants at least 3 similar neighbors.
 
-# In[21]:
+# In[8]:
 
 
 height, width = 10, 10
@@ -313,7 +313,7 @@ for a in model.schedule.agents[0:5]:
 # See [the source code](https://mesa.readthedocs.io/en/stable/_modules/mesa/time.html#RandomActivation) for details. 
 # 
 
-# In[37]:
+# In[10]:
 
 
 # To illustrate the RandomAcitivation scheduler, note that running this
@@ -333,7 +333,7 @@ print([a.unique_id for a in model.schedule.agent_buffer(shuffled=True)])
 # See [the course code](https://mesa.readthedocs.io/en/master/_modules/space.html#SingleGrid) for details. 
 # 
 
-# In[43]:
+# In[11]:
 
 
 # create a simple Schelling model with a 3x3 grid
@@ -346,7 +346,7 @@ for cell in model2.grid.coord_iter():
     print(cell)
 
 
-# In[44]:
+# In[12]:
 
 
 a1 = SchellingAgent(0, (1, 1), model2, 0)
@@ -359,7 +359,7 @@ for cell in model2.grid.coord_iter():
 print(f"\na1 pos is {a1.pos}")
 
 
-# In[82]:
+# In[13]:
 
 
 
@@ -371,7 +371,7 @@ for cell in model2.grid.coord_iter():
 print(f"\na1 pos is {a1.pos}")
 
 
-# In[84]:
+# In[14]:
 
 
 model2 = SchellingModel(3, 3, 0, 0.2, 4)
@@ -413,7 +413,7 @@ for n in model2.grid.neighbor_iter(a3.pos):
 
 # Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times. 
 
-# In[85]:
+# In[15]:
 
 
 height, width = 50, 50
@@ -487,21 +487,21 @@ df
 
 # We will discuss Pandas in more detail later in the course.   For now, see the [10-minute introduction to Pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html).     
 
-# In[87]:
+# In[18]:
 
 
 model_out = model.datacollector.get_model_vars_dataframe()
 model_out
 
 
-# In[88]:
+# In[19]:
 
 
 # use describe() to get basic statistics about the data
 model_out.describe()
 
 
-# In[89]:
+# In[20]:
 
 
 import seaborn as sns
@@ -568,7 +568,7 @@ df = param_sweep.get_model_vars_dataframe()
 df
 
 
-# In[27]:
+# In[26]:
 
 
 import matplotlib.pyplot as plt
@@ -590,3 +590,15 @@ plt.grid(True)
 # * David Easley and Jon Kleinberg, Section 4.5, [Networks, Crowds, and Markets: Reasoning about a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch04.pdf), Cambridge University Press, 2010
 # 
 # * [Parable of the Polygons](https://ncase.me/polygons/)
+
+# In[1]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

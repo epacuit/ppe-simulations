@@ -61,7 +61,7 @@ a = A2("test")
 print(a.param1)
 
 
-# In[14]:
+# In[5]:
 
 
 class A1():
@@ -109,6 +109,75 @@ print(a.param1)
 # 
 # 
 # 
+
+# In[ ]:
+
+
+
+
+
+# In[30]:
+
+
+class EvenNumbers:
+    last = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        self.last += 2
+        if self.last > 8:
+            raise StopIteration
+        return self.last
+en = EvenNumbers()
+for num in en:
+    print(num)
+
+
+# In[12]:
+
+
+gen = (i**2 for i in range(1000))
+print(gen)
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+
+# In[17]:
+
+
+gen = (i**2 for i in range(1000))
+print(sum(gen))
+
+print(sum([i**2 for i in range(1000)]))
+
+
+# In[25]:
+
+
+import sys
+nums_squared_list = [i * 2 for i in range(10000)]
+print(sys.getsizeof(nums_squared_list))
+
+nums_squared_generator = (i ** 2 for i in range(10000))
+print(sys.getsizeof(nums_squared_generator))
+
+
+# In[28]:
+
+
+import cProfile
+cProfile.run('sum([i * 2 for i in range(10000)])')
+
+
+# In[29]:
+
+
+import cProfile
+cProfile.run('sum((i * 2 for i in range(10000)))')
+
 
 # In[ ]:
 

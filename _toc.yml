@@ -14,5 +14,10 @@
       title: Implementation
 - part: Introduction to Game Theory
   chapters: 
-    - file: course-content/game-theory/02-intro-game-theory 
+    - file: course-content/game-theory/02a-intro-game-theory 
       title: Introduction to Game Theory
+    - file: course-content/game-theory/02b-games-local-interaction 
+      title: Games on a Network
+    - file: course-content/game-theory/02c-divide-the-dollar 
+      title: Justice and Bargaining
+- part: Opinion Dynamics
