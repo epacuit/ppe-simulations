@@ -21,3 +21,6 @@
     - file: course-content/game-theory/02c-divide-the-dollar 
       title: Justice and Bargaining
 - part: Opinion Dynamics
+  chapters:
+    - file: course-content/opinion-dynamics/hk-model
+      title: Hegselman Krause Model

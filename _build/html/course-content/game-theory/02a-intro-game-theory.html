@@ -48,6 +48,8 @@
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -148,6 +150,38 @@
  <li class="toctree-l1">
   <a class="reference internal" href="02c-divide-the-dollar.html">
    Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Opinion Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html">
+   HK Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#hk-model-with-noise">
+   HK Model  with noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#hk-model-with-noise-and-reputation">
+   HK Model with noise and reputation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#further-modifications-of-the-hk-model">
+   Further modifications of the HK model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#other-pooling-functions">
+   Other Pooling Functions
   </a>
  </li>
 </ul>
@@ -794,12 +828,12 @@ Normalized Coperation:  (1.0, 0.6)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Match Scores:  [(3, 3), (0, 5), (0, 5), (0, 5), (0, 5), (0, 5), (0, 5), (3, 3), (3, 3), (3, 3)]
-Final Scores:  (12, 42)
-Final Scores Per Turn:  (1.2, 4.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Match Scores:  [(3, 3), (0, 5), (3, 3), (3, 3), (0, 5), (3, 3), (3, 3), (0, 5), (0, 5), (3, 3)]
+Final Scores:  (18, 38)
+Final Scores Per Turn:  (1.8, 3.8)
 Winner:  Random: 0.5
-Cooperation:  (10, 4)
-Normalized Coperation:  (1.0, 0.4)
+Cooperation:  (10, 6)
+Normalized Coperation:  (1.0, 0.6)
 </pre></div>
 </div>
 </div>
@@ -945,9 +979,9 @@ Random: 0.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First by Stein and Rapoport: 0.05: (D, D)
-Tit For Tat
-First by Grofman
 First by Shubik
+First by Grofman
+Tit For Tat
 First by Tideman and Chieruzzi: (D, D)
 First by Nydegger
 Grudger
@@ -957,8 +991,8 @@ First by Downing
 First by Feld: 1.0, 0.5, 200
 First by Joss: 0.9
 First by Tullock
-First by Anonymous
 Random: 0.5
+First by Anonymous
 </pre></div>
 </div>
 </div>
@@ -1024,7 +1058,7 @@ Tit For Tat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Winning strategy:  Random: 0.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Winning strategy:  Cooperator
 </pre></div>
 </div>
 <img alt="../../_images/02a-intro-game-theory_40_1.png" src="../../_images/02a-intro-game-theory_40_1.png" />

@@ -48,6 +48,8 @@
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,6 +59,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HK Model" href="../opinion-dynamics/hk-model.html" />
     <link rel="prev" title="Games on a Network" href="02b-games-local-interaction.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -147,6 +150,38 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Opinion Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html">
+   HK Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#hk-model-with-noise">
+   HK Model  with noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#hk-model-with-noise-and-reputation">
+   HK Model with noise and reputation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#further-modifications-of-the-hk-model">
+   Further modifications of the HK model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../opinion-dynamics/hk-model.html#other-pooling-functions">
+   Other Pooling Functions
   </a>
  </li>
 </ul>
@@ -676,7 +711,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial Probabilities {0: [0.04624260963835009], 1: [0.057038881941310106], 2: [0.0023536211764777974], 3: [0.12127705374864743], 4: [0.0008701687899419336], 5: [0.32198377964644553], 6: [0.02392563055701179], 7: [0.06300365055910649], 8: [0.1917612011643132], 9: [0.11041134194769409], 10: [0.061132060830701586]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial Probabilities {0: [0.15376646526834287], 1: [0.09649528619644486], 2: [0.02136719160290944], 3: [0.0011919287036384213], 4: [0.12603971433814365], 5: [0.08211397700886712], 6: [0.07101490890693382], 7: [0.20028058101790977], 8: [0.010641676689444603], 9: [0.21554241415740827], 10: [0.021545856109957167]}
 [5]
 </pre></div>
 </div>
@@ -730,7 +765,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "aabcd27d2fd540ba9a0ec979d1a196cf"}
+{"model_id": "62fdb3d7a6c340d28ab04a51552235ac", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -749,6 +784,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02c-divide-the-dollar_15_0.png" src="../../_images/02c-divide-the-dollar_15_0.png" />
 </div>
 </div>
 <p>Suppose that every once and a while a member of the population just picks a strategy at random and tries it out—perhaps as an experiment, perhaps just as a mistake.</p>
@@ -962,73 +1000,73 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>42</td>
-      <td>26</td>
-      <td>50</td>
-      <td>36</td>
-      <td>33</td>
-      <td>44</td>
-      <td>31</td>
-      <td>38</td>
-      <td>28</td>
-      <td>32</td>
       <td>40</td>
+      <td>42</td>
+      <td>34</td>
+      <td>29</td>
+      <td>35</td>
+      <td>37</td>
+      <td>29</td>
+      <td>37</td>
+      <td>47</td>
+      <td>34</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>42</td>
-      <td>26</td>
-      <td>50</td>
-      <td>36</td>
-      <td>33</td>
-      <td>44</td>
-      <td>31</td>
+      <td>40</td>
+      <td>41</td>
+      <td>34</td>
+      <td>29</td>
+      <td>35</td>
       <td>37</td>
       <td>29</td>
-      <td>32</td>
-      <td>40</td>
+      <td>37</td>
+      <td>48</td>
+      <td>34</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>42</td>
-      <td>26</td>
-      <td>50</td>
-      <td>36</td>
-      <td>33</td>
-      <td>44</td>
-      <td>31</td>
+      <td>40</td>
+      <td>41</td>
+      <td>34</td>
+      <td>29</td>
+      <td>35</td>
       <td>37</td>
       <td>29</td>
-      <td>32</td>
-      <td>40</td>
+      <td>37</td>
+      <td>48</td>
+      <td>34</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>42</td>
-      <td>26</td>
-      <td>50</td>
+      <td>40</td>
+      <td>41</td>
+      <td>34</td>
+      <td>29</td>
       <td>36</td>
-      <td>33</td>
-      <td>44</td>
-      <td>31</td>
+      <td>36</td>
+      <td>29</td>
       <td>37</td>
-      <td>30</td>
-      <td>32</td>
-      <td>39</td>
+      <td>48</td>
+      <td>34</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>42</td>
-      <td>26</td>
-      <td>50</td>
+      <td>40</td>
+      <td>41</td>
+      <td>34</td>
+      <td>29</td>
       <td>36</td>
-      <td>33</td>
-      <td>45</td>
+      <td>36</td>
       <td>30</td>
-      <td>37</td>
-      <td>30</td>
-      <td>32</td>
-      <td>39</td>
+      <td>36</td>
+      <td>48</td>
+      <td>34</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1046,73 +1084,73 @@
     </tr>
     <tr>
       <th>995</th>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>347</td>
       <td>5</td>
+      <td>3</td>
+      <td>5</td>
+      <td>14</td>
+      <td>59</td>
+      <td>241</td>
+      <td>8</td>
+      <td>25</td>
+      <td>23</td>
       <td>11</td>
       <td>6</td>
-      <td>8</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>996</th>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>347</td>
       <td>5</td>
+      <td>3</td>
+      <td>6</td>
+      <td>14</td>
+      <td>59</td>
+      <td>241</td>
+      <td>8</td>
+      <td>25</td>
+      <td>22</td>
       <td>11</td>
       <td>6</td>
-      <td>8</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>997</th>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>347</td>
       <td>5</td>
+      <td>3</td>
+      <td>6</td>
+      <td>15</td>
+      <td>59</td>
+      <td>241</td>
+      <td>8</td>
+      <td>24</td>
+      <td>22</td>
       <td>11</td>
       <td>6</td>
-      <td>8</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>998</th>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>348</td>
       <td>5</td>
+      <td>3</td>
+      <td>6</td>
+      <td>15</td>
+      <td>59</td>
+      <td>241</td>
+      <td>8</td>
+      <td>24</td>
+      <td>22</td>
       <td>11</td>
       <td>6</td>
-      <td>7</td>
-      <td>2</td>
     </tr>
     <tr>
       <th>999</th>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>4</td>
-      <td>8</td>
-      <td>348</td>
       <td>5</td>
+      <td>3</td>
+      <td>6</td>
+      <td>15</td>
+      <td>59</td>
+      <td>241</td>
+      <td>8</td>
+      <td>24</td>
+      <td>22</td>
       <td>11</td>
       <td>6</td>
-      <td>7</td>
-      <td>2</td>
     </tr>
   </tbody>
 </table>
@@ -1136,6 +1174,12 @@
 </div>
 </div>
 </div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"3f06f7086a7d495f8641a357e4aabc43": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "4148860a57394c8fbe8542ff0b9f0df8": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e0c270f887444b7bb80b552765edafff", "max": 1000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_3f06f7086a7d495f8641a357e4aabc43", "value": 1000.0}}, "57b802ff983f42b89d0efc80dac901e7": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "62fdb3d7a6c340d28ab04a51552235ac": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_707cb1aa88a54097bda108f5ededeec0", "IPY_MODEL_4148860a57394c8fbe8542ff0b9f0df8", "IPY_MODEL_bdda398e154e425b9f318270de72e539"], "layout": "IPY_MODEL_57b802ff983f42b89d0efc80dac901e7"}}, "707cb1aa88a54097bda108f5ededeec0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e6601fd318cd4054ad7252d3c4160924", "placeholder": "\u200b", "style": "IPY_MODEL_d8fe393700fe4e299845b05cccaff5b1", "value": "100%"}}, "811d4eededeb425492b61877df928be2": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "b7d12843aa554605907163d705bc73c5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bdda398e154e425b9f318270de72e539": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_811d4eededeb425492b61877df928be2", "placeholder": "\u200b", "style": "IPY_MODEL_b7d12843aa554605907163d705bc73c5", "value": " 1000/1000 [01:54&lt;00:00,  8.35it/s]"}}, "d8fe393700fe4e299845b05cccaff5b1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "e0c270f887444b7bb80b552765edafff": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e6601fd318cd4054ad7252d3c4160924": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {
@@ -1166,6 +1210,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02b-games-local-interaction.html" title="previous page">Games on a Network</a>
+    <a class='right-next' id="next-link" href="../opinion-dynamics/hk-model.html" title="next page">HK Model</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
