@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Implementation of Schelling's Segregation Model
 
-# # Implementation of Schelling's Segregation Model
-# 
-# This notebook contains an implementation of Schelling's segregation model in mesa.  See [01-schelling.ipynb](01-schelling.ipynb) for an overview of the model. 
+This notebook contains an implementation of Schelling's segregation model in mesa.  See [01-schelling.ipynb](01-schelling.ipynb) for an overview of the model. 
 
-# ## Imports
-
-# In[1]:
-
+## Imports
 
 from mesa import Model, Agent
 from mesa.time import RandomActivation
@@ -24,11 +18,7 @@ import pandas as pd
 
 sns.set()
 
-
-# ## The agents and the model
-
-# In[2]:
-
+## The agents and the model
 
 class SchellingAgent(Agent):
     '''
@@ -105,10 +95,7 @@ class SchellingModel(Model):
             self.running = False
 
 
-# ## Visualization using Jupyter widgets
-
-# In[3]:
-
+## Visualization using Jupyter widgets
 
 
 max_rounds = 100
@@ -201,10 +188,5 @@ interact_manual(run_schelling_sim,
                     readout_format='d'
                 ), 
                );
-
-
-# In[ ]:
-
-
 
 

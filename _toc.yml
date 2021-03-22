@@ -1,26 +1,45 @@
-# Table of contents
+# Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
+#
 - file: intro
 
-- part: About the course
-  chapters:
-    - file: course-overview/schedule
-    - file: course-overview/01-introduction
-- part: Schelling's Segregation Model
+- part: Python Basics
   chapters: 
-    - file: course-content/schelling/01-schelling 
+    - file: python-basics/overview
       title: Overview
-    - file: course-content/schelling/01a-schelling-implementation
-      title: Implementation
-- part: Introduction to Game Theory
+    - file: python-basics/introduction
+      title: Introduction to Python
+    - file: python-basics/classes
+      title: Classes
+    - file: python-basics/scientific-computing
+      title: Scientific Computing    
+    - file: python-basics/networks
+      title: Networks    
+    - file: python-basics/mesa
+      title: Mesa
+- part: Schelling Segregation Model
   chapters: 
-    - file: course-content/game-theory/02a-intro-game-theory 
-      title: Introduction to Game Theory
-    - file: course-content/game-theory/02b-games-local-interaction 
+    - file: schelling/01-schelling
+      title: Overview
+    - file: schelling/01a-schelling-implementation
+      title: Implementation
+- part: Game Theory
+  chapters: 
+    - file: game-theory/02a-intro-game-theory
+      title: Introduciton
+    - file: game-theory/02b-games-local-interaction
       title: Games on a Network
-    - file: course-content/game-theory/02c-divide-the-dollar 
+    - file: game-theory/02c-divide-the-dollar
       title: Justice and Bargaining
-- part: Opinion Dynamics
-  chapters:
-    - file: course-content/opinion-dynamics/hk-model
-      title: Hegselman Krause Model
+- part: Belief Dynamics
+  chapters: 
+    - file: belief-dynamics/overview     
+    - file: belief-dynamics/hk-model     
+    - file: belief-dynamics/cjt     
+    - file: belief-dynamics/testimony     
+    - file: belief-dynamics/epistemic-networks 
+    - file: belief-dynamics/polarization 
+- part: Preference Dynamics and Voting
+  chapters: 
+    - file: preference-aggregation/overview
+      title: Overview

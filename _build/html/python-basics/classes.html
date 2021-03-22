@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scientific Computing" href="scientific-computing.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python-basics/classes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fpython-basics/classes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/python-basics/classes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inheritence-and-subclasses">
+   Inheritence and Subclasses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decorators">
+   Decorators
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<p>When implementing an agent-based model, we will often use <strong>classes</strong>.   A <strong>class</strong> is a way to create your own data taype.   An instance of a class is called an <strong>object</strong> (see the [Python class documentation]((<a class="reference external" href="https://docs.python.org/3/tutorial/classes.html">https://docs.python.org/3/tutorial/classes.html</a>) for an overview.). The general approach to programming using classes and objects is called <a class="reference external" href="https://realpython.com/lessons/what-object-oriented-programming-oop/">object-oriented programming</a>.</p>
+<p>To define a class use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, followed by a name and a colon<code class="docutils literal notranslate"><span class="pre">:</span></code>.   A class can be thought of as a <strong>blueprint</strong> for creating objects.  Classes contain data called <strong>attributes</strong> and functions called <strong>methods</strong>.  Some initial observations about creating a class:</p>
+<ol class="simple">
+<li><p>There are two types of attributes, a class attribute and an instance attribute.   Class attirbutes are the same among all instances of the class while the instance attributes may vary for different instances of a class.</p></li>
+<li><p>Typically, a class contains a <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method which will be run every time a new instance is created.</p></li>
+<li><p>The first parameter of any class method is <code class="docutils literal notranslate"><span class="pre">self</span></code> which refers to an instance of the class.</p></li>
+<li><p>Class attributes should be defined outside of the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, while instance attributes are defined inside the body of the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+        
+<span class="n">a</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">class_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Agent a&#39;s unique id is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">unique_id</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">class_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Agent b&#39;s unique id is &quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">unique_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Agent Class
+Agent a&#39;s unique id is  1
+Agent Class
+Agent b&#39;s unique id is  2
+</pre></div>
+</div>
+</div>
+</div>
+<p>In a class <code class="docutils literal notranslate"><span class="pre">self</span></code> refers to an instance of that class.  In the following code, printing self and printing the object instance generates the same ouput (the memory location of the instance of the Agent class).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Agent object at 0x10ec06f70&gt;
+&lt;__main__.Agent object at 0x10ec06f70&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To illustrate class methods, let’s give our Agent the ability to flip a fair coin.   To do this, we use the <code class="docutils literal notranslate"><span class="pre">random</span></code> package to generate a random number between 0 and 1.   If the randomly generated number is less than 0.5, we output ‘H’ and if it is greater than or equal to 0.5 we output ‘T’.    The first thing we have to do is import the random package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we add class method called <code class="docutils literal notranslate"><span class="pre">flip</span></code> that accepts <code class="docutils literal notranslate"><span class="pre">self</span></code> as its only parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># create an agent</span>
+
+<span class="c1"># let agent a flip a fair coin 5 times</span>
+<span class="c1"># there will be different outputs everytime this code is executed</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">flip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T
+T
+T
+H
+T
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s add an another method to the Agent class that returns multiple flips of a coin. The method will be called <code class="docutils literal notranslate"><span class="pre">multiple_flips</span></code> and have a keyword parameter <code class="docutils literal notranslate"><span class="pre">num</span></code> with a default value of 5.  Note that we call the class method <code class="docutils literal notranslate"><span class="pre">flip</span></code> from the <code class="docutils literal notranslate"><span class="pre">multiple_flip</span></code> function as follows: <code class="docutils literal notranslate"><span class="pre">self.flip()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">multiple_flips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># create an agent</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">multiple_flips</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inheritence-and-subclasses">
+<h2>Inheritence and Subclasses<a class="headerlink" href="#inheritence-and-subclasses" title="Permalink to this headline">¶</a></h2>
+<p>Inheritance allows one class to “inherit” methods and attributes from another class.   For example, suppose that we have a general Agent class and CoinFlipper class that implements an agent that flips a coin of a fixed bias which  is a subclass of the Agent class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+
+<span class="k">class</span> <span class="nc">CoinFlipper</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span>
+        
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">multiple_flips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>An instance of the CoinFlipper class, has access to the attributes and methods of the parent class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">CoinFlipper</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">multiple_flips</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">class_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;T&#39;]
+Agent Class
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, there is a problem with the above implementation.   An instance of the CoinFlipper hasn’t set the unique_id of the partent class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">CoinFlipper</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> <span class="c1"># produces an error since the CoinFlipper class doesn&#39;t have a unique_id attribute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">aec31d94d2cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">CoinFlipper</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> <span class="c1"># produces an error since the CoinFlipper class doesn&#39;t have a unique_id attribute</span>
+
+<span class="ne">AttributeError</span>: &#39;CoinFlipper&#39; object has no attribute &#39;unique_id&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The problem with the above code is that when initializing the CoinFlipper instance we didn’t call the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of the Agent class.   There are two ways to do this:</p>
+<ol class="simple">
+<li><p>Explicitly call the base class <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">super()</span></code> builtin function to instantiate the base class</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+
+<span class="k">class</span> <span class="nc">CoinFlipper</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+        <span class="n">Agent</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">)</span> <span class="c1"># explicitly call the base class __init__ function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span>
+        
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">multiple_flips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">CoinFlipper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second approach using the <code class="docutils literal notranslate"><span class="pre">super()</span></code> key word is often a better approach to do the same thing.  See <a class="reference external" href="https://realpython.com/python-super/">https://realpython.com/python-super/</a> for a discussion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Agent</span><span class="p">():</span>
+    
+    <span class="n">class_name</span> <span class="o">=</span> <span class="s1">&#39;Agent Class&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">=</span> <span class="n">unique_id</span>
+
+<span class="k">class</span> <span class="nc">CoinFlipper</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">)</span> <span class="c1"># super() refers to the base class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span>
+        
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+    
+    <span class="k">def</span> <span class="nf">multiple_flips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">CoinFlipper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decorators">
+<h2>Decorators<a class="headerlink" href="#decorators" title="Permalink to this headline">¶</a></h2>
+<p>One programming construct that is not specific to classes, but is often used when creating a class is a <strong>decorator</strong>.  A decorator “decorates” a function/method with additional functionality.  That is, it is a function that accepts another function as a paramter and adds functionality to that function.</p>
+<p>See <a class="reference external" href="https://realpython.com/primer-on-python-decorators/">https://realpython.com/primer-on-python-decorators/</a> for an overview of decorators.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the following code, we use the the parameter to the inner function wrapper is <code class="docutils literal notranslate"><span class="pre">*args</span></code>.   This is a way of passing an arbitrary number of arguments to wrapper.   The problem is that <code class="docutils literal notranslate"><span class="pre">original_func</span></code> accepts a single argument which needs to be passed to the decorator.    See <a class="reference external" href="https://realpython.com/python-kwargs-and-args/">https://realpython.com/python-kwargs-and-args/</a> for an overview.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">original_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original function&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="c1"># a decorator</span>
+<span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>  <span class="c1"># takes our original function as input</span>
+    
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>  <span class="c1"># wraps our original function with some extra functionality</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A decoration before </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A decoration after </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> with result </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">+</span> <span class="mi">10</span> <span class="c1"># add 10 the result of func</span>
+    
+    <span class="k">return</span> <span class="n">wrapper</span>  <span class="c1"># returns the unexecuted wrapper function which we can can excute later</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">original_func</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Original function
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_decorator</span><span class="p">(</span><span class="n">original_func</span><span class="p">)(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A decoration before original_func.
+Original function
+A decoration after original_func with result 20
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now use this decorator  for other functions using by adding <code class="docutils literal notranslate"><span class="pre">&#64;my_decorator</span></code> before the definition of the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@my_decorator</span>
+<span class="k">def</span> <span class="nf">another_func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Another func&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">another_func</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A decoration before another_func.
+Another func
+A decoration after another_func with result 7
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some commonly used decorators are Python builtins <code class="docutils literal notranslate"><span class="pre">&#64;classmethod</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;staticmethod</span></code>, and <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code>. We focus here on the <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> decorator.   This can be used to customize <em>getters</em> and <em>setters</em> for class attributes. Suppose that we want to create a Coin class that has a fixed bias (which may be changed).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A common approach in object-oriented programming is to make attributes of a class <em>private</em> so that users of the class can only get and set these attributes through so-called “getter” and “setter” functions.   In Python there is no way to force a variable to be “<a class="reference external" href="https://softwareengineering.stackexchange.com/questions/143736/why-do-we-need-private-variables">private</a>” (this is different than languages such as C++ or Java).  A common approach is to add an underscore “_” to the begining of a variable name that should be private (see <a class="reference external" href="https://www.geeksforgeeks.org/private-variables-python/">https://www.geeksforgeeks.org/private-variables-python/</a>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Coin</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">):</span> 
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span> <span class="o">=</span> <span class="mf">0.5</span> 
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bias</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="sd">&quot;&quot;&quot;Get the bias of the coin&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span>
+    
+    <span class="nd">@bias</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">bias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the bias and raise and error if bias is not between 0 and 1&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Bias must be between 0 and 1&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pr_heads</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the probability of heads&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pr_tails</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the probability of heads&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span>
+
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;flip the coin&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+
+    <span class="k">def</span> <span class="nf">flips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;flip the coin&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">)]</span>
+    
+<span class="n">c</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the bias of c is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the probability of heads is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">pr_heads</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the probability of tails is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">pr_tails</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">flips</span><span class="p">(),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># now change the bias</span>
+<span class="n">c</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the bias of c is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the probability of heads is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">pr_heads</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the probability of tails is &quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">pr_tails</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">flips</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the bias of c is  0.5
+the probability of heads is  0.5
+the probability of tails is  0.5
+[&#39;T&#39;, &#39;T&#39;, &#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;T&#39;, &#39;H&#39;, &#39;T&#39;, &#39;T&#39;] 
+
+the bias of c is  0.75
+the probability of heads is  0.75
+the probability of tails is  0.25
+[&#39;H&#39;, &#39;T&#39;, &#39;T&#39;, &#39;T&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;, &#39;H&#39;, &#39;T&#39;, &#39;H&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trying to assign a bias greater than 1 generates an error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="mf">6e018</span><span class="n">a2fac61</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">c</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="nn">&lt;ipython-input-17-cae20d2aafaf&gt;</span> in <span class="ni">bias</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_bias</span> <span class="o">=</span> <span class="n">b</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">18</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Bias must be between 0 and 1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> 
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="nd">@property</span>
+
+<span class="ne">ValueError</span>: Bias must be between 0 and 1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./python-basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="scientific-computing.html" title="next page">Scientific Computing</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

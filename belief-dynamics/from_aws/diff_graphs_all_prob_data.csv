@@ -1,0 +1,10 @@
+num_agents,graph,difficulty,prob_successful_convergence,prob_unsuccessful_convergence,avg_time_to_convergence
+10,complete,0.001,0.9058,0.0942,
+10,complete-1,0.001,0.9132,0.0679,
+10,complete-2,0.001,0.9071,0.0583,
+10,complete-3,0.001,0.8633,0.0556,
+10,complete-4,0.001,0.8399,0.0325,
+10,complete-5,0.001,0.7981,0.0266,
+10,complete-6,0.001,0.8133,0.0331,
+10,complete-7,0.001,0.7336,0.0324,
+10,path,0.001,0.6817,0.0229,

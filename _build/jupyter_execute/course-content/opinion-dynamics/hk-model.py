@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Hegslemann Krause Model
 
-# In[1]:
-
+[Introductory slides](opinion-dynamics.pdf)
 
 import random
 import numpy as np
@@ -16,28 +14,21 @@ from matplotlib.ticker import MaxNLocator
 from ipywidgets import interact, interactive, fixed, interact_manual
 sns.set()
 
-
-# In[2]:
-
-
 from mesa import Agent, Model
 from mesa.time import RandomActivation, SimultaneousActivation
 from mesa.space import SingleGrid
 from mesa.datacollection import DataCollector
 
 
-# ## HK Model 
-# 
-# 1. $T\in [0, 1]$ is the truth
-# 2. $\tau\in [0, 1]$ is the truth seeking 
-# 3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
-# 4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
-# 5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
-# 
-# $$x_{i,t+1} = \tau \times T + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}}{|N(i,t)|}$$
+## HK Model 
 
-# In[3]:
+1. $T\in [0, 1]$ is the truth
+2. $\tau\in [0, 1]$ is the truth seeking 
+3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
+4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
+5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
 
+$$x_{i,t+1} = \tau \times T + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}}{|N(i,t)|}$$
 
 class Expert(Agent):
 
@@ -108,9 +99,6 @@ class DeliberationModel(Model):
         
 
 
-# In[4]:
-
-
 num_agents = 50
 conf = 0.05 #  0.2, 0.15,   0.3, 0.25
 truth_seeking = 0.1
@@ -133,9 +121,6 @@ for num_trials in range(num_trials):
         
 
 
-# In[5]:
-
-
 df = pd.DataFrame(expert_opinions)
 
 ax = plt.figure().gca()
@@ -144,10 +129,6 @@ ax.xaxis.set_major_locator(MaxNLocator(integer=True))
 for e in m_simult.schedule.agents: 
     plt.plot(list(df[e.unique_id]))    
 plt.show();
-
-
-# In[6]:
-
 
 df = pd.DataFrame(expert_opinions_async)
 
@@ -158,22 +139,18 @@ for e in m_async.schedule.agents:
     plt.plot(list(df[e.unique_id]))    
 plt.show();
 
+## HK Model  with noise
 
-# ## HK Model  with noise
-# 
-# 1. $T\in [0, 1]$ is the truth
-# 2. $\tau\in [0, 1]$ is the truth seeking 
-# 3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
-# 4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
-# 5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
-# 6. $\nu$ is the bound on the noise
-# 
-# $$x_{i,t+1} = \tau \times (T + \mathrm{rnd}([-\nu, \nu])) + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}}{|N(i,t)|}$$
-# 
-# where $\mathrm{rnd}([-\nu, \nu])$ is a number drawn from a uniform distribution over the interval $[-\nu, \nu]$.  
+1. $T\in [0, 1]$ is the truth
+2. $\tau\in [0, 1]$ is the truth seeking 
+3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
+4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
+5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
+6. $\nu$ is the bound on the noise
 
-# In[7]:
+$$x_{i,t+1} = \tau \times (T + \mathrm{rnd}([-\nu, \nu])) + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}}{|N(i,t)|}$$
 
+where $\mathrm{rnd}([-\nu, \nu])$ is a number drawn from a uniform distribution over the interval $[-\nu, \nu]$.  
 
 
 class Expert(Agent):
@@ -272,9 +249,6 @@ class DeliberationModel(Model):
         
 
 
-# In[8]:
-
-
 import ipywidgets as widgets
 
 
@@ -371,30 +345,27 @@ interact_manual(run_hk_sim,
          
 
 
-# ## HK Model with noise and reputation
-# 
-# 1. $T\in [0, 1]$ is the truth
-# 2. $\tau\in [0, 1]$ is the truth seeking 
-# 3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
-# 4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
-# 5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
-# 6. $\nu$ is the bound on the noise
-# 7. For each $j$, $w_j\in [0, 1]$ is the reputation of agent $j$, where $\sum_j w_j = 1$
-# 
-# $$x_{i,t+1} = \tau \times (T + \mathrm{rnd}([-\nu, \nu])) + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}\times w_j}{\sum_j w_j}$$
-# 
-# where $\mathrm{rnd}([-\nu, \nu])$ is a number drawn from a uniform distribution over the interval $[-\nu, \nu]$.  
+## HK Model with noise and reputation
 
-# ## Further modifications of the HK model
-# 
-# 1. All of the  experts always interact with every other expert.  That is, they are supposed to know, at any time, the beliefs of all the other agents. 
-# 2. Learning from the world is a black box. 
-# 3. There is no strategizing or misinformation. 
-# 4. Experts are assumed to have beliefs about a single proposition. What happens when agents have beliefs (either qualitative or quantitative) about multiple propositions (that are possibly logically connected)? 
-# 5. What is the aim of deliberation?  Is it to only reach consensus?  Or do we also want accuracy? 
+1. $T\in [0, 1]$ is the truth
+2. $\tau\in [0, 1]$ is the truth seeking 
+3. $x_{i,t}\in [0, 1]$: agent $i$'s opinion at time $t$
+4. $\epsilon\in [0, 1]$ is the agent's bounded confidence parameter
+5. $N(i,t)$: agent $i$'s confidants at time $t$: $N(i,t)=\{j\mid |x_{i,t} - x_{j,t}| < \epsilon\}$
+6. $\nu$ is the bound on the noise
+7. For each $j$, $w_j\in [0, 1]$ is the reputation of agent $j$, where $\sum_j w_j = 1$
 
-# In[9]:
+$$x_{i,t+1} = \tau \times (T + \mathrm{rnd}([-\nu, \nu])) + (1-\tau) * \frac{\sum_{j\in N(i,t)} x_{j,t}\times w_j}{\sum_j w_j}$$
 
+where $\mathrm{rnd}([-\nu, \nu])$ is a number drawn from a uniform distribution over the interval $[-\nu, \nu]$.  
+
+## Further modifications of the HK model
+
+1. All of the  experts always interact with every other expert.  That is, they are supposed to know, at any time, the beliefs of all the other agents. 
+2. Learning from the world is a black box. 
+3. There is no strategizing or misinformation. 
+4. Experts are assumed to have beliefs about a single proposition. What happens when agents have beliefs (either qualitative or quantitative) about multiple propositions (that are possibly logically connected)? 
+5. What is the aim of deliberation?  Is it to only reach consensus?  Or do we also want accuracy? 
 
 class Expert(Agent):
 
@@ -486,9 +457,6 @@ class DeliberationModel(Model):
         
 
 
-# In[10]:
-
-
 height, width = 25, 25
 
 num_agents = 200
@@ -498,10 +466,6 @@ truth = 0.7
 noise = 0.1
 
 m = DeliberationModel(height, width, num_agents, truth, conf, truth_seeking, noise)
-
-
-# In[11]:
-
 
 num_trials = 50
 
@@ -519,10 +483,7 @@ for e in m_simult.schedule.agents:
 plt.show();        
 
 
-# ## Other Pooling Functions
-
-# In[12]:
-
+## Other Pooling Functions
 
 from functools import reduce
 
@@ -554,10 +515,6 @@ pooling_methods = {
     "Geometric": geometric_pool,
     "Multiplicative": multiplicative_pool
 }
-
-
-# In[13]:
-
 
 class Expert(Agent):
 
@@ -654,9 +611,6 @@ class DeliberationModelMultiplePooling(Model):
                 e.update_with_truth_seeking_asynch()
             self.schedule.steps += 1
         
-
-
-# In[14]:
 
 
 def run_hk_sim2(num_trials, num_agents, conf, truth_seeking, truth, noise, pooling_method_str):
@@ -770,9 +724,6 @@ interact_manual(run_hk_sim2,
          
 
 
-# In[15]:
-
-
 import copy 
 class Expert2(Agent):
 
@@ -844,9 +795,6 @@ class DeliberationModelMultiplePooling2(Model):
                 e.update_with_truth_seeking()
             self.schedule.steps += 1
         
-
-
-# In[16]:
 
 
 def run_hk_sim3(num_trials, num_agents, conf, truth_seeking, truth, noise):
@@ -948,4 +896,36 @@ interact_manual(run_hk_sim3,
          ));
 
          
+
+
+ 
+ 
+In an ideal situation, the discussion will elicit from each member of the group not only their judgements, but also their reasons, arguments and evidence that back up these judgements. Through discussion and debate, the group can sort through all of the evidence and arguments leading to a more informed solution.
+
+ 
+
+A common criticism of unstructured group discussion is that it enhances cognitive errors rather than mitigates them.
+
+
+**Bias against the minority**: There is a tendency for groups to ignore isolated, minority or lower-status members. 
+
+
+**Anchoring effect**: There is a tendency to rely too heavily, or "anchor", a judgement on one piece of information (for example, the first announced judgement, the judgement of the most senior person in the group, or the judgement of the loudest person in the group). 
+
+**Common knowledge effect**: Information held by all members of the group has more influence on the final decision than information held by only a few members of the group.  So, if everybody in  the group has some information, then it is more valuable than the information of just a few members.
+
+
+What is the best form for social influence to take? Is it better to have more rather than less social influence? Are all policies which aim to increase the amount of interaction over a particular issue likely to be successful in their aims?
+
+
+
+ 
+K. Zollman, (2013), Network epistemology: Communication in epistemic communities, Philosophy
+Compass, 8 (1), 15  - 27.
+
+V. Bala  and S. Goyal (1998), Learning from neighbors}{Review of Economic Studies, 65 (3), 595 - 621.
+
+
+B. Golub and M. O. Jackson (2010), Naive learning in social networks and the wisdom of crowds, American Economic Journal: Microeconomics, pages 112 - 149.
+
 

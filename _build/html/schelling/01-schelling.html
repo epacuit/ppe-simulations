@@ -1,0 +1,1329 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview of Schelling’s Model &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Implementation of Schelling’s Segregation Model" href="01a-schelling-implementation.html" />
+    <link rel="prev" title="Mesa" href="../python-basics/mesa.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/schelling/01-schelling.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fschelling/01-schelling.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/schelling/01-schelling.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-schelling-s-model-using-mesa">
+   Implementing Schelling’s Model using  Mesa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-the-parameter-space">
+   Exploring the Parameter Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-reading">
+   Additional Reading
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="overview-of-schelling-s-model">
+<h1>Overview of Schelling’s Model<a class="headerlink" href="#overview-of-schelling-s-model" title="Permalink to this headline">¶</a></h1>
+<p>The Nobel prize winning economist Thomas Schelling developed a model that shows  how global patterns of spatial segregation can arise from the effect of <em>homophily</em> operating at a local level.  Homophily is the principle that we tend to be similar to our friends and/or neighbors.</p>
+<p>T. Schelling. Dynamic models of segregation. The Journal of Mathematical Sociology, 1(2), 143-186, 1971.</p>
+<p>See also,</p>
+<ul class="simple">
+<li><p>J. M. Sakoda, The checkerboard model of social interaction. The Journalof Mathematical Sociology 1(1), 119-132, 1971.</p></li>
+<li><p>R. Hegselmann, Thomas C. Schelling and James M. Sakoda: The intellectual, technical, and social history of a model. Journal of Artificial Societies and Social Simulation 20 (3), 2017.</p></li>
+</ul>
+<p>There are two components of the Schelling model:</p>
+<ol class="simple">
+<li><p>A grid representing different locations for the agents</p></li>
+<li><p>A set of agents with two properties:</p>
+<ol class="simple">
+<li><p>The agent type (e.g., ‘red’ or ‘blue’)</p></li>
+<li><p>The current position of the agent in the grid</p></li>
+</ol>
+</li>
+</ol>
+<p>An example of a grid with two types of agents:</p>
+<p><img alt="grid.jpg" src="../_images/grid1.jpg" /></p>
+<p>At each round of the simulation:</p>
+<ol class="simple">
+<li><p>For each agent <span class="math notranslate nohighlight">\(a\)</span>, determine the number of neighbors that are of the same type.</p></li>
+<li><p>Agent <span class="math notranslate nohighlight">\(a\)</span> is happy if the number of similar agents is above a fixed threshold.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(a\)</span> is not happy, then <span class="math notranslate nohighlight">\(a\)</span>  moves to an empty location.</p></li>
+</ol>
+<p>Continue that process for a fixed number of rounds or until every agent is happy.</p>
+<div class="section" id="implementing-schelling-s-model-using-mesa">
+<h2>Implementing Schelling’s Model using  Mesa<a class="headerlink" href="#implementing-schelling-s-model-using-mesa" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Agent</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+<span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">SingleGrid</span>
+<span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SchellingAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Schelling segregation agent</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">         Create a new Schelling agent.</span>
+<span class="sd">         Args:</span>
+<span class="sd">            pos: Agent initial location.</span>
+<span class="sd">            agent_type: Indicator for the agent&#39;s type (minority=1, majority=0)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">agent_type</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">similar</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+                <span class="n">similar</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># If unhappy, move:</span>
+        <span class="k">if</span> <span class="n">similar</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">homophily</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">move_to_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">happy</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SchellingModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Model class for the Schelling segregation model.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">density</span> <span class="o">=</span> <span class="n">density</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minority_percent</span> <span class="o">=</span> <span class="n">minority_percent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">homophily</span> <span class="o">=</span> <span class="n">homophily</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">happy</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
+            <span class="p">{</span><span class="s2">&quot;happy&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">happy</span><span class="p">},</span>  <span class="c1"># Model-level count of happy agents</span>
+            <span class="c1"># For testing purposes, agent&#39;s individual x and y</span>
+            <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="c1"># Set up agents</span>
+        <span class="n">agent_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+            <span class="c1">#print(cell)</span>
+            <span class="n">_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">cell</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">density</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">minority_percent</span><span class="p">:</span>
+                    <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">agent_type</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">agent</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="n">agent_id</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">agent_type</span><span class="p">)</span>
+                <span class="n">agent_id</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Run one step of the model. If All agents are happy, halt the model.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">happy</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Reset counter of happy agents</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">happy</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_agent_count</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a model instance: a 10x10 grid, a 10% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and each agent wants at least 3 similar neighbors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">minority_percent</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">homophily</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Display the first 5 agents:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pos is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unique id is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Display the first 5 agents:
+
+&lt;__main__.SchellingAgent object at 0x151fbf4c0&gt;
+type is  0
+pos is (1, 6)
+unique id is 0
+
+&lt;__main__.SchellingAgent object at 0x151fbf460&gt;
+type is  0
+pos is (5, 0)
+unique id is 1
+
+&lt;__main__.SchellingAgent object at 0x151fbf550&gt;
+type is  0
+pos is (8, 3)
+unique id is 2
+
+&lt;__main__.SchellingAgent object at 0x151fbf100&gt;
+type is  1
+pos is (9, 8)
+unique id is 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute one round of the models</span>
+<span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+<span class="c1"># some positions should change</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;pos is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unique id is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;model.happy = </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">happy</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.SchellingAgent object at 0x151fbf4c0&gt;
+type is  0
+pos is (1, 7)
+unique id is 0
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x151fbf460&gt;
+type is  0
+pos is (1, 9)
+unique id is 1
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x151fbf550&gt;
+type is  0
+pos is (5, 1)
+unique id is 2
+model.happy = 0
+
+&lt;__main__.SchellingAgent object at 0x151fbf100&gt;
+type is  1
+pos is (1, 4)
+unique id is 3
+model.happy = 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that on line 17 of the definition of <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> we have the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This activates the agents one at a time in random order with the order reshuffled every step of the model.</p>
+<p>See <a class="reference external" href="https://mesa.readthedocs.io/en/stable/_modules/mesa/time.html#RandomActivation">the source code</a> for details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To illustrate the RandomAcitivation scheduler, note that running this</span>
+<span class="c1"># multiple times will produce different orders of the agents</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">unique_id</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agent_buffer</span><span class="p">(</span><span class="n">shuffled</span><span class="o">=</span><span class="kc">True</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 1, 2, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that  line 18 of the definition of the <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> has the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This defines a grid to place the agents.</p>
+<p>See <a class="reference external" href="https://mesa.readthedocs.io/en/master/_modules/space.html#SingleGrid">the course code</a> for details.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a simple Schelling model with a 3x3 grid</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># each cell is a tuple where the first component is the agent, </span>
+<span class="c1"># the second component is the x position and </span>
+<span class="c1"># the 3rd component is the y position</span>
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+(None, 0, 1)
+(None, 0, 2)
+(None, 1, 0)
+(None, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># initially position the agent at 1,1</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a1 pos is </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, 0, 0)
+(None, 0, 1)
+(None, 0, 2)
+(None, 1, 0)
+(&lt;__main__.SchellingAgent object at 0x151fc77c0&gt;, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+
+a1 pos is (1, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now move a1 to an empty location</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">move_to_empty</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a1 pos is </span><span class="si">{</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;__main__.SchellingAgent object at 0x151fc77c0&gt;, 0, 0)
+(None, 0, 1)
+(None, 0, 2)
+(None, 1, 0)
+(None, 1, 1)
+(None, 1, 2)
+(None, 2, 0)
+(None, 2, 1)
+(None, 2, 2)
+
+a1 pos is (0, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a3</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">a4</span> <span class="o">=</span> <span class="n">SchellingAgent</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">model2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">a4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The neighbors of a1 are: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a</span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The neighbors of a3 are: &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">model2</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="n">a3</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a</span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The neighbors of a1 are: 
+a3 at (0, 0)
+a2 at (1, 0)
+a4 at (2, 2)
+The neighbors of a3 are: 
+a4 at (2, 2)
+a2 at (1, 0)
+a1 at (1, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instatiate a model instance: a 10x10 grid, with an 80% chance of an agent being placed in each cell, approximately 20% of agents set as minorities, and agents wanting at least 3 similar neighbors.  Run the model at most 100 times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">minority_percent</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">homophily</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SchellingModel</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">minority_percent</span><span class="p">,</span> <span class="n">homophily</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">steps</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The model ran for </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">steps</span><span class="si">}</span><span class="s2"> steps&quot;</span><span class="p">)</span> <span class="c1"># Show how many steps have actually run</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model ran for 1000 steps
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lines 21 - 24 of the definition of the <code class="docutils literal notranslate"><span class="pre">SchellingModel</span></code> has the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
+<span class="p">{</span><span class="s2">&quot;happy&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">happy</span><span class="p">},</span>  <span class="c1"># Model-level count of happy agents</span>
+<span class="c1"># For testing purposes, agent&#39;s individual x and y</span>
+<span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>This code is called in the <code class="docutils literal notranslate"><span class="pre">step()</span></code> method on line 47:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataCollector</span></code> is a simple, standard way to collect data generated by a Mesa model. It collects three types of data: model-level data, agent-level data, and tables.</p>
+<p>See the <a class="reference external" href="https://mesa.readthedocs.io/en/stable/apis/datacollection.html">documentation for details</a>.</p>
+<p>Use the method <code class="docutils literal notranslate"><span class="pre">get_model_vars_dataframe</span></code> to get the model-level data after running the model.</p>
+<p>Use the method <code class="docutils literal notranslate"><span class="pre">get_agent_vars_dataframe</span></code> to get the agent-level data after running the model.</p>
+<p>Both returna a <a class="reference external" href="https://pandas.pydata.org/">Pandas dataframe</a>.  Pandas is a popular tool for data analysis and manipulation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;var1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+    <span class="s2">&quot;var2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;var3&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>var1</th>
+      <th>var2</th>
+      <th>var3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>a</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>b</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>c</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>d</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>e</td>
+      <td>c</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We will discuss Pandas in more detail later in the text.   For now, see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10-minute introduction to Pandas</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1194</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1459</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1593</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1685</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1725</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>995</th>
+      <td>1993</td>
+    </tr>
+    <tr>
+      <th>996</th>
+      <td>1993</td>
+    </tr>
+    <tr>
+      <th>997</th>
+      <td>1993</td>
+    </tr>
+    <tr>
+      <th>998</th>
+      <td>1993</td>
+    </tr>
+    <tr>
+      <th>999</th>
+      <td>1993</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use describe() to get basic statistics about the data</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>happy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1000.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>1979.783000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>39.494122</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1194.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1984.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1987.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>1991.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1994.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<span class="n">model_out</span><span class="o">.</span><span class="n">happy</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01-schelling_27_0.png" src="../_images/01-schelling_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_agent_vars_dataframe</span><span class="p">()</span>
+<span class="n">agent_out</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+    <tr>
+      <th>Step</th>
+      <th>AgentID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">1</th>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="exploring-the-parameter-space">
+<h2>Exploring the Parameter Space<a class="headerlink" href="#exploring-the-parameter-space" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.batchrunner</span> <span class="kn">import</span> <span class="n">BatchRunner</span>
+
+<span class="k">def</span> <span class="nf">get_segregation</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Find the % of agents that only have neighbors of their same type.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">segregated_agents</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+        <span class="n">segregated</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">agent</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+                <span class="n">segregated</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">segregated</span><span class="p">:</span>
+            <span class="n">segregated_agents</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">segregated_agents</span> <span class="o">/</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_agent_count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;homophily&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">)}</span>
+<span class="n">fixed_params</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;density&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;minority_percent&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span> 
+<span class="n">model_reporters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Segregated_Agents&quot;</span><span class="p">:</span> <span class="n">get_segregation</span><span class="p">}</span>
+<span class="n">param_sweep</span> <span class="o">=</span> <span class="n">BatchRunner</span><span class="p">(</span><span class="n">SchellingModel</span><span class="p">,</span> 
+                          <span class="n">variable_params</span><span class="p">,</span> 
+                          <span class="n">fixed_params</span><span class="p">,</span> 
+                          <span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+                          <span class="n">max_steps</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> 
+                          <span class="n">model_reporters</span><span class="o">=</span><span class="n">model_reporters</span><span class="p">,</span> 
+                          <span class="n">display_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_sweep</span><span class="o">.</span><span class="n">run_all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">param_sweep</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>homophily</th>
+      <th>Run</th>
+      <th>Segregated_Agents</th>
+      <th>height</th>
+      <th>width</th>
+      <th>density</th>
+      <th>minority_percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0.118421</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.470588</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0.192308</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0.373494</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>4</td>
+      <td>0.443038</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>8</td>
+      <td>75</td>
+      <td>0.220779</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>8</td>
+      <td>76</td>
+      <td>0.123457</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>8</td>
+      <td>77</td>
+      <td>0.263158</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>8</td>
+      <td>78</td>
+      <td>0.340909</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>8</td>
+      <td>79</td>
+      <td>0.243902</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0.8</td>
+      <td>0.2</td>
+    </tr>
+  </tbody>
+</table>
+<p>80 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">homophily</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Segregated_Agents</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01-schelling_34_0.png" src="../_images/01-schelling_34_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="additional-reading">
+<h2>Additional Reading<a class="headerlink" href="#additional-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.netlogoweb.org/launch#http://ccl.northwestern.edu/netlogo/models/models/Sample%20Models/Social%20Science/Segregation.nlogo">NetLogo Schelling Simulation</a></p></li>
+<li><p>Brian Hayes, <a class="reference external" href="https://www.americanscientist.org/article/the-math-of-segregation">The Math of Segregation</a>, American Scientist.</p></li>
+<li><p>Christina Brandt, Nicole Immorlica, Gautam Kamath, and Robert Kleinberg, <a class="reference external" href="https://arxiv.org/abs/1203.6346">An Analysis of One-Dimensional Schelling Segregation</a>, Proceedings of the forty-fourth annual ACM symposium on theory of computing,  2012.</p></li>
+<li><p>Matthew Jackson, Chapter 5, The Human Network: How Your Social Position Determines Your Power, Beliefs, and Behaviors,  Vintage, 2020.</p></li>
+<li><p>David Easley and Jon Kleinberg, Section 4.5, <a class="reference external" href="https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch04.pdf">Networks, Crowds, and Markets: Reasoning about a Highly Connected World</a>, Cambridge University Press, 2010</p></li>
+<li><p><a class="reference external" href="https://ncase.me/polygons/">Parable of the Polygons</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./schelling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../python-basics/mesa.html" title="previous page">Mesa</a>
+    <a class='right-next' id="next-link" href="01a-schelling-implementation.html" title="next page">Implementation of Schelling’s Segregation Model</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

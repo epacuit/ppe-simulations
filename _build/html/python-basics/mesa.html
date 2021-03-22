@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesa &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Overview of Schelling’s Model" href="../schelling/01-schelling.html" />
+    <link rel="prev" title="Networks" href="networks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python-basics/mesa.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fpython-basics/mesa.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/python-basics/mesa.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mesa">
+<h1>Mesa<a class="headerlink" href="#mesa" title="Permalink to this headline">¶</a></h1>
+<p>Mesa is a Python package that can be used to quickly create and analyze agent-based models. Its goal is to be a Python 3  alternative to other frameworks for creating agent-based simulations, such as <a class="reference external" href="https://ccl.northwestern.edu/netlogo/">NetLogo</a>, <a class="reference external" href="https://repast.github.io/">Repast</a>, and [MASON]. (<a class="reference external" href="https://cs.gmu.edu/~eclab/projects/mason/">https://cs.gmu.edu/~eclab/projects/mason/</a>).</p>
+<p>Consult the documentation for more information about Mesa: <a class="reference external" href="https://mesa.readthedocs.io/en/master/">https://mesa.readthedocs.io/en/master/</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To install mesa in a Jupyter notebook run the following command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">mesa</span></code></p>
+<p>(Remove the ! to install Mesa from the command line).</p>
+</div>
+<p>When creating an agent-based simualtion in Mesa,</p>
+<ol class="simple">
+<li><p>Define your agent as a subclass of the Mesa <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class.</p></li>
+<li><p>Define your model as a subclass of the Mesa <code class="docutils literal notranslate"><span class="pre">Model</span></code> class.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="c1"># initialize an agent </span>
+        
+    <span class="c1">### add other methods that are useful for your agent ###</span>
+    
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># what does the agent do each step of the simulation?</span>
+        <span class="k">pass</span>
+    
+<span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># initialize a model and create agents </span>
+                
+    <span class="c1">### add other methods that are useful for your simulation ###</span>
+    
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># executes a step of the simulation</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your agent class or model class is not <em>required</em> to have a step method.  Many of the Mesa agent-based models do use these functions, so it is good practice to define these functions.</p>
+<p>Note also that the default value of the model in MyAgent is <code class="docutils literal notranslate"><span class="pre">None</span></code>.  This makes it easier for testing purposes so you can create an instance of MyAgent without creating an instance of MyModel.</p>
+</div>
+<p>To illustrate the main features of the Mesa framework, consider the following simulation:</p>
+<ol class="simple">
+<li><p>There are some number of agents</p></li>
+<li><p>Each agent is initially assigned 10 units of money.</p></li>
+<li><p>At each step, an agent <span class="math notranslate nohighlight">\(i\)</span> is matched up with another agent <span class="math notranslate nohighlight">\(j\)</span> (chosen at random).  Both agents flip a fair coin.   If the coins match (both land heads or both land tails) then <span class="math notranslate nohighlight">\(i\)</span> gives <span class="math notranslate nohighlight">\(j\)</span> 1 unit of money, and if they mismatch then <span class="math notranslate nohighlight">\(j\)</span> gives <span class="math notranslate nohighlight">\(i\)</span> one unit of money.</p></li>
+<li><p>When an agent runs out of money they no longer participate in any game.</p></li>
+</ol>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">random</span></code> package will be used in two ways:</p>
+<ol class="simple">
+<li><p>To simulate flipping a fair coin (recall the implementation of the <code class="docutils literal notranslate"><span class="pre">CoinFlipper</span></code> class).</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> to randomly choose an opponet to play the coin game: <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> choses a random element from any list of objects.</p></li>
+</ol>
+<p>Rather than using the Python random package, we will use Mesa’s wrapper for this function. This is accessible as an attribute of both the Agent and the Model class.</p>
+<p>The final piece needed to implement the above simulation is a way of <em>scheduling</em> the agents.   Mesa has multiple schudlers from the <a class="reference external" href="https://mesa.readthedocs.io/en/master/apis/time.html">Mesa Time Moduel</a>. The most useful is the <code class="docutils literal notranslate"><span class="pre">RandomActivation</span></code> scheduler.  During each step of the simulation, the agents are shuffled, then each agent’s  <code class="docutils literal notranslate"><span class="pre">step</span></code> function is called.  The agents are added to the schedule using the <code class="docutils literal notranslate"><span class="pre">add</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">init_payout</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payout</span> <span class="o">=</span> <span class="n">init_payout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_flip</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># the current flip of the coin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="s1">&#39;H&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s1">&#39;T&#39;</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">payout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+            
+            <span class="c1"># find possible opponents (any other player with a positive payout)</span>
+            <span class="n">possible_opponents</span> <span class="o">=</span> <span class="p">[</span><span class="n">_p</span> <span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">_p</span> <span class="o">!=</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">_p</span><span class="o">.</span><span class="n">payout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_opponents</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+                <span class="c1"># choose a random opponent</span>
+                <span class="n">opponent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">possible_opponents</span><span class="p">)</span>
+                
+                <span class="c1"># play the game</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="o">==</span> <span class="n">opponent</span><span class="o">.</span><span class="n">flip</span><span class="p">():</span> 
+                    <span class="c1"># outcomes match, so gain 1 and opponent loses 1  </span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">payout</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">opponent</span><span class="o">.</span><span class="n">payout</span> <span class="o">-=</span> <span class="mi">1</span>
+
+                <span class="k">else</span><span class="p">:</span> 
+                    <span class="c1"># outcomes mismatch, so lose 1 and opponent gains 1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">payout</span> <span class="o">-=</span> <span class="mi">1</span>
+                    <span class="n">opponent</span><span class="o">.</span><span class="n">payout</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">class</span> <span class="nc">CoinGame</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_players</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_players</span> <span class="o">=</span> <span class="n">num_players</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="c1"># use random activation</span>
+        
+        <span class="c1"># creat the players and add them to the schedule</span>
+        <span class="k">for</span> <span class="n">p_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_players</span><span class="p">):</span> 
+            
+            <span class="n">p</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="n">p_id</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+            
+        <span class="c1"># keep track of when the model should stop running</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        
+        <span class="c1"># call each players step function after randomly shuffling the agents</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="c1"># if there is only one player with a non-zero amount of money, then stop running</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">([</span><span class="n">_p</span> <span class="k">for</span> <span class="n">_p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">_p</span><span class="o">.</span><span class="n">payout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a CoinGame with 10 players</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">CoinGame</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The players initial payouts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># run the simulation for a maximu of num_rounds</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">):</span> 
+    <span class="n">g</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="c1"># break out of the loop if the model stops running</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">g</span><span class="o">.</span><span class="n">running</span><span class="p">:</span> 
+        <span class="k">break</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> rounds the final payouts: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The players initial payouts:
+[10, 10, 10, 10, 10, 10, 10, 10, 10, 10] 
+
+After 999 rounds the final payouts: 
+[0, 5, 0, 0, 0, 0, 0, 95, 0, 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The implementation uses  Mesa’s own wrapper for Python <code class="docutils literal notranslate"><span class="pre">random</span></code> package.This allows one to set the random seed to reproduce the results (see <a class="reference external" href="https://mesa.readthedocs.io/en/stable/best-practices.html#randomization">https://mesa.readthedocs.io/en/stable/best-practices.html#randomization</a> for a discussion).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a CoinGame with 10 players</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">CoinGame</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The players initial payouts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># run the simulation for a maximu of num_rounds</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">):</span> 
+    <span class="n">g</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="c1"># break out of the loop if the model stops running</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">g</span><span class="o">.</span><span class="n">running</span><span class="p">:</span> 
+        <span class="k">break</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> rounds the final payouts: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Run the simulation again with the same seed.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">CoinGame</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">seed</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The players initial payouts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># run the simulation for a maximu of num_rounds</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">):</span> 
+    <span class="n">g</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="c1"># break out of the loop if the model stops running</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">g</span><span class="o">.</span><span class="n">running</span><span class="p">:</span> 
+        <span class="k">break</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> rounds the final payouts: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">payout</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The players initial payouts:
+[10, 10, 10, 10, 10, 10, 10, 10, 10, 10] 
+
+After 999 rounds the final payouts: 
+[38, 0, 0, 0, 0, 0, 0, 0, 0, 62]
+
+Run the simulation again with the same seed.
+
+The players initial payouts:
+[10, 10, 10, 10, 10, 10, 10, 10, 10, 10] 
+
+After 999 rounds the final payouts: 
+[38, 0, 0, 0, 0, 0, 0, 0, 0, 62]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will introduce other features of the Mesa package, such as the <a class="reference external" href="https://mesa.readthedocs.io/en/master/tutorials/intro_tutorial.html#adding-space">Mesa Space Module</a>, the <a class="reference external" href="https://mesa.readthedocs.io/en/master/tutorials/intro_tutorial.html#collecting-data">DataCollector</a> and <a class="reference external" href="https://mesa.readthedocs.io/en/master/tutorials/intro_tutorial.html#batch-run">Batch Running</a>, later in the text.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./python-basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="networks.html" title="previous page">Networks</a>
+    <a class='right-next' id="next-link" href="../schelling/01-schelling.html" title="next page">Overview of Schelling’s Model</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

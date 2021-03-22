@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning from Testimony &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Epistemic Networks" href="epistemic-networks.html" />
+    <link rel="prev" title="Condorcet Jury Theorem" href="cjt.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/belief-dynamics/testimony.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fbelief-dynamics/testimony.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/belief-dynamics/testimony.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="learning-from-testimony">
+<h1>Learning from Testimony<a class="headerlink" href="#learning-from-testimony" title="Permalink to this headline">¶</a></h1>
+<p>This section implements the simulation from:</p>
+<p>K. Zollman (2015). <a class="reference external" href="http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf">Modeling the social consequences of testimonial norms</a>, Philosophical Studies, 172, pp. 2371 - 2383(2015)</p>
+<p>Fix a large number of propositions that the individuals want to learn.  For each proposition <span class="math notranslate nohighlight">\(P\)</span>, an individual either believes <span class="math notranslate nohighlight">\(P\)</span>, disbelieves <span class="math notranslate nohighlight">\(P\)</span> (i.e., believes that <span class="math notranslate nohighlight">\(P\)</span> is false)  or suspends judgement about <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>Each individual is endowed with an intrinsic reliability which determines how
+likely she is to believe true propositions and disbelieve false ones when she receives
+evidence directly from the world.</p>
+<p>At each round, each individual:</p>
+<ol class="simple">
+<li><p>with a 10 % chance, individauls receive some new piece of information from direct observation of the world.</p></li>
+<li><p>each individual chooses a group of people from whom to solicit testimony.</p></li>
+<li><p>each individual asks each of the individuals in that group to tell them something that the testifier either believes or disbelieves.</p></li>
+<li><p>the individuals receives an honest report from the asked individual.</p></li>
+<li><p>if the individual told something about which they currently suspend judgment, they believes what they are told. Otherwise they do not change their doxastic attitudes.</p></li>
+</ol>
+<p>The above process is repeated 500 times and the group is evaulated according to two questions:</p>
+<ol class="simple">
+<li><p>Did the group maximuze the number of true beliefs?</p></li>
+<li><p>Did the group minimize the number of false beliefs?</p></li>
+</ol>
+<p>There are 4 types of agents:</p>
+<ol class="simple">
+<li><p>Skeptics do not think testimony is justified, and so do not listen to any other agents and only modify their doxastic attitudes in response to their own evidence from the world.</p></li>
+<li><p>Credulists have no  reason to stop listening to someone, so they initially choose a set of indivudals to trust and never change this set.</p></li>
+<li><p>Objective calibrationist only listens to agents that have the most true beliefs.</p></li>
+<li><p>Subjective calibrationists only listen to the agents that they agree the most with.</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+<span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
+
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AgentType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">skeptic</span> <span class="o">=</span> <span class="s1">&#39;skeptic&#39;</span> <span class="c1"># ignore all testimony</span>
+    <span class="n">credulous</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># randomly select members of the community to solicit belief reports</span>
+    <span class="n">objective_calibrationist</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># choose agents that have the highest porportion of true beliefs </span>
+                                 <span class="c1"># to solicit belief reports</span>
+    <span class="n">subjective_calibrationist</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># choose    agents with the highest degree of agreement to solicit belief reports</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Types of beliefs</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># Believe (Bp)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>    <span class="c1"># Disbelieve (B\neg p)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># Suspend Judgement (\neg Bp \wedge \neg B\neg p)</span>
+
+<span class="k">class</span> <span class="nc">AgentType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">skeptic</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ignore all testimony</span>
+    <span class="n">credulous</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># randomly select members of the community to solicit belief reports</span>
+    <span class="n">objective_calibrationist</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># choose agents that have the highest porportion of true beliefs </span>
+                                 <span class="c1"># to solicit belief reports</span>
+    <span class="n">subjective_calibrationist</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># choose agents with the highest degree of agreement to solicit belief reports</span>
+
+<span class="c1"># A world consists of a set of facts</span>
+<span class="k">class</span> <span class="nc">World</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">num_facts</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        
+        <span class="c1"># initially randomly assign truth values to each fact</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">facts</span><span class="o">=</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span><span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_facts</span><span class="p">)]</span> 
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">propositions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">facts</span><span class="p">)))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">num_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">facts</span><span class="p">)</span>
+    
+    <span class="c1"># Return the truth value of proposition f</span>
+    <span class="k">def</span> <span class="nf">truth_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">facts</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">Individual</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                 <span class="n">unique_id</span><span class="p">,</span>
+                 <span class="n">model</span><span class="p">,</span>
+                 <span class="n">init_facts_to_investigate</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+                 <span class="n">investigate_probability</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+                 <span class="n">a_type</span> <span class="o">=</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">,</span>
+                 <span class="n">num_experts</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="n">believe_most_recent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># the probability that the agent believes true facts and disbelieves false ones</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">investigate_prob</span> <span class="o">=</span> <span class="n">investigate_probability</span> <span class="c1"># probability that the agent will investiage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span> <span class="o">=</span> <span class="p">[</span><span class="n">S</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">num_facts</span> <span class="c1"># The agent&#39;s beliefs about the facts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span> <span class="o">=</span> <span class="p">[</span><span class="n">S</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">num_facts</span> <span class="c1"># Testimony from others about the facts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">a_type</span> <span class="c1"># Skeptic, Credulous, Objective Calibrationist or Subjective Calibrationist</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">believe_most_recent</span> <span class="o">=</span> <span class="n">believe_most_recent</span> <span class="c1"># If True, then the agent will believe the most recent report on a fact</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">=</span> <span class="n">num_experts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">experts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span> <span class="c1"># List of agents to receive testimony from</span>
+        
+        <span class="c1"># Initially, choose some facts to investigate</span>
+        <span class="n">facts_to_investigate</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">propositions</span><span class="p">,</span> <span class="n">init_facts_to_investigate</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">facts_to_investigate</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+
+    <span class="c1"># observe truth value tv of fact f</span>
+    <span class="k">def</span> <span class="nf">update_observed_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">tv</span><span class="p">):</span>
+
+        <span class="c1"># If currently suspend judgement about fact f, set the belief to tv </span>
+        <span class="c1"># (This means that there is no belief revision)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">==</span> <span class="n">S</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">tv</span>
+
+
+    <span class="c1"># Return a list of the agent&#39;s beliefs</span>
+    <span class="c1"># To do this, merge the agent&#39;s private_beliefs (what is learned by observation) with social_beliefs (what is learned via testimony)</span>
+    <span class="c1"># Preference is given to what is learned by observation.</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="k">return</span> <span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">S</span> <span class="k">else</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+                <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span><span class="p">)]</span>
+
+    <span class="c1"># Return the agent&#39;s belief about fact f</span>
+    <span class="k">def</span> <span class="nf">belief</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">!=</span> <span class="n">S</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+
+    <span class="c1"># Observe a fact</span>
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">tv</span><span class="p">):</span>
+
+        <span class="c1"># With probability self.rel, the agent&#39;s private belief is correct</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span> <span class="k">if</span> <span class="n">tv</span> <span class="k">else</span> <span class="n">D</span>  <span class="c1"># the belief is correct</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span> <span class="k">if</span> <span class="n">tv</span> <span class="k">else</span> <span class="n">B</span> <span class="c1"># the agent believes  a falsehood</span>
+
+    <span class="c1"># Learn from testimony of the agent&#39;s experts</span>
+    <span class="k">def</span> <span class="nf">learn_from_testimony</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">experts</span><span class="p">:</span>
+            <span class="n">f</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">report</span><span class="p">()</span>  <span class="c1"># get a report from expert e</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_observation</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">==</span> <span class="n">S</span><span class="p">:</span> <span class="c1"># The agent has not observed f</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">believe_most_recent</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># the agent believes the current report about f</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">believe_most_recent</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">==</span> <span class="n">S</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">beliefs_from_testimony</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># only accept the report if the agent currently suspends judgement</span>
+
+    <span class="c1"># Return facts that the agent currently suspends judgement</span>
+    <span class="k">def</span> <span class="nf">unknown_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beliefs</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="n">S</span><span class="p">]</span>
+
+    <span class="c1"># All the believed facts</span>
+    <span class="k">def</span> <span class="nf">believed_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beliefs</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="n">B</span><span class="p">]</span>
+
+    <span class="c1"># All the disbelieved facts</span>
+    <span class="k">def</span> <span class="nf">disbelieved_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">idx</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">beliefs</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span> <span class="o">==</span> <span class="n">D</span><span class="p">]</span>
+
+    <span class="c1"># Choose a random fact to report</span>
+    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Find some fact that you believe or disbelieve</span>
+        <span class="n">facts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">believed_facts</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">disbelieved_facts</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">facts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO BELIEVED FACTS!&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">private_beliefs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">facts</span><span class="p">)</span>
+
+        <span class="c1"># Report your true belief for fact f</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># With probability self.investigate_prob, investigate an unknown fact</span>
+    <span class="k">def</span> <span class="nf">investigate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unknown_facts</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># There is something to investigate</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">investigate_prob</span><span class="p">:</span> <span class="c1"># Investigate with probability self.investigate_prob</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unknown_facts</span><span class="p">())</span> <span class="c1"># Choose a random fact to observe</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="c1"># observe the truth value</span>
+
+    <span class="c1"># Return all the facts that are correctly believed</span>
+    <span class="c1"># Also return the percentage of non-suspended judgement beliefs that are correct</span>
+    <span class="k">def</span> <span class="nf">correct_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">bel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">believed_facts</span><span class="p">()</span>
+        <span class="n">disbel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disbelieved_facts</span><span class="p">()</span>
+
+        <span class="n">correct_bels</span><span class="o">=</span><span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bel</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">b</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">disbel</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">b</span><span class="p">)]</span>
+
+        <span class="n">percentage</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">correct_bels</span><span class="p">))</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bel</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">disbel</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">correct_bels</span><span class="p">,</span><span class="n">percentage</span>
+
+    <span class="c1"># Return all the facts that are incorrect</span>
+    <span class="k">def</span> <span class="nf">false_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">bel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">believed_facts</span><span class="p">()</span>
+        <span class="n">disbel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">disbelieved_facts</span><span class="p">()</span>
+
+        <span class="n">false_bels</span><span class="o">=</span><span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bel</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">b</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">disbel</span> <span class="k">if</span>  <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">truth_value</span><span class="p">(</span><span class="n">b</span><span class="p">)]</span>
+
+        <span class="n">percentage</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">false_bels</span><span class="p">))</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bel</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">disbel</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">false_bels</span><span class="p">,</span><span class="n">percentage</span>
+
+    <span class="c1"># Find new experts</span>
+    <span class="k">def</span> <span class="nf">find_experts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">experts</span><span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">:</span>
+            <span class="c1"># initially, randomly select num_experts from community, otherwise keep the same experts</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">experts</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">)</span> <span class="k">if</span>  <span class="n">initial</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">experts</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">:</span>
+            <span class="n">experts</span><span class="o">=</span><span class="p">[]</span>
+
+            <span class="c1"># get all the agent&#39;s objective abilities</span>
+            <span class="n">agent_reliabilities</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">correct_beliefs</span><span class="p">()[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+            
+            <span class="n">sorted_agent_reliabilities</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agent_reliabilities</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">experts</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">sorted_agent_reliabilities</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">]]</span>
+            
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">:</span>
+            <span class="n">experts</span><span class="o">=</span><span class="p">[]</span>
+
+            <span class="c1"># get all the agent&#39;s agreements</span>
+            <span class="n">agent_agreements</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">agreement</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+            
+            <span class="n">sorted_agent_agreements</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agent_agreements</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">experts</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">sorted_agent_agreements</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span><span class="p">]]</span>
+
+
+    <span class="c1"># Of all the beliefs that the agent shares with a, returns the proportion on which they agree</span>
+    <span class="k">def</span> <span class="nf">agreement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        
+        <span class="c1"># memoize (dis)believed facts</span>
+        <span class="n">own_believed_facts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">believed_facts</span><span class="p">()</span>
+        <span class="n">own_disbelieved_facts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">disbelieved_facts</span><span class="p">()</span>
+        <span class="n">other_believed_facts</span> <span class="o">=</span>  <span class="n">a</span><span class="o">.</span><span class="n">believed_facts</span><span class="p">()</span>  
+        <span class="n">other_disbelieved_facts</span> <span class="o">=</span>  <span class="n">a</span><span class="o">.</span><span class="n">disbelieved_facts</span><span class="p">()</span>
+        
+        <span class="n">opinions</span> <span class="o">=</span> <span class="n">own_believed_facts</span>  <span class="o">+</span> <span class="n">own_disbelieved_facts</span>
+        <span class="n">others_opinions</span> <span class="o">=</span> <span class="n">other_believed_facts</span>  <span class="o">+</span> <span class="n">other_disbelieved_facts</span>
+
+        <span class="n">overlap</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">opinions</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">others_opinions</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">overlap</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="c1">#agreements = [1 for f in own_believed_facts if f in other_believed_facts] + [1 for f in own_disbelieved_facts if f in other_disbelieved_facts]</span>
+        <span class="n">agreements</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">own_believed_facts</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">other_believed_facts</span><span class="p">)))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">own_disbelieved_facts</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">other_disbelieved_facts</span><span class="p">)))</span>
+        <span class="c1">#agreements = set(self.believed_facts()).intersection(set(a.believed_facts())).union(set(self.disbelieved_facts()).intersection(set(a.disbelieved_facts())))</span>
+        <span class="c1">#print &quot;agreements: &quot;, agreements</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agreements</span><span class="p">))</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">overlap</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">TestimonyModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">num_facts</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+                 <span class="n">num_agents</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+                 <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                 <span class="n">a_type</span> <span class="o">=</span> <span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">,</span>
+                 <span class="n">num_experts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                 <span class="n">believe_most_recent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">=</span><span class="n">World</span><span class="p">(</span><span class="n">num_facts</span><span class="o">=</span><span class="n">num_facts</span><span class="p">)</span> <span class="c1"># The world</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">a_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_agents</span><span class="p">):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="n">a_id</span><span class="p">,</span> 
+                           <span class="bp">self</span><span class="p">,</span> 
+                           <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="n">init_facts_to_investigate</span><span class="p">,</span>
+                           <span class="n">a_type</span> <span class="o">=</span> <span class="n">a_type</span><span class="p">,</span>
+                           <span class="n">believe_most_recent</span><span class="o">=</span><span class="n">believe_most_recent</span><span class="p">)</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="c1"># each agent finds some initial experts</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">find_experts</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+    <span class="c1"># Return the average of the proportion of the agent&#39;s correct beliefs</span>
+    <span class="k">def</span> <span class="nf">avg_correct_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">correct_beliefs</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+
+    <span class="c1"># Returns the average of the proportion of the agent&#39;s incorrect beliefs</span>
+    <span class="k">def</span> <span class="nf">avg_false_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">false_beliefs</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+
+
+    <span class="c1"># Return the total number of correct beliefs for each agent</span>
+    <span class="k">def</span> <span class="nf">total_correct_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">correct_beliefs</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+
+    <span class="c1"># Return the total number of false beliefs for each agent</span>
+    <span class="k">def</span> <span class="nf">total_false_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">false_beliefs</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="c1"># each agent learns about the world</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">investigate</span><span class="p">()</span>
+            
+        <span class="c1"># each agent learns from testimony            </span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">learn_from_testimony</span><span class="p">()</span>
+            
+        <span class="c1"># each agent (possibly) finds new experts</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">find_experts</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Simulation parameters</span>
+<span class="n">NUM_FACTS</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># number of facts</span>
+<span class="n">INIT_FACTS_TO_INVESTIGATE</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># number of facts to initially investigate</span>
+<span class="n">NUM_AGENTS</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of agents</span>
+<span class="n">NUM_ROUNDS</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of rounds</span>
+<span class="n">BELIEVE_MOST_RECENT</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># True means that agents will believe the most recent report on a fact</span>
+
+<span class="n">all_number_experts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">data_for_df</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">a_type</span><span class="p">:</span> <span class="p">{</span><span class="n">n_experts</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+                         <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+                         <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+                         <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()}</span> 
+             <span class="k">for</span> <span class="n">n_experts</span> <span class="ow">in</span> <span class="n">all_number_experts</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">a_type</span> <span class="ow">in</span> <span class="n">AgentType</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">a_type</span> <span class="ow">in</span> <span class="n">AgentType</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">n_exp</span> <span class="ow">in</span> <span class="n">all_number_experts</span><span class="p">:</span> 
+        <span class="n">m</span> <span class="o">=</span> <span class="n">TestimonyModel</span><span class="p">(</span>
+            <span class="n">num_facts</span><span class="o">=</span><span class="n">NUM_FACTS</span><span class="p">,</span>
+            <span class="n">num_agents</span><span class="o">=</span><span class="n">NUM_AGENTS</span><span class="p">,</span>
+            <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="n">INIT_FACTS_TO_INVESTIGATE</span><span class="p">,</span>
+            <span class="n">a_type</span><span class="o">=</span><span class="n">a_type</span><span class="p">,</span>
+            <span class="n">num_experts</span><span class="o">=</span><span class="n">n_exp</span><span class="p">,</span>
+            <span class="n">believe_most_recent</span><span class="o">=</span><span class="n">BELIEVE_MOST_RECENT</span>
+        <span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_ROUNDS</span><span class="p">):</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">data_for_df</span><span class="p">[</span><span class="n">a_type</span><span class="p">][</span><span class="n">n_exp</span><span class="p">][</span><span class="s2">&quot;correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_correct_beliefs</span><span class="p">())</span>
+            <span class="n">data_for_df</span><span class="p">[</span><span class="n">a_type</span><span class="p">][</span><span class="n">n_exp</span><span class="p">][</span><span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_false_beliefs</span><span class="p">())</span>
+            <span class="n">data_for_df</span><span class="p">[</span><span class="n">a_type</span><span class="p">][</span><span class="n">n_exp</span><span class="p">][</span><span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_correct_beliefs</span><span class="p">()))</span>
+            <span class="n">data_for_df</span><span class="p">[</span><span class="n">a_type</span><span class="p">][</span><span class="n">n_exp</span><span class="p">][</span><span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_false_beliefs</span><span class="p">()))</span>
+            
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Done: </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done: 4039.9720480442047 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_experts</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">belief_type</span> <span class="o">=</span> <span class="s1">&#39;avg_num_correct_beliefs&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">][</span><span class="n">num_experts</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Skeptic&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">][</span><span class="n">num_experts</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Credulous&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">][</span><span class="n">num_experts</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Objective Calibrationist&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">][</span><span class="n">num_experts</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Subjective Calibrationist&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Average Number of Correct Beliefs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/testimony_5_0.png" src="../_images/testimony_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">belief_type</span> <span class="o">=</span> <span class="s1">&#39;correct_beliefs&#39;</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">ne_idx</span><span class="p">,</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">][</span><span class="n">ne</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Skeptic&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">][</span><span class="n">ne</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Credulous&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">][</span><span class="n">ne</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Objective Calibrationist&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_for_df</span><span class="p">[</span><span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">][</span><span class="n">ne</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Subjective Calibrationist&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2"> Experts&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average Percent of Correct Beliefs</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/testimony_6_0.png" src="../_images/testimony_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestimonyModelDifferentAgentTypes</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">num_facts</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+                 <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                 <span class="n">agent_types</span> <span class="o">=</span> <span class="p">{</span><span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span>
+                 <span class="n">believe_most_recent</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">world</span><span class="o">=</span><span class="n">World</span><span class="p">(</span><span class="n">num_facts</span><span class="o">=</span><span class="n">num_facts</span><span class="p">)</span> <span class="c1"># The world</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_types</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">agent_types</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_agents</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">agent_types</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">a_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">a_type</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">agent_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+                
+                <span class="n">a</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="n">a_id</span><span class="p">,</span> 
+                               <span class="bp">self</span><span class="p">,</span> 
+                               <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="n">init_facts_to_investigate</span><span class="p">,</span>
+                               <span class="n">a_type</span> <span class="o">=</span> <span class="n">a_type</span><span class="p">,</span>
+                               <span class="n">believe_most_recent</span><span class="o">=</span><span class="n">believe_most_recent</span><span class="p">)</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">a_id</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># each agent finds some initial experts</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">find_experts</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+    <span class="c1"># Return the average of the proportion of the agent&#39;s correct beliefs</span>
+    <span class="k">def</span> <span class="nf">avg_correct_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_types</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+
+        <span class="n">a_types</span> <span class="o">=</span> <span class="n">a_types</span> <span class="k">if</span> <span class="n">a_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_types</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">correct_beliefs</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">a_types</span><span class="p">])</span>
+
+    <span class="c1"># Returns the average of the proportion of the agent&#39;s incorrect beliefs</span>
+    <span class="k">def</span> <span class="nf">avg_false_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_types</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">a_types</span> <span class="o">=</span> <span class="n">a_types</span> <span class="k">if</span> <span class="n">a_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_types</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">false_beliefs</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">a_types</span><span class="p">])</span>
+
+
+    <span class="c1"># Return the total number of correct beliefs for each agent</span>
+    <span class="k">def</span> <span class="nf">total_correct_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_types</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">a_types</span> <span class="o">=</span> <span class="n">a_types</span> <span class="k">if</span> <span class="n">a_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_types</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">correct_beliefs</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">a_types</span><span class="p">]</span>
+
+    <span class="c1"># Return the total number of false beliefs for each agent</span>
+    <span class="k">def</span> <span class="nf">total_false_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a_types</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">a_types</span> <span class="o">=</span> <span class="n">a_types</span> <span class="k">if</span> <span class="n">a_types</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">agent_types</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">false_beliefs</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="n">a_types</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="c1"># each agent learns about the world</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">investigate</span><span class="p">()</span>
+            
+        <span class="c1"># each agent learns from testimony            </span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">learn_from_testimony</span><span class="p">()</span>
+            
+        <span class="c1"># each agent (possibly) finds new experts</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">find_experts</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="c1"># Simulation parameters</span>
+<span class="n">NUM_FACTS</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># number of facts</span>
+<span class="n">INIT_FACTS_TO_INVESTIGATE</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># number of facts to initially investigate</span>
+<span class="n">NUM_AGENTS</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of agents</span>
+<span class="n">NUM_ROUNDS</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of rounds</span>
+<span class="n">BELIEVE_MOST_RECENT</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># True means that agents will believe the most recent report on a fact</span>
+
+<span class="n">all_number_experts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">data_varying_experts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">n_experts</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+            <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()</span>
+        <span class="p">},</span>
+        <span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+            <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()</span>
+        <span class="p">},</span>
+        <span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+            <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()</span>
+        <span class="p">},</span>
+        <span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+            <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;all&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;correct_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(),</span> 
+            <span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(),</span>
+            <span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">()</span>
+        <span class="p">}}</span>
+    <span class="k">for</span> <span class="n">n_experts</span> <span class="ow">in</span> <span class="n">all_number_experts</span>
+<span class="p">}</span>
+
+
+<span class="n">agent_types</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">:</span> <span class="mi">50</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">n_exp</span> <span class="ow">in</span> <span class="n">all_number_experts</span><span class="p">:</span> 
+    <span class="n">m</span> <span class="o">=</span> <span class="n">TestimonyModelDifferentAgentTypes</span><span class="p">(</span>
+        <span class="n">num_facts</span><span class="o">=</span><span class="n">NUM_FACTS</span><span class="p">,</span>
+        <span class="n">init_facts_to_investigate</span><span class="o">=</span><span class="n">INIT_FACTS_TO_INVESTIGATE</span><span class="p">,</span>
+        <span class="n">agent_types</span><span class="o">=</span><span class="n">agent_types</span><span class="p">,</span>
+        <span class="n">believe_most_recent</span><span class="o">=</span><span class="n">BELIEVE_MOST_RECENT</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_ROUNDS</span><span class="p">):</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="s2">&quot;correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_correct_beliefs</span><span class="p">())</span>
+        <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_false_beliefs</span><span class="p">())</span>
+        <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_correct_beliefs</span><span class="p">()))</span>
+        <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_false_beliefs</span><span class="p">()))</span>
+            
+        <span class="k">for</span> <span class="n">a_type</span> <span class="ow">in</span> <span class="n">agent_types</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="n">a_type</span><span class="p">][</span><span class="s2">&quot;correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_correct_beliefs</span><span class="p">(</span><span class="n">a_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_type</span><span class="p">]))</span>
+            <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="n">a_type</span><span class="p">][</span><span class="s2">&quot;incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">avg_false_beliefs</span><span class="p">(</span><span class="n">a_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_type</span><span class="p">]))</span>
+            <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="n">a_type</span><span class="p">][</span><span class="s2">&quot;avg_num_correct_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_correct_beliefs</span><span class="p">(</span><span class="n">a_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_type</span><span class="p">])))</span>
+            <span class="n">data_varying_experts</span><span class="p">[</span><span class="n">n_exp</span><span class="p">][</span><span class="n">a_type</span><span class="p">][</span><span class="s2">&quot;avg_num_incorrect_beliefs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">total_false_beliefs</span><span class="p">(</span><span class="n">a_types</span><span class="o">=</span><span class="p">[</span><span class="n">a_type</span><span class="p">])))</span>
+
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Done: </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done: 1028.8375871181488 seconds
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">belief_type</span> <span class="o">=</span> <span class="s1">&#39;correct_beliefs&#39;</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">ne_idx</span><span class="p">,</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;All&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2"> Experts&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Average Percent of Correct Beliefs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/testimony_9_0.png" src="../_images/testimony_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">belief_type</span> <span class="o">=</span> <span class="s1">&#39;correct_beliefs&#39;</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">ne_idx</span><span class="p">,</span> <span class="n">ne</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_number_experts</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="n">AgentType</span><span class="o">.</span><span class="n">skeptic</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Sketpic&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="n">AgentType</span><span class="o">.</span><span class="n">credulous</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Credulous&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="n">AgentType</span><span class="o">.</span><span class="n">objective_calibrationist</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Objective Calibrationist&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="n">AgentType</span><span class="o">.</span><span class="n">subjective_calibrationist</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Subjective Calibrationist&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_varying_experts</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s1">&#39;all&#39;</span><span class="p">][</span><span class="n">belief_type</span><span class="p">],</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;All&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">ne_idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2"> Experts&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.15</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Average Percent of Correct Beliefs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/testimony_10_0.png" src="../_images/testimony_10_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./belief-dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="cjt.html" title="previous page">Condorcet Jury Theorem</a>
+    <a class='right-next' id="next-link" href="epistemic-networks.html" title="next page">Epistemic Networks</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

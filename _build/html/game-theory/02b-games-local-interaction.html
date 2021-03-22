@@ -1,0 +1,1783 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games on a Network &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Justice and Bargaining" href="02c-divide-the-dollar.html" />
+    <link rel="prev" title="Introduction to Game Theory" href="02a-intro-game-theory.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../belief-dynamics/polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/game-theory/02b-games-local-interaction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fgame-theory/02b-games-local-interaction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/game-theory/02b-games-local-interaction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploring-the-parameter-space">
+   Exploring the Parameter Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#games-on-graphs">
+   Games on Graphs
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="games-on-a-network">
+<h1>Games on a Network<a class="headerlink" href="#games-on-a-network" title="Permalink to this headline">¶</a></h1>
+<p>Fix a 2x2 game.  Each agent plays this game with her neighbors in a network.</p>
+<p>At each step:</p>
+<ol class="simple">
+<li><p>One agent (the focal agent) is chosen at random to adopt a new strategy</p></li>
+<li><p>The focal agent chooses a new strategy based on how well her neighbors perform in the game:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">imitation</span></code>: imitate the neighbor with the highest total score for that round</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prob_imitation</span></code>: select a neighbor to imitate proportional to the  average payouts</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Agent</span>
+<span class="kn">from</span> <span class="nn">mesa.batchrunner</span> <span class="kn">import</span> <span class="n">BatchRunner</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+<span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">SingleGrid</span>
+<span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">nashpy</span> <span class="k">as</span> <span class="nn">nash</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">tqdm.notebook</span> <span class="k">as</span> <span class="nn">tqdm</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create some games:</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">pd</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(pd)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">pd2</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(pd2)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(coord)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">hilo</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(hilo)</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">bos</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(bos)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">sh</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(sh)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]])</span>
+<span class="n">sh2</span> <span class="o">=</span> <span class="n">nash</span><span class="o">.</span><span class="n">Game</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="c1">#print(str(sh2))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fix two strategies</span>
+<span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">STRATS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;S1&quot;</span><span class="p">:</span> <span class="n">S1</span><span class="p">,</span>
+    <span class="s2">&quot;S2&quot;</span><span class="p">:</span> <span class="n">S2</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A player for a game </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">strat</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">strat</span> <span class="c1"># fixed strategy to play in the game </span>
+
+    <span class="k">def</span> <span class="nf">average_payout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;find the average payout when playing the game against all neighbors&#39;&#39;&#39;</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">game</span><span class="p">[</span><span class="n">STRATS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">strat</span><span class="p">],</span> <span class="n">STRATS</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">strat</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">])</span>
+    
+    <span class="k">def</span> <span class="nf">total_payout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;find the total payout when playing the game against all neighbors&#39;&#39;&#39;</span>
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">neighbor_iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">game</span><span class="p">[</span><span class="n">STRATS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">strat</span><span class="p">],</span> <span class="n">STRATS</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">strat</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">])</span>
+    
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GameLatticeModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Play a fixed game on a lattice.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">game</span><span class="p">,</span> <span class="n">bias_S1</span><span class="p">,</span> <span class="n">num_changes_per_step</span><span class="p">,</span> <span class="n">mutation</span><span class="p">,</span> <span class="n">update_type</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">game</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias_S1</span> <span class="o">=</span> <span class="n">bias_S1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">=</span> <span class="n">update_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_changes_per_step</span> <span class="o">=</span> <span class="n">num_changes_per_step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mutation</span> <span class="o">=</span> <span class="n">mutation</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">SingleGrid</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">torus</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
+             <span class="p">{</span><span class="s2">&quot;Percent S1&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> 
+                                              <span class="k">if</span>   <span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="o">==</span>  <span class="s2">&quot;S1&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_agent_count</span><span class="p">()}</span>             <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="c1"># Set up agents</span>
+        <span class="n">agent_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">coord_iter</span><span class="p">():</span>
+            <span class="n">_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">cell</span>
+            <span class="n">strat</span> <span class="o">=</span> <span class="s2">&quot;S1&quot;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias_S1</span> <span class="k">else</span> <span class="s2">&quot;S2&quot;</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="n">agent_id</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">strat</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">position_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+            <span class="n">agent_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_changes_per_step</span><span class="p">):</span>
+            
+            <span class="c1"># choose a random agent</span>
+            <span class="n">focal_agent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span>
+            
+            <span class="c1"># find all the neighbors of the agent</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">focal_agent</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">moore</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+            
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">==</span> <span class="s1">&#39;imitator&#39;</span><span class="p">:</span>
+                <span class="c1"># imitate most successful neighbor</span>
+                <span class="n">total_payouts</span>  <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">total_payout</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">}</span>
+
+                <span class="n">max_payout</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">total_payouts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+                <span class="n">strat_to_imitate</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">total_payouts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">total_payouts</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="n">max_payout</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">==</span> <span class="s1">&#39;prob_imitator&#39;</span><span class="p">:</span>
+                
+                <span class="c1"># get the average payouts for each neighbor</span>
+                <span class="n">average_payouts</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">average_payout</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">]</span>
+                <span class="n">total_average_payouts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">average_payouts</span><span class="p">)</span>
+                
+                <span class="c1"># probabilities for each neighbor</span>
+                <span class="n">neighbor_probs</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">average_payout</span><span class="p">()</span> <span class="o">/</span> <span class="n">total_average_payouts</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">]</span>
+                
+                <span class="c1"># probabilistically imitate most successful neighbor </span>
+                <span class="n">strat_to_imitate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">neighbors</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">neighbor_probs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strat</span>
+            
+            
+            <span class="c1"># mutations</span>
+            <span class="n">other_strat</span> <span class="o">=</span> <span class="s2">&quot;S2&quot;</span> <span class="k">if</span> <span class="n">strat_to_imitate</span> <span class="o">==</span> <span class="s2">&quot;S1&quot;</span> <span class="k">else</span> <span class="s2">&quot;S1&quot;</span>
+            
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutation</span><span class="p">:</span>
+                <span class="n">focal_agent</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">other_strat</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">focal_agent</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">strat_to_imitate</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># stop running if all agents have the same strategy</span>
+
+        <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="o">==</span> <span class="s2">&quot;S1&quot;</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="o">==</span> <span class="s2">&quot;S2&quot;</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">running</span><span class="o">=</span><span class="kc">False</span>
+            
+                        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span> 
+<span class="n">game</span> <span class="o">=</span> <span class="n">sh</span>
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">mutation</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s1">&#39;imitator&#39;</span>
+<span class="n">num_changes_per_step</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameLatticeModel</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> 
+                         <span class="n">game</span><span class="p">,</span> <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">num_changes_per_step</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> <span class="n">update_type</span><span class="p">)</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "865766a845ae4501ac2a9da81dabff35", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_5_11.png" src="../_images/02b-games-local-interaction_5_11.png" />
+</div>
+</div>
+<div class="section" id="exploring-the-parameter-space">
+<h2>Exploring the Parameter Space<a class="headerlink" href="#exploring-the-parameter-space" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_percentS1</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Find the % of agents playing the strategy S1.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span>
+                   <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="o">==</span> <span class="s2">&quot;S1&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_agent_count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;mutation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]}</span>
+<span class="n">fixed_params</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;bias_S1&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+                 <span class="s2">&quot;update_type&quot;</span><span class="p">:</span> <span class="s2">&quot;imitator&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="n">sh</span><span class="p">,</span>
+                 <span class="s2">&quot;num_changes_per_step&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> 
+<span class="n">model_reporters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PercentS1&quot;</span><span class="p">:</span> <span class="n">get_percentS1</span><span class="p">}</span>
+<span class="n">param_sweep</span> <span class="o">=</span> <span class="n">BatchRunner</span><span class="p">(</span><span class="n">GameLatticeModel</span><span class="p">,</span> 
+                          <span class="n">variable_params</span><span class="p">,</span> 
+                          <span class="n">fixed_params</span><span class="p">,</span> 
+                          <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+                          <span class="n">max_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+                          <span class="n">model_reporters</span><span class="o">=</span><span class="n">model_reporters</span><span class="p">,</span> 
+                          <span class="n">display_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">param_sweep</span><span class="o">.</span><span class="n">run_all</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">param_sweep</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mutation</th>
+      <th>Run</th>
+      <th>PercentS1</th>
+      <th>height</th>
+      <th>width</th>
+      <th>bias_S1</th>
+      <th>update_type</th>
+      <th>game</th>
+      <th>num_changes_per_step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.9125</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>1</td>
+      <td>0.9275</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>2</td>
+      <td>0.9100</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>3</td>
+      <td>0.8650</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>4</td>
+      <td>0.9525</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.1</td>
+      <td>5</td>
+      <td>0.8250</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.1</td>
+      <td>6</td>
+      <td>0.8450</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.1</td>
+      <td>7</td>
+      <td>0.8050</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.1</td>
+      <td>8</td>
+      <td>0.8025</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.1</td>
+      <td>9</td>
+      <td>0.8025</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.2</td>
+      <td>10</td>
+      <td>0.7400</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.2</td>
+      <td>11</td>
+      <td>0.6700</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.2</td>
+      <td>12</td>
+      <td>0.7025</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.2</td>
+      <td>13</td>
+      <td>0.6675</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.2</td>
+      <td>14</td>
+      <td>0.6825</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.3</td>
+      <td>15</td>
+      <td>0.6600</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.3</td>
+      <td>16</td>
+      <td>0.5525</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.3</td>
+      <td>17</td>
+      <td>0.5725</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.3</td>
+      <td>18</td>
+      <td>0.5725</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0.3</td>
+      <td>19</td>
+      <td>0.5750</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>imitator</td>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mutation</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">PercentS1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Imitator, different games&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percet S1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;mutation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02b-games-local-interaction_9_01.png" src="../_images/02b-games-local-interaction_9_01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">pd</span><span class="p">,</span> <span class="n">pd2</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">hilo</span><span class="p">,</span> <span class="n">bos</span><span class="p">,</span> <span class="n">sh</span><span class="p">,</span> <span class="n">sh2</span><span class="p">]}</span>
+<span class="n">fixed_params</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;bias_S1&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+                 <span class="s2">&quot;update_type&quot;</span><span class="p">:</span> <span class="s2">&quot;prob_imitator&quot;</span><span class="p">,</span> 
+                 <span class="s2">&quot;mutation&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                 <span class="s2">&quot;num_changes_per_step&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> 
+<span class="n">model_reporters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PercentS1&quot;</span><span class="p">:</span> <span class="n">get_percentS1</span><span class="p">}</span>
+<span class="n">param_sweep</span> <span class="o">=</span> <span class="n">BatchRunner</span><span class="p">(</span><span class="n">GameLatticeModel</span><span class="p">,</span> 
+                          <span class="n">variable_params</span><span class="p">,</span> 
+                          <span class="n">fixed_params</span><span class="p">,</span> 
+                          <span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+                          <span class="n">max_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+                          <span class="n">model_reporters</span><span class="o">=</span><span class="n">model_reporters</span><span class="p">,</span> 
+                          <span class="n">display_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">param_sweep</span><span class="o">.</span><span class="n">run_all</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">param_sweep</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game</th>
+      <th>Run</th>
+      <th>PercentS1</th>
+      <th>height</th>
+      <th>width</th>
+      <th>bias_S1</th>
+      <th>update_type</th>
+      <th>mutation</th>
+      <th>num_changes_per_step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>0</td>
+      <td>0.2375</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>1</td>
+      <td>0.2500</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>2</td>
+      <td>0.2900</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>3</td>
+      <td>0.2200</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>4</td>
+      <td>0.2425</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>65</td>
+      <td>0.1550</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>66</td>
+      <td>0.2450</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>67</td>
+      <td>0.1575</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>68</td>
+      <td>0.2875</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>69</td>
+      <td>0.2050</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>prob_imitator</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>70 rows × 9 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_game_string</span><span class="p">(</span><span class="n">gstr</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">pd</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;PD&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">pd2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;PD2&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Coord&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">hilo</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;HiLo&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">bos</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;BoS&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">sh</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;SH&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">sh2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;SH2&quot;</span>
+    <span class="k">return</span> <span class="n">gstr</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">convert_game_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">game</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">PercentS1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Prob Imitatory, different games&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percet S1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Game&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02b-games-local-interaction_11_01.png" src="../_images/02b-games-local-interaction_11_01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;game&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">pd</span><span class="p">,</span> <span class="n">pd2</span><span class="p">,</span> <span class="n">coord</span><span class="p">,</span> <span class="n">hilo</span><span class="p">,</span> <span class="n">bos</span><span class="p">,</span> <span class="n">sh</span><span class="p">,</span> <span class="n">sh2</span><span class="p">],</span> 
+                   <span class="s2">&quot;update_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;imitator&quot;</span><span class="p">,</span> <span class="s2">&quot;prob_imitator&quot;</span><span class="p">]}</span>
+<span class="n">fixed_params</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> 
+                 <span class="s2">&quot;bias_S1&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> 
+                 <span class="s2">&quot;mutation&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+                 <span class="s2">&quot;num_changes_per_step&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> 
+<span class="n">model_reporters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;PercentS1&quot;</span><span class="p">:</span> <span class="n">get_percentS1</span><span class="p">}</span>
+<span class="n">param_sweep</span> <span class="o">=</span> <span class="n">BatchRunner</span><span class="p">(</span><span class="n">GameLatticeModel</span><span class="p">,</span> 
+                          <span class="n">variable_params</span><span class="p">,</span> 
+                          <span class="n">fixed_params</span><span class="p">,</span> 
+                          <span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+                          <span class="n">max_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> 
+                          <span class="n">model_reporters</span><span class="o">=</span><span class="n">model_reporters</span><span class="p">,</span> 
+                          <span class="n">display_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">param_sweep</span><span class="o">.</span><span class="n">run_all</span><span class="p">()</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">param_sweep</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>game</th>
+      <th>update_type</th>
+      <th>Run</th>
+      <th>PercentS1</th>
+      <th>height</th>
+      <th>width</th>
+      <th>bias_S1</th>
+      <th>mutation</th>
+      <th>num_changes_per_step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>imitator</td>
+      <td>0</td>
+      <td>0.0550</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>imitator</td>
+      <td>1</td>
+      <td>0.0425</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>imitator</td>
+      <td>2</td>
+      <td>0.0450</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>imitator</td>
+      <td>3</td>
+      <td>0.0825</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>imitator</td>
+      <td>4</td>
+      <td>0.1125</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>prob_imitator</td>
+      <td>135</td>
+      <td>0.1675</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>prob_imitator</td>
+      <td>136</td>
+      <td>0.1875</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>prob_imitator</td>
+      <td>137</td>
+      <td>0.1825</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>prob_imitator</td>
+      <td>138</td>
+      <td>0.2525</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Bi matrix game with payoff matrices:\n\nRow pl...</td>
+      <td>prob_imitator</td>
+      <td>139</td>
+      <td>0.2950</td>
+      <td>20</td>
+      <td>20</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>140 rows × 9 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_game_string</span><span class="p">(</span><span class="n">gstr</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">pd</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;PD&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">pd2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;PD2&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">coord</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Coord&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">hilo</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;HiLo&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">bos</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;BoS&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">sh</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;SH&quot;</span>
+    <span class="k">if</span> <span class="n">gstr</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">sh2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;SH2&quot;</span>
+    <span class="k">return</span> <span class="n">gstr</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">convert_game_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;update_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;imitator&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">game</span><span class="p">],</span>  
+            <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;update_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;imitator&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">PercentS1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Imitator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">convert_game_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;update_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;prob_imitator&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">game</span><span class="p">],</span> 
+            <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;update_type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;prob_imitator&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">PercentS1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob Imitator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Different games&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percet S1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Game&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02b-games-local-interaction_13_01.png" src="../_images/02b-games-local-interaction_13_01.png" />
+</div>
+</div>
+</div>
+<div class="section" id="games-on-graphs">
+<h2>Games on Graphs<a class="headerlink" href="#games-on-graphs" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>  <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">)])</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02b-games-local-interaction_16_01.png" src="../_images/02b-games-local-interaction_16_01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">NetworkGrid</span>
+
+<span class="c1"># fix two strategies</span>
+<span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">STRATS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;S1&quot;</span><span class="p">:</span> <span class="n">S1</span><span class="p">,</span>
+    <span class="s2">&quot;S2&quot;</span><span class="p">:</span> <span class="n">S2</span>
+<span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A player for a game </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">strat</span><span class="p">):</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">strat</span> <span class="c1"># fixed strategy to play in the game </span>
+
+    <span class="k">def</span> <span class="nf">average_payout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;find the average payout when playing the game against all neighbors&#39;&#39;&#39;</span>
+            
+        <span class="n">neighbors_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)]</span>
+            
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="n">neighbors_nodes</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">game</span><span class="p">[</span><span class="n">STRATS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">strat</span><span class="p">],</span> <span class="n">STRATS</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">strat</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">])</span>
+    
+    <span class="k">def</span> <span class="nf">total_payout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;find the total payout when playing the game against all neighbors&#39;&#39;&#39;</span>
+        <span class="n">neighbors_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">)]</span>
+            
+        <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="n">neighbors_nodes</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">game</span><span class="p">[</span><span class="n">STRATS</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">strat</span><span class="p">],</span> <span class="n">STRATS</span><span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">strat</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">])</span>
+
+    
+    
+<span class="k">class</span> <span class="nc">GameNetworkModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Play a fixed game on a lattice.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>  <span class="n">game</span><span class="p">,</span> <span class="n">bias_S1</span><span class="p">,</span>  <span class="n">mutation</span><span class="p">,</span> <span class="n">update_type</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">game</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias_S1</span> <span class="o">=</span> <span class="n">bias_S1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">=</span> <span class="n">update_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_changes_per_step</span> <span class="o">=</span> <span class="n">num_changes_per_step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mutation</span> <span class="o">=</span> <span class="n">mutation</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network</span> <span class="o">=</span> <span class="n">NetworkGrid</span><span class="p">(</span><span class="n">network</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span>
+             <span class="p">{</span><span class="s2">&quot;Percent S1&quot;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="mi">1</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> 
+                                              <span class="k">if</span>  <span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="o">==</span> <span class="s2">&quot;S1&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="n">m</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">get_agent_count</span><span class="p">()}</span>             <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="c1"># Set up agents</span>
+        <span class="n">agent_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            
+            <span class="n">strat</span> <span class="o">=</span> <span class="s2">&quot;S1&quot;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias_S1</span> <span class="k">else</span> <span class="s2">&quot;S2&quot;</span>
+            <span class="n">agent</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="n">agent_id</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">strat</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">place_agent</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+            <span class="n">agent_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_changes_per_step</span><span class="p">):</span>
+            
+            <span class="c1"># choose a random agent</span>
+            <span class="n">focal_agent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span>
+            
+            <span class="c1"># find all the neighbors of the agent</span>
+            
+            <span class="n">neighbors_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="n">focal_agent</span><span class="o">.</span><span class="n">pos</span><span class="p">)]</span>
+            
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="n">neighbors_nodes</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">==</span> <span class="s1">&#39;imitator&#39;</span><span class="p">:</span>
+                <span class="c1"># imitate most successful neighbor</span>
+                <span class="n">total_payouts</span>  <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">total_payout</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">}</span>
+
+                <span class="n">max_payout</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">total_payouts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+                <span class="n">strat_to_imitate</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">total_payouts</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">total_payouts</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="n">max_payout</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_type</span> <span class="o">==</span> <span class="s1">&#39;prob_imitator&#39;</span><span class="p">:</span>
+                
+                <span class="c1"># get the average payouts for each neighbor</span>
+                <span class="n">average_payouts</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">average_payout</span><span class="p">()</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">]</span>
+                <span class="n">total_average_payouts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">average_payouts</span><span class="p">)</span>
+                
+                <span class="c1"># probabilities for each neighbor</span>
+                <span class="n">neighbor_probs</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">.</span><span class="n">average_payout</span><span class="p">()</span> <span class="o">/</span> <span class="n">total_average_payouts</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">]</span>
+                
+                <span class="c1"># probabilistically imitate most successful neighbor </span>
+                <span class="n">strat_to_imitate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">neighbors</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">neighbor_probs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strat</span>
+            
+            
+            <span class="c1"># mutations</span>
+            <span class="n">other_strat</span> <span class="o">=</span> <span class="s2">&quot;S2&quot;</span> <span class="k">if</span> <span class="n">strat_to_imitate</span> <span class="o">==</span> <span class="s2">&quot;S1&quot;</span> <span class="k">else</span> <span class="s2">&quot;S1&quot;</span>
+            
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">mutation</span><span class="p">:</span>
+                <span class="n">focal_agent</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">other_strat</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">focal_agent</span><span class="o">.</span><span class="n">strat</span> <span class="o">=</span> <span class="n">strat_to_imitate</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            
+            <span class="c1"># stop running if all agents have the same strategy</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">strat</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span><span class="o">=</span><span class="kc">False</span>
+            
+            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>  
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;prob_imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">sh</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d8806bd3a453403ca7030f485d6700e9", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_19_11.png" src="../_images/02b-games-local-interaction_19_11.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> 
+        <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+        <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> 
+        <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+        <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>  
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">pd</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "184c2464881340b4a12a7e78ecea466a", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_20_11.png" src="../_images/02b-games-local-interaction_20_11.png" />
+<img alt="../_images/02b-games-local-interaction_20_21.png" src="../_images/02b-games-local-interaction_20_21.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">star_graph</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>  
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">sh</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "87f7a2c016da452c82f390956dc33195", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_21_11.png" src="../_images/02b-games-local-interaction_21_11.png" />
+<img alt="../_images/02b-games-local-interaction_21_21.png" src="../_images/02b-games-local-interaction_21_21.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">coord</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "91e3fc5706014652bf9ed69fd440e8be", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_22_11.png" src="../_images/02b-games-local-interaction_22_11.png" />
+<img alt="../_images/02b-games-local-interaction_22_21.png" src="../_images/02b-games-local-interaction_22_21.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">petersen_graph</span><span class="p">()</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>  
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">pd2</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0fa09601dbaf4a82beb7dc6f538192c0", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_23_11.png" src="../_images/02b-games-local-interaction_23_11.png" />
+<img alt="../_images/02b-games-local-interaction_23_21.png" src="../_images/02b-games-local-interaction_23_21.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">erdos_renyi_graph</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">bias_S1</span> <span class="o">=</span> <span class="mf">0.5</span>  
+<span class="n">mutation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">update_type</span> <span class="o">=</span> <span class="s2">&quot;imitator&quot;</span>
+<span class="n">game</span> <span class="o">=</span> <span class="n">pd</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">GameNetworkModel</span><span class="p">(</span><span class="n">game</span><span class="p">,</span> 
+                         <span class="n">bias_S1</span><span class="p">,</span> 
+                         <span class="n">mutation</span><span class="p">,</span> 
+                         <span class="n">update_type</span><span class="p">,</span> 
+                         <span class="n">G</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">)):</span>
+<span class="c1"># initialize the model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">model_out</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">datacollector</span><span class="o">.</span><span class="n">get_model_vars_dataframe</span><span class="p">()</span>
+<span class="n">model_out</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "fb928ff3aa234fb19abfb5e796bbce73", "version_major": 2, "version_minor": 0}
+</script><img alt="../_images/02b-games-local-interaction_24_11.png" src="../_images/02b-games-local-interaction_24_11.png" />
+<img alt="../_images/02b-games-local-interaction_24_21.png" src="../_images/02b-games-local-interaction_24_21.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"0bdb319152b745db95aeb7ec63c4af45": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0d70188e548046408738f9b4ff41081b": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0eeb178b279346b996e28f952004b793": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0bdb319152b745db95aeb7ec63c4af45", "placeholder": "\u200b", "style": "IPY_MODEL_c3e5fa5868bc4a8ca68baf840822dba1", "value": " 14/500 [00:00&lt;00:00, 509.38it/s]"}}, "0fa09601dbaf4a82beb7dc6f538192c0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e4720158c9f74d6ca557ad0b66f2ed58", "IPY_MODEL_9054d326a279425ba38384cc48f5d643", "IPY_MODEL_0eeb178b279346b996e28f952004b793"], "layout": "IPY_MODEL_d48737070f824c0b916b89238544154b"}}, "138a460d5da94dacadb2669da4669ca1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "184c2464881340b4a12a7e78ecea466a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_9134e9deae73433baebcdc224c9b1770", "IPY_MODEL_f51f9b901a17412599d7708e9c2feb8a", "IPY_MODEL_8fa4fc9b5da64434a9bdd719be401f96"], "layout": "IPY_MODEL_8bf4e8b92dee4894ab7656ebba1ea892"}}, "1e192316d01640da8d74dce7be6cecbe": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "20409a86ed4746b788363bd13a176d49": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "23bcc8ef73184bb5b5d81444abad5113": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "23ef68457bb04959b317931645cb8910": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_e4b379bf707b42c996905da69e76e77b", "placeholder": "\u200b", "style": "IPY_MODEL_aa5dc98372dd451ba53e3f67a10eaf28", "value": "100%"}}, "245041b2834a45cfbdb083d8a27cc1d0": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "280d816f881849499b1d5064c3ebf0b3": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_20409a86ed4746b788363bd13a176d49", "placeholder": "\u200b", "style": "IPY_MODEL_138a460d5da94dacadb2669da4669ca1", "value": " 44/500 [00:00&lt;00:02, 209.37it/s]"}}, "2cbb2af12d4642fe8ed5c9ca1f46701f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3022233c1f684509acb310fd6552e6bf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "3571da0a240f482b84213c72c43c8b80": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "3e4e2e7cf7ca43218dccd9b0c1a31959": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "49890057108b48809bdd3cbde820ada9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "4f43fe538c694377bceba6ea17e14867": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "509464cb686d447abeef79e37425e0cf": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "50d1c1769d394e808722d01b0c203e9b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "559ed6fa275c4220bc14f6361784a6fa": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "61c4d8138d744443a140055c8d0301cb": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6a346526f23e4033884b2457ca9f5a0c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "6d0e5f6f0d2e488986bbd12e4105b5bb": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "6f1240628309437eabb05511a829fd5a": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "73a146cfd21c4720ac57a82368322a7e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "7941690b79dd47da8802f7d45cf08799": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "danger", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ed4569a92b1e4a7da793511220f5fa27", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_a3761d4682a549908131e36945c7de32", "value": 104.0}}, "79f30ad8e8a04fc3a9c2bc565e3b1895": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "7ffdc609a277490fb4d737f23e30a926": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "danger", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_1e192316d01640da8d74dce7be6cecbe", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_aa26882f0fac4e59bddde8478a13509a", "value": 40.0}}, "8176367dfc234d31b84a91220bb1f19f": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "85713955bbb8416c850dd0ab9f1bae9e": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "85a261c47d964386adfefe4be296dc54": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "865766a845ae4501ac2a9da81dabff35": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_23ef68457bb04959b317931645cb8910", "IPY_MODEL_ed91548f1990435f8b7c8aea1a7b308c", "IPY_MODEL_bfd60ecfbc304fc68bb72fe43bf37cc9"], "layout": "IPY_MODEL_e9aae895a8ba40799f28460766349224"}}, "869eb2e1401644659f6d27f764840d20": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "87f7a2c016da452c82f390956dc33195": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_a51bb791811a4bca9bcbec631d8083d6", "IPY_MODEL_7941690b79dd47da8802f7d45cf08799", "IPY_MODEL_8be8f7cd8a524856b25684b2fd92b537"], "layout": "IPY_MODEL_cc8ce285aea243f781e69ae14d3dc57c"}}, "8be8f7cd8a524856b25684b2fd92b537": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3e4e2e7cf7ca43218dccd9b0c1a31959", "placeholder": "\u200b", "style": "IPY_MODEL_869eb2e1401644659f6d27f764840d20", "value": " 104/500 [00:00&lt;00:00, 1844.49it/s]"}}, "8bf4e8b92dee4894ab7656ebba1ea892": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8e4e2f0b27f44f4baa061eedce0484bf": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8fa4fc9b5da64434a9bdd719be401f96": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_ddec3765830d4db8b742642d2e129c72", "placeholder": "\u200b", "style": "IPY_MODEL_49890057108b48809bdd3cbde820ada9", "value": " 500/500 [00:00&lt;00:00, 2758.67it/s]"}}, "9054d326a279425ba38384cc48f5d643": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "danger", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_cb39f71d699b4bb2acfaea892e6416fd", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_f8fb3c3f03334af6bda1237f93aa5882", "value": 14.0}}, "9134e9deae73433baebcdc224c9b1770": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_85a261c47d964386adfefe4be296dc54", "placeholder": "\u200b", "style": "IPY_MODEL_b001bc86bb8241afbc1db341b050e10a", "value": "100%"}}, "91e3fc5706014652bf9ed69fd440e8be": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_fcc1cc5081ae4ca0bec8c7b0fc038f6d", "IPY_MODEL_d2d3c676f98842a0aa29083ea758ec87", "IPY_MODEL_280d816f881849499b1d5064c3ebf0b3"], "layout": "IPY_MODEL_23bcc8ef73184bb5b5d81444abad5113"}}, "94152eb332224919bed3ffb735368478": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9ce1b559d7a24c28a79f851e3d053e1d": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "9de098a447d04033b8a7e21c4384ef81": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "a0896557eb484caa910d847e03174cad": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "danger", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_6d0e5f6f0d2e488986bbd12e4105b5bb", "max": 100.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_73a146cfd21c4720ac57a82368322a7e", "value": 27.0}}, "a3761d4682a549908131e36945c7de32": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "a51bb791811a4bca9bcbec631d8083d6": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_9ce1b559d7a24c28a79f851e3d053e1d", "placeholder": "\u200b", "style": "IPY_MODEL_c1100855dade43cbbf4801422b026c29", "value": " 21%"}}, "a6c0a3fa85c74cde9fba9c7891269eb4": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "aa26882f0fac4e59bddde8478a13509a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "aa5dc98372dd451ba53e3f67a10eaf28": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "adeefc90b0ae49cb83d4293089c905c5": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "afefc5cbe0c547ffa97c6e7d3803ed95": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_61c4d8138d744443a140055c8d0301cb", "placeholder": "\u200b", "style": "IPY_MODEL_9de098a447d04033b8a7e21c4384ef81", "value": " 40/500 [00:00&lt;00:00, 1002.03it/s]"}}, "b001bc86bb8241afbc1db341b050e10a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bd432d119d1d4dddb7b91ef480bcb807": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "bfd60ecfbc304fc68bb72fe43bf37cc9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_a6c0a3fa85c74cde9fba9c7891269eb4", "placeholder": "\u200b", "style": "IPY_MODEL_85713955bbb8416c850dd0ab9f1bae9e", "value": " 1000/1000 [00:01&lt;00:00, 554.14it/s]"}}, "c1100855dade43cbbf4801422b026c29": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "c3e5fa5868bc4a8ca68baf840822dba1": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "cb39f71d699b4bb2acfaea892e6416fd": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "cc8ce285aea243f781e69ae14d3dc57c": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d2d3c676f98842a0aa29083ea758ec87": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "danger", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8176367dfc234d31b84a91220bb1f19f", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_adeefc90b0ae49cb83d4293089c905c5", "value": 44.0}}, "d48737070f824c0b916b89238544154b": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d7d0dc70b4c2426a908a96734488ca6b": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": ""}}, "d8806bd3a453403ca7030f485d6700e9": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_f5658b57ff24425ab255fa81fc7f41cf", "IPY_MODEL_a0896557eb484caa910d847e03174cad", "IPY_MODEL_fff1b971311849ee89f17a3714831c7f"], "layout": "IPY_MODEL_6f1240628309437eabb05511a829fd5a"}}, "ddec3765830d4db8b742642d2e129c72": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e34f733424c246eab686f55b0ecf52ba": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_509464cb686d447abeef79e37425e0cf", "placeholder": "\u200b", "style": "IPY_MODEL_79f30ad8e8a04fc3a9c2bc565e3b1895", "value": "  8%"}}, "e4720158c9f74d6ca557ad0b66f2ed58": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_245041b2834a45cfbdb083d8a27cc1d0", "placeholder": "\u200b", "style": "IPY_MODEL_559ed6fa275c4220bc14f6361784a6fa", "value": "  3%"}}, "e4b379bf707b42c996905da69e76e77b": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "e9aae895a8ba40799f28460766349224": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ed4569a92b1e4a7da793511220f5fa27": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "ed91548f1990435f8b7c8aea1a7b308c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_0d70188e548046408738f9b4ff41081b", "max": 1000.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_3022233c1f684509acb310fd6552e6bf", "value": 1000.0}}, "f51f9b901a17412599d7708e9c2feb8a": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "FloatProgressModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatProgressModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "ProgressView", "bar_style": "success", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_8e4e2f0b27f44f4baa061eedce0484bf", "max": 500.0, "min": 0.0, "orientation": "horizontal", "style": "IPY_MODEL_50d1c1769d394e808722d01b0c203e9b", "value": 500.0}}, "f5658b57ff24425ab255fa81fc7f41cf": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_94152eb332224919bed3ffb735368478", "placeholder": "\u200b", "style": "IPY_MODEL_6a346526f23e4033884b2457ca9f5a0c", "value": " 27%"}}, "f8fb3c3f03334af6bda1237f93aa5882": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "ProgressStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "ProgressStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "bar_color": null, "description_width": ""}}, "fb928ff3aa234fb19abfb5e796bbce73": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HBoxModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HBoxView", "box_style": "", "children": ["IPY_MODEL_e34f733424c246eab686f55b0ecf52ba", "IPY_MODEL_7ffdc609a277490fb4d737f23e30a926", "IPY_MODEL_afefc5cbe0c547ffa97c6e7d3803ed95"], "layout": "IPY_MODEL_2cbb2af12d4642fe8ed5c9ca1f46701f"}}, "fcc1cc5081ae4ca0bec8c7b0fc038f6d": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_4f43fe538c694377bceba6ea17e14867", "placeholder": "\u200b", "style": "IPY_MODEL_bd432d119d1d4dddb7b91ef480bcb807", "value": "  9%"}}, "fff1b971311849ee89f17a3714831c7f": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "HTMLModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "HTMLView", "description": "", "description_tooltip": null, "layout": "IPY_MODEL_3571da0a240f482b84213c72c43c8b80", "placeholder": "\u200b", "style": "IPY_MODEL_d7d0dc70b4c2426a908a96734488ca6b", "value": " 27/100 [00:00&lt;00:00, 782.02it/s]"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./game-theory"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="02a-intro-game-theory.html" title="previous page">Introduction to Game Theory</a>
+    <a class='right-next' id="next-link" href="02c-divide-the-dollar.html" title="next page">Justice and Bargaining</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

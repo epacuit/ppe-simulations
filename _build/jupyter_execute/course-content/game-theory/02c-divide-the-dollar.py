@@ -1,57 +1,51 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Justice and Bargaining
 
-# # Justice and Bargaining
-# 
-# 
-# J. McKenzie Alexander and B. Skyrms, [Bargaining with Neighbors: Is Justice Contagious](https://umd.instructure.com/courses/1301051/files/61141688?module_item_id=10558093), Journal of Philosophy 96 (11):588 (1999)
-# 
-# See also [J. Alexander, Evolutionary Game Theory, Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/game-evolutionary/#SenFai)
-# 
 
-# ##  Bargaining
-# 
-# 
-# Two individuals are to decide how to distribute a certain amount of money. 
-# 
-# Neither is especially entitled, or especially needy, or especially anything---their positions are entirely symmetric. 
-# 
-# Their utilities derived from the distribution may be taken, for all intents and purposes, simply as the amount of money received. 
-# 
-# If they cannot decide, the money remains undistributed and neither gets any. 
-# 
+J. McKenzie Alexander and B. Skyrms, [Bargaining with Neighbors: Is Justice Contagious](https://umd.instructure.com/courses/1301051/files/61141688?module_item_id=10558093), Journal of Philosophy 96 (11):588 (1999)
 
-# ## Two Principles of Justice
-# 
-# **Optimality**: a distribution is not just if, under an alternative distribution, all recipients would be better off.
-# 
-# **Equity**: if the position of the recipients is symmetric, then the distribution should be symmetric. That is to say, it does not vary when we switch the recipients.
-# 
-# 
+See also [J. Alexander, Evolutionary Game Theory, Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/entries/game-evolutionary/#SenFai)
 
-# ### Classical Game Theory
-# 
-# Suppose that two  rational agents play the divide-the-dollar game. Their rationality is *common knowledge*. What do they do?
 
-# 
-# | &nbsp; |$0$ |  $1$ |  $2$ |  $3$ |  $4$ |  $5$ |  $6$ |  $7$ |  $8$ |  $9$ |  $10$ | 
-# |----|----|----|----|----|----|----|----|----|----|----|----|
-# |$0$ | $0,0$ | $0,1$ | $0,2$ | $0,3$ | $0,4$ | $0,5$ | $0,6$ | $0,7$ | $0,8$ | $0,9$ | $0,10$ | 
-# |$1$ | $1,0$ | $1,1$ | $1,2$ | $1,3$ | $1,4$ | $1,5$ | $1,6$ | $1,7$ | $1,8$ | $1,9$ | $0,0$ | 
-# |$2$ | $2,0$ | $2,1$ | $2,2$ | $2,3$ | $2,4$ | $2,5$ | $2,6$ | $2,7$ | $2,8$ | $0,0$ | $0,0$ |
-# |$3$ | $3,0$ | $3,1$ | $3,2$ | $3,3$ | $3,4$ | $3,5$ | $3,6$ | $3,7$ | $0,0$ | $0,0$ | $0,0$ | 
-# |$4$ | $4,0$ | $4,1$ | $4,2$ | $4,3$ | $4,4$ | $4,5$ | $4,6$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
-# |$5$ | $5,0$ | $5,1$ | $5,2$ | $5,3$ | $5,4$ | $5,5$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
-# |$6$ | $6,0$ | $6,1$ | $6,2$ | $6,3$ | $6,4$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
-# |$7$ | $7,0$ | $7,1$ | $7,2$ | $7,3$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
-# |$8$ | $8,0$ | $8,1$ | $8,2$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
-# |$9$ | $9,0$ | $9,1$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
-# |$10$ | $10,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
-# 
-# 
-# 
+##  Bargaining
 
-# In[1]:
+
+Two individuals are to decide how to distribute a certain amount of money. 
+
+Neither is especially entitled, or especially needy, or especially anything---their positions are entirely symmetric. 
+
+Their utilities derived from the distribution may be taken, for all intents and purposes, simply as the amount of money received. 
+
+If they cannot decide, the money remains undistributed and neither gets any. 
+
+
+## Two Principles of Justice
+
+**Optimality**: a distribution is not just if, under an alternative distribution, all recipients would be better off.
+
+**Equity**: if the position of the recipients is symmetric, then the distribution should be symmetric. That is to say, it does not vary when we switch the recipients.
+
+
+
+### Classical Game Theory
+
+Suppose that two  rational agents play the divide-the-dollar game. Their rationality is *common knowledge*. What do they do?
+
+
+| &nbsp; |$0$ |  $1$ |  $2$ |  $3$ |  $4$ |  $5$ |  $6$ |  $7$ |  $8$ |  $9$ |  $10$ | 
+|----|----|----|----|----|----|----|----|----|----|----|----|
+|$0$ | $0,0$ | $0,1$ | $0,2$ | $0,3$ | $0,4$ | $0,5$ | $0,6$ | $0,7$ | $0,8$ | $0,9$ | $0,10$ | 
+|$1$ | $1,0$ | $1,1$ | $1,2$ | $1,3$ | $1,4$ | $1,5$ | $1,6$ | $1,7$ | $1,8$ | $1,9$ | $0,0$ | 
+|$2$ | $2,0$ | $2,1$ | $2,2$ | $2,3$ | $2,4$ | $2,5$ | $2,6$ | $2,7$ | $2,8$ | $0,0$ | $0,0$ |
+|$3$ | $3,0$ | $3,1$ | $3,2$ | $3,3$ | $3,4$ | $3,5$ | $3,6$ | $3,7$ | $0,0$ | $0,0$ | $0,0$ | 
+|$4$ | $4,0$ | $4,1$ | $4,2$ | $4,3$ | $4,4$ | $4,5$ | $4,6$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
+|$5$ | $5,0$ | $5,1$ | $5,2$ | $5,3$ | $5,4$ | $5,5$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
+|$6$ | $6,0$ | $6,1$ | $6,2$ | $6,3$ | $6,4$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
+|$7$ | $7,0$ | $7,1$ | $7,2$ | $7,3$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
+|$8$ | $8,0$ | $8,1$ | $8,2$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
+|$9$ | $9,0$ | $9,1$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ |
+|$10$ | $10,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | $0,0$ | 
+
+
 
 
 import nashpy as nash
@@ -92,57 +86,49 @@ for eq in divide_the_dollar.support_enumeration():
         break
     num_nash_eq += 1
 
+If experimental game theorists have people actually play divide-the-dollar, they *alwas* split equally.
 
-# If experimental game theorists have people actually play divide-the-dollar, they *alwas* split equally.
-# 
-# Rational-choice theory has no explanation of this phenomenon. It appears that the experimental subjects are using norms of justice to select a particular Nash equilibrium of the game. But what account can we give for the existence of these norms?
+Rational-choice theory has no explanation of this phenomenon. It appears that the experimental subjects are using norms of justice to select a particular Nash equilibrium of the game. But what account can we give for the existence of these norms?
 
-# ## Evolutionary Game Theory
-# 
-# 
-# 
-# Evolutionary game theory  promises an explanation, but the promise is only partially fulfilled. Demand-half is the only **evolutionarily stable strategy**:  It is the only strategy such that, if the whole population played that strategy, no small group of innovators, or "mutants",  playing a different strategy could achieve an average payoff at least as great as the natives. 
-# 
-# 
+## Evolutionary Game Theory
 
-# A problem with that explanation: There are states of the population which are evolutionarily stable where some fraction of the population makes one demand and some fraction makes another. The state where half the population demands one third and half the population demands two thirds is such an evolutionarily stable *polymorphism* of the population. 
-# 
-# We can think of these as pitfalls along the evolutionary road to justice.
 
-# In[2]:
 
+Evolutionary game theory  promises an explanation, but the promise is only partially fulfilled. Demand-half is the only **evolutionarily stable strategy**:  It is the only strategy such that, if the whole population played that strategy, no small group of innovators, or "mutants",  playing a different strategy could achieve an average payoff at least as great as the natives. 
+
+
+
+A problem with that explanation: There are states of the population which are evolutionarily stable where some fraction of the population makes one demand and some fraction makes another. The state where half the population demands one third and half the population demands two thirds is such an evolutionarily stable *polymorphism* of the population. 
+
+We can think of these as pitfalls along the evolutionary road to justice.
 
 
 # make graphs look nice
 import seaborn as sns
 sns.set()
 
+### Replicator Dynamics
 
-# ### Replicator Dynamics
-# 
-# Consider a large population with $N$ replicators. In each period, each replicator is randomly matched with another replicator for playing a two-players game.
-# 
-# Replicators are assigned strategies $A$ or $B$.
-# 
-# |&nbsp; | $A$ | $B$ |
-# |-|-----|-----|
-# |$A$| $a,a$ | $b,c$|
-# |$B$| $c,b$ | $d,d$|
-# 
-# 
-# The proporition of the population playing strategy  $A$  is  $p_A$ and the proportion playing $B$ is $p_B$.
-# 
-# 
-# The state of the population is given by  $(p_A, p_B)$  where  $p_A\ge 0, p_B\ge 0$ and $p_A + p_B=1$. 
-# 
+Consider a large population with $N$ replicators. In each period, each replicator is randomly matched with another replicator for playing a two-players game.
 
-# Suppose that individuals are paired at random from a very large population to play the (bargaining) game. We assume that the probability of meeting a strategy can be taken as the proportion of the population that has that strategy. The population proportions evolve according to the **replicator dynamics**. The proportion of the population using a strategy in the next generation is the proportion playing that strategy in the current generation mutiplied by a *fitness factor*. This fitness factor is just the ratio of the average payoff to this strategy to the average payoff in the whole population.
+Replicators are assigned strategies $A$ or $B$.
 
-# In[3]:
+|&nbsp; | $A$ | $B$ |
+|-|-----|-----|
+|$A$| $a,a$ | $b,c$|
+|$B$| $c,b$ | $d,d$|
 
+
+The proporition of the population playing strategy  $A$  is  $p_A$ and the proportion playing $B$ is $p_B$.
+
+
+The state of the population is given by  $(p_A, p_B)$  where  $p_A\ge 0, p_B\ge 0$ and $p_A + p_B=1$. 
+
+
+Suppose that individuals are paired at random from a very large population to play the (bargaining) game. We assume that the probability of meeting a strategy can be taken as the proportion of the population that has that strategy. The population proportions evolve according to the **replicator dynamics**. The proportion of the population using a strategy in the next generation is the proportion playing that strategy in the current generation mutiplied by a *fitness factor*. This fitness factor is just the ratio of the average payoff to this strategy to the average payoff in the whole population.
 
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
+%matplotlib inline
 
 # PD payoffs
 #a = 3; b = 0; c = 4; d = 1
@@ -169,10 +155,6 @@ plt.plot(pA, 'r', label ='share of strategy A')
 plt.plot(pB, 'b', label ='share of strategy B')
 plt.ylim(-0.1, 1.1)
 plt.legend(loc='center', bbox_to_anchor=[1.25,0.75]);
-
-
-# In[4]:
-
 
 
 strats = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -208,10 +190,6 @@ for s in strats:
 plt.legend(loc='best', bbox_to_anchor=[1.25,1])
 
 plt.show()
-
-
-# In[5]:
-
 
 import tqdm.notebook as tqdm 
 
@@ -255,10 +233,6 @@ for t in tqdm.tqdm(range(num_trials)):
     num_converge[tuple(winning_strats)] += 1
 
 
-# In[6]:
-
-
-
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
 
@@ -272,19 +246,15 @@ students = [num_converge[(0,10)],
 ax.bar(langs,students)
 plt.show()
 
+Suppose that every once and a while a member of the population just picks a strategy at random and tries it out---perhaps as an experiment, perhaps just as a mistake. 
 
-# Suppose that every once and a while a member of the population just picks a strategy at random and tries it out---perhaps as an experiment, perhaps just as a mistake. 
-# 
-# Suppose we are at a polymorphic equilibrium---for instance, the $(4,6)$ equilibrium. If there is some fixed probability of an experiment (or mistake), and if experiments are independent, and if we wait long enough, there will be enough experiments of the right kind to kick the population out of the basin of attraction of the $(4,6)$ polymorphism and into the basin of attraction of fair division and the evolutionary dynamics will carry fair division to fixation. 
-# 
-# 
-# Peyton Young showed that, if we take the limit as the probability of someone experimenting gets smaller and smaller, the ratio of time spent in fair division approaches one. 
-# 
+Suppose we are at a polymorphic equilibrium---for instance, the $(4,6)$ equilibrium. If there is some fixed probability of an experiment (or mistake), and if experiments are independent, and if we wait long enough, there will be enough experiments of the right kind to kick the population out of the basin of attraction of the $(4,6)$ polymorphism and into the basin of attraction of fair division and the evolutionary dynamics will carry fair division to fixation. 
 
-# However, it is important to realise that the replicator dynamics assumes any pairwise interaction between individuals is equally likely. In reality, quite often interactions between individuals are *correlated* to some extent. Correlated interaction can occur as a result of spatial location (as shown above for the case of the spatial prisoner's dilemma), the structuring effect of social relations, or ingroup/outgroup membership effects, to list a few causes.
 
-# In[7]:
+Peyton Young showed that, if we take the limit as the probability of someone experimenting gets smaller and smaller, the ratio of time spent in fair division approaches one. 
 
+
+However, it is important to realise that the replicator dynamics assumes any pairwise interaction between individuals is equally likely. In reality, quite often interactions between individuals are *correlated* to some extent. Correlated interaction can occur as a result of spatial location (as shown above for the case of the spatial prisoner's dilemma), the structuring effect of social relations, or ingroup/outgroup membership effects, to list a few causes.
 
 from mesa import Model, Agent
 from mesa.time import RandomActivation
@@ -298,9 +268,6 @@ from ipywidgets import widgets, interact, interact_manual
 import seaborn as sns
 import numpy as np
 import pandas
-
-
-# In[8]:
 
 
 def payout(s,other_s):
@@ -425,9 +392,6 @@ class DivideDollarLatticeModel(Model):
             self.running=False
 
 
-# In[9]:
-
-
 strats = [0,1,2,3,4,5,6,7,8,9,10]
 
 height, width = 20, 20 
@@ -444,20 +408,13 @@ while running and m.schedule.steps < 1000:
     if len(list(set([a.strat for a in m.schedule.agents]))) == 1:
         running=False
 
-
-# In[10]:
-
-
 df = m.datacollector.get_model_vars_dataframe()
 df
-
-
-# In[11]:
-
 
 sns.set(rc={'figure.figsize':(11.7,8.27)})
 for s in strats:
     plt.plot(list(df[str(s)]), lw=2, label = str(s))
     
 plt.legend(loc='best', bbox_to_anchor=[1.15,1]);
+
 

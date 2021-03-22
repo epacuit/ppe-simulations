@@ -1,0 +1,1318 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hegslemann Krause Model" href="hk-model.html" />
+    <link rel="prev" title="Justice and Bargaining" href="../game-theory/02c-divide-the-dollar.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/belief-dynamics/overview.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fbelief-dynamics/overview.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/belief-dynamics/overview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-measures">
+   Probability Measures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-in-python-discrete-probability">
+   Probability in Python: Discrete Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-in-python-continuous-probability">
+   Probability in Python: Continuous Probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning">
+   Learning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-from-others">
+     Learning from Others
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulations">
+   Simulations
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this section, we will explore a number of different simulations involving a group of agents, each of which has a different opinion or belief about one or more events. The agents will update their beliefs in response to evidence and/or testimony from other agents in the group.</p>
+<p>We typically represent the an agent’s opinion or belief (sometimes called the agent’s <em>credence</em>) as a <em>probability</em>.   There is an extensive literature about using probability to represent beliefs:</p>
+<ul class="simple">
+<li><p>W. Talbott, <a class="reference external" href="https://plato.stanford.edu/entries/epistemology-bayesian/">Bayesian Epistemology</a>, Stanford Encyclopedia of Philosophy</p></li>
+<li><p>A. Hajek, <a class="reference external" href="https://plato.stanford.edu/entries/probability-interpret/">Interpretations of Probability</a>, Stanford Encyclopedia of Philosophy</p></li>
+</ul>
+<div class="section" id="probability-measures">
+<h2>Probability Measures<a class="headerlink" href="#probability-measures" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that <span class="math notranslate nohighlight">\(W\)</span> is a set of states (i.e., the possible <em>outcomes</em>).</p>
+<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is a set <span class="math notranslate nohighlight">\(\Sigma\subseteq\wp(W)\)</span> such that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(W\in\Sigma\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(A\in\Sigma\)</span>, then <span class="math notranslate nohighlight">\(\overline{A}\in \Sigma\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\{A_i\}\)</span> is a countable collection of sets from <span class="math notranslate nohighlight">\(\Sigma\)</span>, then <span class="math notranslate nohighlight">\(\bigcup_i A_i\in\Sigma\)</span></p></li>
+</ul>
+<p>A  <strong>probability measure</strong> is a function <span class="math notranslate nohighlight">\(Pr:\Sigma\rightarrow[0,1]\)</span> satisfying:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(Pr(W)=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Pr(A\cup B)=Pr(A)+Pr(B)\)</span> whenever <span class="math notranslate nohighlight">\(A\cap B=\emptyset\)</span></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\((W,\Sigma,Pr)\)</span> is called a probability space.</p>
+<p>A probability measure <span class="math notranslate nohighlight">\(Pr\)</span> satisfies the <strong>Kolmogorov Axioms</strong>:</p>
+<ol class="simple">
+<li><p>For each <span class="math notranslate nohighlight">\(E\in\Sigma\)</span>, <span class="math notranslate nohighlight">\(0\le Pr(E)\le 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Pr(W)=1\)</span> and  <span class="math notranslate nohighlight">\(Pr(\emptyset)=0\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(E_1,\ldots, E_n,\ldots\)</span> are pairwise disjoint (<span class="math notranslate nohighlight">\(E_i\cap E_j=\emptyset\)</span> for <span class="math notranslate nohighlight">\(i\ne j\)</span>), then <span class="math notranslate nohighlight">\(Pr(\bigcup_i E_i)=\sum_i Pr(E_i)\)</span></p></li>
+</ol>
+<p>Other properties (derivable from the above axioms) include:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(Pr(\overline{E})=1-Pr(E)\)</span> (<span class="math notranslate nohighlight">\(\overline{E}\)</span> is the complement of <span class="math notranslate nohighlight">\(E\)</span>)</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(E\subseteq F\)</span> then <span class="math notranslate nohighlight">\(Pr(E)\le Pr(F)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Pr(E\cup F)=Pr(E)+Pr(F)-Pr(E\cap F)\)</span></p></li>
+</ol>
+<p>Given a probability measure <span class="math notranslate nohighlight">\(Pr\)</span> on <span class="math notranslate nohighlight">\((W, \Sigma)\)</span> and events <span class="math notranslate nohighlight">\(E,F\in \Sigma\)</span>, the <strong>conditional probability</strong> if <span class="math notranslate nohighlight">\(E\)</span> given <span class="math notranslate nohighlight">\(F\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[Pr(E\mid F)=\frac{Pr(E\cap F)}{Pr(F)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Pr(F)&gt;0\)</span> (the conditional probability is undefined when <span class="math notranslate nohighlight">\(Pr(F)=0\)</span>).</p>
+</div>
+<div class="section" id="probability-in-python-discrete-probability">
+<h2>Probability in Python: Discrete Probability<a class="headerlink" href="#probability-in-python-discrete-probability" title="Permalink to this headline">¶</a></h2>
+<p>When there is a single proposition or event about which the agents have a belief, then it is very easy to represent an agent’s beliefs as a single floating point variable.</p>
+<p>When there is a finite set of mutually exclusive and exhaustive outcomes, the best way is to represent a probability over this set outcomes as a list or a dictionary.  For instance, suppose that there are 4 mutually exclusive and exhaustive outcomes.  Then we can represent the probability over these 4 as a list of floats whose sum in 1.0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The sum is&quot;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">prs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sum is 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>To choose the outcome with the given probabilities, you can use either import the <code class="docutils literal notranslate"><span class="pre">random</span></code> package</p>
+<p><code class="docutils literal notranslate"><span class="pre">random.choices</span></code>: see <a class="reference external" href="https://www.w3schools.com/python/ref_random_choices.asp">https://www.w3schools.com/python/ref_random_choices.asp</a></p>
+<p>or import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and use</p>
+<p><code class="docutils literal notranslate"><span class="pre">numpy.random.choice</span></code>: see <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html">https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html</a></p>
+<p>For instance,  use the following code to randomly select the propositions 0, 1, 2, 3 or 4 given the above probabilities <code class="docutils literal notranslate"><span class="pre">prs</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># you will get a different result every time the code is executed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prs</span><span class="p">)),</span> <span class="n">p</span> <span class="o">=</span> <span class="n">prs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes it is more convenient to use a dictionary to represent the agent’s probability.  This may be useful when the events are represented as strings or some other mutable object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prs_as_dict</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;E1&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;E2&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;E3&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;E4&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">}</span>
+
+<span class="n">events</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">prs_as_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="c1"># do 5 samples, you will get a different result every time the code is executed</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">prs_as_dict</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">events</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E3
+E1
+E2
+E2
+E4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You might have expected that I would have implemented the random choice as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">print(np.random.choice(prs_as_dict.keys(),</span> <span class="pre">p</span> <span class="pre">=</span> <span class="pre">prs_as_dict.values())</span></code>.   There are two problems with this:</p>
+<ol class="simple">
+<li><p>It will produce an error since the <code class="docutils literal notranslate"><span class="pre">keys</span></code> and <code class="docutils literal notranslate"><span class="pre">values</span></code> methods return objects that are not subscriptable.  So, one could  use: <code class="docutils literal notranslate"><span class="pre">print(np.random.choice(list(prs_as_dict.keys()),</span> <span class="pre">p</span> <span class="pre">=</span> <span class="pre">list(prs_as_dict.values()))</span></code>.</p></li>
+<li><p>Even if you can remove the error by casting the dict keys and values to lists, there may still be a problem with the above code.   The issue is that it needs to be clear that the list assigned to <code class="docutils literal notranslate"><span class="pre">p</span></code> are indeed the probabilities of the times in the list provided as the first parameter to <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code>.  The above code makes this clear.  Futhermore, unlike lists, dictionaries are inherently <strong>orderless</strong>. (See <a class="reference external" href="https://www.geeksforgeeks.org/ordereddict-in-python/">https://www.geeksforgeeks.org/ordereddict-in-python/</a> for an overview of a new addition to Python 3 called <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code> that orders the keys in a dictionary.)</p></li>
+</ol>
+</div>
+<p>When reasoning about acts that have two outcomes (“success” and “failure”), it will be convenient to use the <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html">numpy binomial distribution</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">num_trials</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">prob_success</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># number of success after 100 tries, tested 2 times.  </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">num_trials</span><span class="p">,</span> <span class="n">prob_success</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45 57 55 54 60]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.displot.html">seaborn displot</a> to visualize the outcomes of sampling from a binomial distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_trials</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">prob_success</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">successes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">num_trials</span><span class="p">,</span> <span class="n">prob_success</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">successes</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_14_0.png" src="../_images/overview_14_0.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your simulation requires using discrete probabilities when there are more than 2 outcomes, then you might want to use the <code class="docutils literal notranslate"><span class="pre">lea</span></code> package.  This package provides a very extensive set of tools for defining and using discrete probabilities, including tools for defining and reasoning about Bayesian Networks.  For more information, read the <a class="reference external" href="https://bitbucket.org/piedenis/lea/wiki/Lea3_Tutorial_1">tutorial</a>.</p>
+</div>
+</div>
+<div class="section" id="probability-in-python-continuous-probability">
+<h2>Probability in Python: Continuous Probability<a class="headerlink" href="#probability-in-python-continuous-probability" title="Permalink to this headline">¶</a></h2>
+<p>There are many continuous distributions that have been implemented in Python: See <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">https://docs.scipy.org/doc/scipy/reference/stats.html</a>.   We will discuss all of these distributions here.</p>
+<p>We will briefly discuss two well-known distributions: the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">normal distribution</a> and the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.beta.html">beta distribution</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="c1"># define a normal distribution is defined by specifying the mean and standard deviation</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean is &quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The variance is &quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+
+
+<span class="c1"># the default values is a mean of 0 and std of 1</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">norm</span><span class="p">()</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The mean is &quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The variance is &quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean is  10.0
+The variance is  4.0
+The mean is  0.0
+The variance is  1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">mean</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">std</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span> <span class="p">,</span>  <span class="n">mean</span> <span class="p">,</span>  <span class="n">std</span> <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pdf</span> <span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Outcomes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The probability of an outcome is less than 7.5 is </span><span class="si">{</span><span class="n">norm</span><span class="p">(</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">7.5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+ 
+<span class="c1">#probability that the height of the person will be between 6.5 and 4.5 ft.</span>
+
+<span class="n">cdf_upper_limit</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">cdf_lower_limit</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The probability of an outcome is between 8 and 12 is </span><span class="si">{</span><span class="n">cdf_upper_limit</span> <span class="o">-</span> <span class="n">cdf_lower_limit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+ 
+<span class="n">cdf_value</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mf">10.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The probability of an outcome is greater than 10.5 is </span><span class="si">{</span><span class="mi">1</span><span class="o">-</span> <span class="n">cdf_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The probability of an outcome is less than 7.5 is 0.10564977366685535
+The probability of an outcome is between 8 and 12 is 0.6826894921370859
+The probability of an outcome is greater than 10.5 is 0.4012936743170763
+</pre></div>
+</div>
+<img alt="../_images/overview_18_1.png" src="../_images/overview_18_1.png" />
+</div>
+</div>
+<p>The domain of a normal distribution is infinite. This means that when you sample from a normal distribution you could potentially get any number (the probability might be very low that you will get certain values, depending on the mean and the standard deviation, but it is a possibility).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># return 100 samples from a normal distrubtion with mean 0.5 and standard deviation 0.2</span>
+<span class="c1"># note that as your run this multiple times, you might get values less than 0 or greater than 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.24400967  0.95935281  0.26755399  0.40544344  0.4016341   0.28696165
+  0.39008875  0.42828162  0.53308399  0.23170055  0.57451432  0.53668459
+  0.76220322  0.55576343  0.68212208  0.75988277  0.3220451   0.57504712
+ -0.0354033   0.81357947  0.4653134   0.58256746  0.2233155   0.51593616
+  0.36814643  0.6055326   0.73444592  0.78959812  0.68875112  0.59692629
+  0.52227789  0.31587617  0.62028731  0.58455535  0.56688426  0.24069066
+  0.59638703  0.64561361  0.52189694  0.38000636  0.48108758  0.78495811
+  0.73990781  0.64353866  0.6498693   0.48083863  0.92417159  0.4973998
+  0.35097986  0.40440254  0.66894703  0.3523425   0.36092093  0.708613
+  0.66892531  0.30113635  0.27437242  0.18166378  0.49195541  0.55008959
+ -0.05715427  0.47236628  0.39394625  0.18311831  0.51123588  0.47624563
+  0.28714763  0.75331865  0.55663437  0.89214965  0.01319698  0.72242007
+  0.39763915  0.53772977  0.45851187  0.52911746  0.59351323  0.53767016
+  0.87153242  0.6172987   0.59971495  0.41252551  0.45893449  0.81793126
+  0.35058007  0.61345559  0.54010229  0.49816637  0.18650236  0.47902104
+  0.46191745  0.42793083  0.71077234  0.34713839  0.71836824  0.63599299
+  0.35040348  0.42102094  0.3664546   0.83305234]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Often you might want to restrict the domain of your distribution to real numbers between 0 and 1. E.g., when initializing the probability of an event. In such a case, you should use the beta distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+
+<span class="c1">#  a beta distribution is defined by two parameters: a and b</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the mean is&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the variance is&quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the mean is&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the variance is&quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the mean is&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the variance is&quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">var</span> <span class="o">=</span> <span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the mean is&quot;</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;When a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> and b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, the variance is&quot;</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>When a = 1 and b = 1, the mean is 0.5
+When a = 1 and b = 1, the variance is 0.08333333333333333
+
+When a = 10 and b = 10, the mean is 0.5
+When a = 10 and b = 10, the variance is 0.011904761904761904
+
+When a = 20 and b = 10, the mean is 0.6666666666666666
+When a = 20 and b = 10, the variance is 0.007168458781362006
+
+When a = 10 and b = 20, the mean is 0.3333333333333333
+When a = 10 and b = 20, the variance is 0.007168458781362006
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=1, b=1&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=10, b=10&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=50, b=50&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=20, b=10&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=10, b=20&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=1, b=5&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">beta</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;a=5, b=1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.35</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Outcomes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_23_0.png" src="../_images/overview_23_0.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodel package</a> can also be used to reason about continuous distributions.</p>
+</div>
+</div>
+<div class="section" id="learning">
+<h2>Learning<a class="headerlink" href="#learning" title="Permalink to this headline">¶</a></h2>
+<p>In many of the simulations, the agents will update their probabilities in response to some evidence.</p>
+<p><a class="reference external" href="https://plato.stanford.edu/entries/bayes-theorem/">Bayes Theorem</a>  is often used to update a probability in response to some evidence. (<a class="reference external" href="https://www.youtube.com/watch?v=HZGCoVF3YvM">See this video for an excellent introduction to Bayes Theroem</a>.)  Suppose that   <span class="math notranslate nohighlight">\(H\)</span> is an hypothesis and <span class="math notranslate nohighlight">\(E\)</span> is the evidence received about the hypothese (formally, both <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(E\)</span> are events in the domain of the probability measure <span class="math notranslate nohighlight">\(Pr\)</span>).   Then,</p>
+<div class="math notranslate nohighlight">
+\[Pr(H\mid E) = Pr(E\mid H)\frac{Pr(H)}{Pr(E)}\]</div>
+<p>Typically, <span class="math notranslate nohighlight">\(Pr(E)\)</span> is determined using the law of total probability:</p>
+<div class="math notranslate nohighlight">
+\[Pr(E)=Pr(H)Pr(E\mid H) + Pr(\overline{H})Pr(E\mid \overline{H})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\overline{H}\)</span> is the complement of <span class="math notranslate nohighlight">\(H\)</span>, so <span class="math notranslate nohighlight">\(Pr(\overline{H})=1-Pr(H)\)</span>.</p>
+<p>We can illustrate Bayes Theorem as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bayes</span><span class="p">(</span><span class="n">prior</span><span class="p">,</span> <span class="n">e_given_hyp</span><span class="p">,</span> <span class="n">e_given_not_hyp</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">e_given_hyp</span> <span class="o">*</span> <span class="n">prior</span> <span class="o">/</span> <span class="p">(</span><span class="n">prior</span> <span class="o">*</span> <span class="n">e_given_hyp</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">prior</span><span class="p">)</span> <span class="o">*</span> <span class="n">e_given_not_hyp</span><span class="p">)</span>
+
+<span class="n">priors</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">e_given_h</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">e_given_not_h</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">priors</span><span class="p">,</span> <span class="p">[</span><span class="n">bayes</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">e_given_h</span><span class="p">,</span><span class="n">e_given_not_h</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">priors</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$Pr(E\mid H)= </span><span class="si">{</span><span class="n">e_given_h</span><span class="si">}</span><span class="s2">\qquad Pr(E\mid </span><span class="se">\\</span><span class="s2">neg H)=</span><span class="si">{</span><span class="n">e_given_not_h</span><span class="si">}</span><span class="s2">$</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$Pr(H)$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$Pr(H\mid E)$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">1.05</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_27_0.png" src="../_images/overview_27_0.png" />
+</div>
+</div>
+<p>Suppose that an agent is uncertain about the bias of a coin.  For instance, the coin might be a fair coin or it might have a bias of 0.55 for heads.   If an agent updates using Bayes Theorem, how many times does the agent need to flip a coin to learn bias?</p>
+<p>Suppose that there are only two possible biases (either it is fair with a bias of 0.5 or has a bias of 0.55 for heads).  Let  <span class="math notranslate nohighlight">\(H\)</span> is the hypothesis that the coin being flipped is fair and so <span class="math notranslate nohighlight">\(\overline{H}\)</span> is the hypothesis that the coin has a 0.55 bias for heads.  The evidence is the number of heads that are observed after flipping the coin a certain number of times.  For instance, suppose that evidence <span class="math notranslate nohighlight">\(E\)</span> is that the coin is flipped 10 times and 6 heads are observed.   Then, <span class="math notranslate nohighlight">\(Pr(H\mid E)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[Pr(H\mid E) = Pr(E\mid H)\frac{Pr(H)}{Pr(H)Pr(E\mid H) + Pr(\overline{H})Pr(E\mid \overline{H})}\]</div>
+<p>Now, we know the likelihoods <span class="math notranslate nohighlight">\(Pr(E\mid H)\)</span> and <span class="math notranslate nohighlight">\(Pr(E\mid\overline{H})\)</span>:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(Pr(E\mid H)\)</span> is the probability of observing 6 heads out of 10 flips with a bias of 0.5, i.e., it is <span class="math notranslate nohighlight">\(0.5^6*0.5^4 = 0.0009765625\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Pr(E\mid \overline{H})\)</span> is the probability of observing 6 heads out of 10 flips with a bias of 0.55, i.e., it is <span class="math notranslate nohighlight">\(0.55^6*0.45^4 = 0.00113507926\)</span>.</p></li>
+</ol>
+<p>If <span class="math notranslate nohighlight">\(Pr(H)=0.5\)</span>, applying Bayes Theorem, gives:</p>
+<div class="math notranslate nohighlight">
+\[Pr(H\mid E) = 0.0009765625 * \frac{0.5}{0.5* 0.0009765625 + 0.5* 0.00113507926} = 0.46246599139\]</div>
+<p>We first implement a Coin class to define coins of different biases.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Calculating the probability of seeing a head for a large number of flips (e.g., flipping the coin 10,000 times) produces very small numbers.  You need to be careful with floating point arithmentic in Python: <a class="reference external" href="https://docs.python.org/3/tutorial/floatingpoint.html">https://docs.python.org/3/tutorial/floatingpoint.html</a>.  There are a number of ways to deal with these issue: 1. use the <a class="reference external" href="https://docs.python.org/3/library/decimal.html"><code class="docutils literal notranslate"><span class="pre">Decimal</span></code> package</a> or 2. use the <a class="reference external" href="https://mpmath.org/">mpmath</a> package.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+
+<span class="c1"># illustrate the problem </span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0.5^4000 * 0.5^6000 = &quot;</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="mi">4000</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="mi">6000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using mpmath, 0.5^4000 * 0.5^6000 = &quot;</span><span class="p">,</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="mi">4000</span><span class="p">)</span> <span class="o">*</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="mi">6000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5^4000 * 0.5^6000 =  0.0
+Using mpmath, 0.5^4000 * 0.5^6000 =  5.01237274920645e-3011
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Coin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+        
+        <span class="k">assert</span> <span class="n">bias</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">bias</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;The bias is </span><span class="si">{</span><span class="n">bias</span><span class="si">}</span><span class="s2">, but it  must be between 0 and 1&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">bias</span> <span class="c1"># the bias that that the coin lands heads when flipped</span>
+        
+    <span class="k">def</span> <span class="nf">flip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span> 
+        <span class="sd">&#39;&#39;&#39;returns the number of times flipping the coin returns heads&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span> 
+        
+    <span class="k">def</span> <span class="nf">pr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_heads</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;returns the exact probability of getting num_heads heads out of num_flips flips&#39;&#39;&#39;</span>
+        <span class="k">assert</span> <span class="n">num_heads</span> <span class="o">&lt;=</span> <span class="n">num_flips</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;the successes </span><span class="si">{</span><span class="n">num_heads</span><span class="si">}</span><span class="s2"> cannot be greater than the total </span><span class="si">{</span><span class="n">num_flips</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span><span class="o">**</span><span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">(</span><span class="n">num_heads</span><span class="p">)</span> <span class="o">*</span> <span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">))</span><span class="o">**</span><span class="n">mp</span><span class="o">.</span><span class="n">mpf</span><span class="p">((</span><span class="n">num_flips</span> <span class="o">-</span> <span class="n">num_heads</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Pr(H)=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fair_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of observing 25 heads after flipping fair_coin 50 times is &quot;</span><span class="p">,</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">pr</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of heads after flipping the fair_coin 50 times is &quot;</span><span class="p">,</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+
+<span class="n">biased_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.55</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">biased_coin</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of observing 25 heads after flipping biased_coin 50 times is &quot;</span><span class="p">,</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">pr</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number of heads after flipping biased_coin 50 times is &quot;</span><span class="p">,</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pr(H)=0.5
+The probability of observing 25 heads after flipping fair_coin 50 times is  8.88178419700125e-16
+The number of heads after flipping the fair_coin 50 times is  26
+Pr(H)=0.55
+The probability of observing 25 heads after flipping biased_coin 50 times is  6.90844145800137e-16
+The number of heads after flipping biased_coin 50 times is  31
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is not hard to define a learner that updates their beliefs in response to observing the number of times the coin lands hands when flipping it a certain number of times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Learner</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pr</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;pr is a dictionary assigning floats that sum to 1 over some coins&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+        
+    <span class="k">def</span> <span class="nf">belief</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coin</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">[</span><span class="n">coin</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">update_bayes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_heads</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">):</span> 
+        <span class="sd">&#39;&#39;&#39;update using Bayes Theorem&#39;&#39;&#39;</span>
+        <span class="n">new_bel</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">new_bel</span><span class="p">[</span><span class="n">coin</span><span class="p">]</span> <span class="o">=</span> <span class="n">coin</span><span class="o">.</span><span class="n">pr</span><span class="p">(</span><span class="n">num_heads</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">[</span><span class="n">coin</span><span class="p">]</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">[</span><span class="n">_c</span><span class="p">]</span> <span class="o">*</span> <span class="n">_c</span><span class="o">.</span><span class="n">pr</span><span class="p">(</span><span class="n">num_heads</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span> <span class="k">for</span> <span class="n">_c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">new_bel</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the coins</span>
+<span class="n">fair_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">biased_coin1</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.55</span><span class="p">)</span>
+<span class="n">biased_coin2</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.45</span><span class="p">)</span>
+
+<span class="c1"># Initially, the agent is uncertain about which of the three coins is currently being flipped</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">fair_coin</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin1</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin2</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the fair coin is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 1 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 2 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Flip the coin once and observe a tails&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the fair coin is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 1 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 2 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Flip the coin again and observe a heads&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the fair coin is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 1 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 2 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Flip the coin again and observe a heads&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the fair coin is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 1 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 2 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Flip the coin again and observe a heads&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the fair coin is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 1 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The probability of the biased coin 2 is &quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The probability of the fair coin is  0.3333333333333333
+The probability of the biased coin 1 is  0.3333333333333333
+The probability of the biased coin 2 is  0.3333333333333333
+
+Flip the coin once and observe a tails
+The probability of the fair coin is  0.333333333333333
+The probability of the biased coin 1 is  0.3
+The probability of the biased coin 2 is  0.366666666666667
+
+Flip the coin again and observe a heads
+The probability of the fair coin is  0.335570469798658
+The probability of the biased coin 1 is  0.332214765100671
+The probability of the biased coin 2 is  0.332214765100671
+
+Flip the coin again and observe a heads
+The probability of the fair coin is  0.335570469798658
+The probability of the biased coin 1 is  0.365436241610738
+The probability of the biased coin 2 is  0.298993288590604
+
+Flip the coin again and observe a heads
+The probability of the fair coin is  0.333355557037136
+The probability of the biased coin 1 is  0.399326621774785
+The probability of the biased coin 2 is  0.267317821188079
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose now that the agent flips the coin 10 times, and updates beliefs on the number of observed heads.  How many times does the agent need to perform this experiment to assign a high probability to the correct bias  (i.e., a probability of greater than 0.99 to the correct bias)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_flips</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">num_trials</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">fair_coin</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin1</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin2</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&#39;s initial belief that the coin is fair is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>  
+    <span class="n">flip</span> <span class="o">=</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">flip</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.99</span><span class="p">:</span> 
+        <span class="k">break</span>    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;It took </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s2"> trials for the agent to believe that the coin is fair with probability &gt; 0.99</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+<span class="n">prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">fair_coin</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin1</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">biased_coin2</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&#39;s initial belief that the coin has bias 0.45 is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>  
+    <span class="n">flip</span> <span class="o">=</span> <span class="n">biased_coin2</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">flip</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">biased_coin2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.99</span><span class="p">:</span> 
+        <span class="k">break</span>    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;It took </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s2"> trials for the agent to believe that the coin is the biased coin 2 probability &gt; 0.99</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a&#39;s initial belief that the coin is fair is 0.3333333333333333
+It took 110 trials for the agent to believe that the coin is fair with probability &gt; 0.99
+
+a&#39;s initial belief that the coin has bias 0.45 is 0.3333333333333333
+It took 186 trials for the agent to believe that the coin is the biased coin 2 probability &gt; 0.99
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">fair_coin</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">biased_coin1</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span> <span class="n">biased_coin2</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&#39;s initial belief that the coin is fair is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>  
+    <span class="n">flip</span> <span class="o">=</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">flip</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.99</span><span class="p">:</span> 
+        <span class="k">break</span>    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;It took </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s2"> trials for the agent to believe that the coin is fair with probability &gt; 0.99</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="n">prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">fair_coin</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">biased_coin1</span><span class="p">:</span> <span class="mf">0.495</span><span class="p">,</span> <span class="n">biased_coin2</span><span class="p">:</span> <span class="mf">0.495</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&#39;s initial belief that the coin is fair is&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>  
+    <span class="n">flip</span> <span class="o">=</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">flip</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">(</span><span class="n">fair_coin</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.99</span><span class="p">:</span> 
+        <span class="k">break</span>    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;It took </span><span class="si">{</span><span class="n">trial</span><span class="si">}</span><span class="s2"> trials for the agent to believe that the coin is fair with probability &gt; 0.99</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a&#39;s initial belief that the coin is fair is 0.1
+It took 265 trials for the agent to believe that the coin is fair with probability &gt; 0.99
+
+a&#39;s initial belief that the coin is fair is 0.01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It took 392 trials for the agent to believe that the coin is fair with probability &gt; 0.99
+</pre></div>
+</div>
+</div>
+</div>
+<p>One issue with the implementation of the <code class="docutils literal notranslate"><span class="pre">Learn</span></code> is that the agent must assign a non-zero probability to only finitely many different biases.  What if we want an agent that considers <em>any</em> bias between 0 and 1 as a possibility?  We can represent such an agent’s beliefs using a beta distribution.  Another reason to use a beta distribution is that it is <a class="reference external" href="https://en.wikipedia.org/wiki/Conjugate_prior#Example">very easy to implement Bayesian updating for a beta distribution</a>:  Given a beta distribution parameterized with <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, after observing <span class="math notranslate nohighlight">\(s\)</span> heads out of <span class="math notranslate nohighlight">\(n\)</span> flips, the updated beta distribution is paerameterized by <span class="math notranslate nohighlight">\(a+s\)</span> and <span class="math notranslate nohighlight">\(a+(n-s)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Learner2</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+        
+    <span class="k">def</span> <span class="nf">belief</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">beta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">beta</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">update_bayes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_heads</span><span class="p">,</span> <span class="n">num_flips</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">num_heads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">num_flips</span> <span class="o">-</span> <span class="n">num_heads</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Starting from an initial belief about the possible biases, the agent will converge on the true bias the more times the coin is flipped.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Learner2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">biased_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.55</span><span class="p">)</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Initial belief&quot;</span><span class="p">);</span>
+
+<span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;After 10 flips&quot;</span><span class="p">);</span>
+
+<span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;After 20 flips&quot;</span><span class="p">);</span>
+
+<span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;After 30 flips&quot;</span><span class="p">);</span>
+
+<span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;After 40 flips&quot;</span><span class="p">);</span>
+
+<span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;After 50 flips&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The true bias is </span><span class="si">{</span><span class="n">biased_coin</span><span class="o">.</span><span class="n">bias</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_41_0.png" src="../_images/overview_41_0.png" />
+</div>
+</div>
+<p>Agents will converge on the true bias regardless of their initial beliefs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_agent_beliefs</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> 
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">belief</span><span class="p">()</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+
+<span class="n">num_agents</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num_experiments</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">num_flips</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">biased_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
+
+<span class="c1"># define the agents</span>
+<span class="n">agents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_agents</span><span class="p">):</span> 
+    <span class="c1"># the inital belief will be parameterized with a, b any number between 0 and 4</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Learner2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># plot their beliefs</span>
+<span class="n">plot_agent_beliefs</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Initial Beliefs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+
+<span class="c1"># let the agents perform the experiments </span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_experiments</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="n">num_flips</span><span class="p">)</span>
+
+<span class="c1"># plot their updated beliefs</span>
+<span class="n">plot_agent_beliefs</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Updated Beliefs&quot;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_43_0.png" src="../_images/overview_43_0.png" />
+<img alt="../_images/overview_43_1.png" src="../_images/overview_43_1.png" />
+</div>
+</div>
+<p>We now plot the average distance between the mean of the agent’s belief and the true bias of the coin and how that distance changes as the agents learn from observing the outcome of flipping the coin.  We perform the experiment with a fair coin and a biased coind (with bias 0.9 for heads).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">average_distance</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">mean</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">([</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">])</span>
+
+<span class="n">num_agents</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">num_experiments</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">num_flips</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">fair_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> 
+<span class="n">biased_coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>
+
+<span class="n">agents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_agents</span><span class="p">):</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Learner2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="n">avg_distances</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_experiments</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span> 
+        <span class="n">heads</span> <span class="o">=</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">avg_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">average_distance</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">fair_coin</span><span class="o">.</span><span class="n">bias</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_experiments</span><span class="p">),</span> <span class="n">avg_distances</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;fair&quot;</span><span class="p">)</span>
+
+<span class="n">agents</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_agents</span><span class="p">):</span> 
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">agents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Learner2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">avg_distances</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_experiments</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span> 
+        <span class="n">heads</span> <span class="o">=</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">num_flips</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">update_bayes</span><span class="p">(</span><span class="n">heads</span><span class="p">,</span><span class="n">num_flips</span><span class="p">)</span>
+    <span class="n">avg_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">average_distance</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">biased_coin</span><span class="o">.</span><span class="n">bias</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_experiments</span><span class="p">),</span> <span class="n">avg_distances</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;biased&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_45_0.png" src="../_images/overview_45_0.png" />
+</div>
+</div>
+<div class="section" id="learning-from-others">
+<h3>Learning from Others<a class="headerlink" href="#learning-from-others" title="Permalink to this headline">¶</a></h3>
+<p>If an agent <span class="math notranslate nohighlight">\(i\)</span> reports that the probability of <span class="math notranslate nohighlight">\(E\)</span> is <span class="math notranslate nohighlight">\(q\)</span>, then agents <span class="math notranslate nohighlight">\(j\)</span>’s new probability should be <span class="math notranslate nohighlight">\(Pr^{new}_j(E)=P(E\ |\ Pr_i(E)=q)\)</span>.  That is, agent <span class="math notranslate nohighlight">\(j\)</span> conditions on the event that “<span class="math notranslate nohighlight">\(i\)</span> reports that the probability of <span class="math notranslate nohighlight">\(E\)</span> is <span class="math notranslate nohighlight">\(q\)</span>”.  Since, in general, we will not have a prior probability over the the possible probablities that an agent may report, a very good heuristic is to define <span class="math notranslate nohighlight">\(j\)</span>’s new probability as the average of the <span class="math notranslate nohighlight">\(j\)</span>’s own probability and <span class="math notranslate nohighlight">\(i\)</span>’s reported probability:</p>
+<div class="math notranslate nohighlight">
+\[Pr^{new}_j(E) = \frac{Pr_j(E) + Pr_i(E)}{2}\]</div>
+<p>For a discussion of this see:</p>
+<ol class="simple">
+<li><p>C. Genest  and M. J.  Schervish (1985). Modeling expert judgments for bayesian updating, The Annals of Statistics, 13(3), pgs. 1198-1212.</p></li>
+<li><p>R. Bradley (2017). Learning from others: conditioning versus averaging, Theory and Decision</p></li>
+<li><p>J. W. Romeijn and O. Roy (2017). All agreed: Aumann meets DeGroot, Theory and Decision.</p></li>
+</ol>
+<p>More generally, we are interested in aggregating the probabilities of a group of agents.</p>
+<ol class="simple">
+<li><p>C. Genest and J. V. Zidek (1986). Combining probability distributions: A critique and an annotated bibliography, Statistical Science,1(1), pp. 114 - 135.</p></li>
+<li><p>F. Dietrich and C. List (2016). Probabilistic opinion pooling, in Oxford Handbook of Probability and Philosophy.</p></li>
+</ol>
+<p>Suppose that  <span class="math notranslate nohighlight">\((W,\mathcal{E})\)</span> is a set of states with a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> is a set of probability measures on <span class="math notranslate nohighlight">\((W, \mathcal{E})\)</span>.  A <strong>probabilistic pooling method</strong> for <span class="math notranslate nohighlight">\(n\)</span> agents  is a function  <span class="math notranslate nohighlight">\(F:\mathcal{P}^n \rightarrow \mathcal{P}\)</span>  mapping a sequence of probability measures to a single probability measure.  There are three well-known methods that have been studied:</p>
+<p><strong>Linear pooling</strong>: <span class="math notranslate nohighlight">\(L:\mathcal{P}^n\rightarrow \mathcal{P}\)</span>.  For all <span class="math notranslate nohighlight">\(A\in\mathcal{E}\)</span>, <span class="math notranslate nohighlight">\(L(\mathbf{P})(A)=w_1 P_1(A) + \cdots w_nP_n(A)\)</span>, with <span class="math notranslate nohighlight">\(\sum_i w_i = 1\)</span></p>
+<p><strong>Geometric pooling</strong>: <span class="math notranslate nohighlight">\(G:\mathcal{P}^n\rightarrow \mathcal{P}\)</span>. Assuming <span class="math notranslate nohighlight">\(W\)</span> is finite, for all <span class="math notranslate nohighlight">\(w\in W\)</span>, <span class="math notranslate nohighlight">\(G(\mathbf{P})(w)=c\cdot [P_1(w)]^{w_1} \cdots [P_n(w)]^{w_n}\)</span>    with <span class="math notranslate nohighlight">\(\sum_i w_i = 1\)</span> and  <span class="math notranslate nohighlight">\(c=\frac{1}{\sum_{w'\in W} [P_i(w')]^{w_1}\cdots [P_i(w')]^{w_n}}\)</span></p>
+<p><strong>Multiplicative pooling</strong>: <span class="math notranslate nohighlight">\(M:\mathcal{P}^n\rightarrow \mathcal{P}\)</span> Assuming <span class="math notranslate nohighlight">\(W\)</span> is finite, for all <span class="math notranslate nohighlight">\(w\in W\)</span>, <span class="math notranslate nohighlight">\(M(\mathbf{P})(w)=c\cdot [P_1(w)]\cdots [P_n(w)]\)</span> with  <span class="math notranslate nohighlight">\(c=\frac{1}{\sum_{w'\in W} [P_i(w')]\cdots [P_i(w')]}\)</span></p>
+<p>Note that multiplicative pooling is geometric pooling with weights all equal to 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is an important difference between linear pooling and geometric/multiplicative pooling.   Linear pooling can be applied to a fixed event.   Geometric/multiplicative pooling is applied to the outcomes.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="k">def</span> <span class="nf">linear_pool</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">_weights</span> <span class="o">=</span>  <span class="n">weights</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">p</span> <span class="k">for</span> <span class="n">w</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_weights</span><span class="p">,</span><span class="n">probs</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">geometric_pool</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">_weights</span> <span class="o">=</span>  <span class="n">weights</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">]</span>
+    
+    <span class="n">c</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">p</span><span class="o">**</span><span class="n">w</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">_weights</span><span class="p">)])</span>  <span class="o">+</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">w</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">_weights</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">p</span><span class="o">**</span><span class="n">w</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">_weights</span><span class="p">)]))</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">multiplicitave_pool</span><span class="p">(</span><span class="n">probs</span><span class="p">):</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">geometric_pool</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get a feeling for these different aggregation methods, we plot the pooled probability for a group of agents.   We fix a set of probabilities and study what happens if a new agent enters the group with some belief between the minimum and maximum of the fixed set of probabilities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">other_probs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)</span><span class="o">-</span><span class="mf">0.01</span> <span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">linear_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">geometric_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;geometric&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">multiplicitave_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;multiplicative&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Other probabilities are $(</span><span class="si">{}</span><span class="s2">)$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">sorted</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)))),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Probability of agent $i$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Aggregate probability&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_51_0.png" src="../_images/overview_51_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">other_probs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)</span><span class="o">-</span><span class="mf">0.01</span> <span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">linear_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">geometric_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;geometric&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[</span><span class="n">multiplicitave_pool</span><span class="p">(</span><span class="n">other_probs</span> <span class="o">+</span> <span class="p">[</span><span class="n">p</span><span class="p">])</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;multiplicative&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>   <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Other probabilities are $(</span><span class="si">{}</span><span class="s2">)$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">sorted</span><span class="p">(</span><span class="n">other_probs</span><span class="p">)))),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Probability of agent $i$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Aggregate probability&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/overview_52_0.png" src="../_images/overview_52_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simulations">
+<h2>Simulations<a class="headerlink" href="#simulations" title="Permalink to this headline">¶</a></h2>
+<p>In this section of the text, we will study at the following simulations:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="http://jasss.soc.surrey.ac.uk/5/3/2.html">Hegselmann-Krause model of opinion dynamics</a></p></li>
+<li><p><a class="reference external" href="http://www.franzdietrich.net/Papers/Dietrich-CondorcetJuryTheorem.pdf">The Condorcet Jury Theorem</a></p></li>
+<li><p><a class="reference external" href="http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf">Learning from Testimony</a></p></li>
+<li><p><a class="reference external" href="http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_communication_structure.pdf">Epistemic Networks</a></p></li>
+<li><p><a class="reference external" href="http://cailinoconnor.com/wp-content/uploads/2017/12/scientific-polarization-shareable-draft.pdf">Polarization</a></p></li>
+<li><p><a class="reference external" href="https://link.springer.com/content/pdf/10.1007%2Fs11229-016-1268-9.pdf">A Bayesian Model of Deliberation</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./belief-dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../game-theory/02c-divide-the-dollar.html" title="previous page">Justice and Bargaining</a>
+    <a class='right-next' id="next-link" href="hk-model.html" title="next page">Hegslemann Krause Model</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

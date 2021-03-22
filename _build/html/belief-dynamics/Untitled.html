@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deliberation &#8212; Computer Simulations for PPE</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Computer Simulations for PPE</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Course Overview
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Python Basics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/introduction.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/classes.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/scientific-computing.html">
+   Scientific Computing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/networks.html">
+   Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../python-basics/mesa.html">
+   Mesa
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Schelling Segregation Model
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01-schelling.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schelling/01a-schelling-implementation.html">
+   Implementation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Game Theory
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02a-intro-game-theory.html">
+   Introduciton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02b-games-local-interaction.html">
+   Games on a Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../game-theory/02c-divide-the-dollar.html">
+   Justice and Bargaining
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Belief Dynamics
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hk-model.html">
+   Hegslemann Krause Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cjt.html">
+   Condorcet Jury Theorem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="testimony.html">
+   Learning from Testimony
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="epistemic-networks.html">
+   Epistemic Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polarization.html">
+   Polarization
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preference Dynamics and Voting
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/overview.html">
+   Overview
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/belief-dynamics/Untitled.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/epacuit/ppe-simulations"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fbelief-dynamics/Untitled.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/belief-dynamics/Untitled.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="deliberation">
+<h1>Deliberation<a class="headerlink" href="#deliberation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Agent</span>
+<span class="kn">from</span> <span class="nn">mesa.space</span> <span class="kn">import</span> <span class="n">NetworkGrid</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">import</span> <span class="nn">mpmath</span> 
+<span class="kn">from</span> <span class="nn">mpmath</span> <span class="kn">import</span> <span class="n">mp</span>
+<span class="n">mp</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">starmap</span>
+<span class="kn">from</span> <span class="nn">multiprocess</span> <span class="kn">import</span> <span class="n">Pool</span><span class="p">,</span> <span class="n">cpu_count</span>
+
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are three types of criteria to evaluate a proposed decision-making procedure:</p>
+<ol class="simple">
+<li><p>Practical reasons: The procedure should be easy to implement for groups of a given size, and following the procedure should not take too much time to arrive at a decision.</p></li>
+<li><p>Procedural reasons: The procedure should  should be fair and it should end up in a consensus that all group members endorse.</p></li>
+<li><p>Epistemic reasons: The group decision should be reliable and it should coincide with the fact of the matter if it is the task of the group to decide on a fact of the matter (e.g. the group decision should be ‘guilty if and only if the defendant is guilty).</p></li>
+</ol>
+<p>S. Hartmann and S. Rafiee Rad (2018). <a class="reference external" href="https://link.springer.com/content/pdf/10.1007%2Fs11229-016-1268-9.pdf">Voting, deliberation and truth</a>, Synthese, 105, pp. 1273 - 1293.</p>
+<p>A formal analysis which (i) shows that deliberation procedures are truth-conducive (in a similar way as majority voting is truth conducive according to the Condorcet Jury Theorem) and that (ii) explores which procedure does better (under certain conditions) epistemically.</p>
+<p>Fix a binary propositional variable with values <span class="math notranslate nohighlight">\(H\)</span>: the hypothesis is true, and <span class="math notranslate nohighlight">\(\neg H\)</span>: the hypothesis is false.  Assume that <span class="math notranslate nohighlight">\(H\)</span> is true.</p>
+<p>Consider  a group of <span class="math notranslate nohighlight">\(n\)</span> agents who deliberate on the truth or falsity of <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<p>The group members express their individual verdicts in terms of a yes/no vote. The votes are represented by binary propositional variables <span class="math notranslate nohighlight">\(V_i\)</span> (for <span class="math notranslate nohighlight">\(i = 1,\ldots, n\)</span>) with the values: <span class="math notranslate nohighlight">\(V_i\)</span>: agent <span class="math notranslate nohighlight">\(i\)</span> votes “yes”, i.e., that <span class="math notranslate nohighlight">\(H\)</span> is true <span class="math notranslate nohighlight">\(\neg V_i\)</span>: agent <span class="math notranslate nohighlight">\(i\)</span> votes “no”, i.e., that <span class="math notranslate nohighlight">\(H\)</span> is false. thesis is false.</p>
+<ol class="simple">
+<li><p>During the procedure, no new evidence comes up. However, some people forgot or did not notice certain pieces of evidence. There is also disagreement about the strength of certain pieces of evidence. Initially, the jury members do not know each other at all (they were randomly assembled). They therefore do not know how much weight they can assign to the verdicts of their colleagues. However, during the course of deliberation they get to know each other much better. They see how the others argue, how they criticize the arguments of others, and what they remember of the details of the case. This helps them to better assess how reliable the other group members are and which weight to assign to their verdicts.</p></li>
+<li><p>Assume that it is in the interest of each group member that the probability that the ﬁnal verdict of the group corresponds to the truth is as large as possible.</p></li>
+<li><p>Each group member <span class="math notranslate nohighlight">\(i\)</span> has a first-order reliability <span class="math notranslate nohighlight">\(r_i\)</span>: the probability that <span class="math notranslate nohighlight">\(i\)</span> will make the correct judgements.</p></li>
+<li><p>The other group members do not know the reliability of the other agents. At stage <span class="math notranslate nohighlight">\(t\)</span>,
+$<span class="math notranslate nohighlight">\(r_{ij}^ = Pr^t_i(V_j\mid H) = Pr^t_i(\neg V_j\mid \neg H)\)</span><span class="math notranslate nohighlight">\(
+is \)</span>i<span class="math notranslate nohighlight">\('s estimation of \)</span>j$’s first-order reliability.</p></li>
+<li><p>The agents  become better and better in assessing the reliability of the other group members.  For each group member <span class="math notranslate nohighlight">\(i\)</span>, let <span class="math notranslate nohighlight">\(c_i\)</span> be the second-order reliability of <span class="math notranslate nohighlight">\(i\)</span> to judge the first-order reliability of the other group members.  So, if <span class="math notranslate nohighlight">\(c_i = 1\)</span>, then <span class="math notranslate nohighlight">\(i\)</span> assigns correct first-order reliability to every group member <span class="math notranslate nohighlight">\(j\)</span>; and if <span class="math notranslate nohighlight">\(c_i = 0\)</span>, then <span class="math notranslate nohighlight">\(i\)</span> assigns a random first-order reliability to the other agents drawn uniformaly from <span class="math notranslate nohighlight">\((0,1)\)</span>.</p></li>
+</ol>
+<p>ng empirically but it can be relaxed easily). If c i = 0, then group member a i assigns a random reliability from the interval (0, 1) to group member a i . If c i ∈ (0, 1), then we follow the procedure speciﬁed below which basically assigns</p>
+<p>123 1278</p>
+<p>Synthese (2018) 195:1273–1293</p>
+<p>a reliability drawn from a more or less broad distribution around r i (depending on the value of the second order reliability). This reliability weights the verdict of group member a j in each voting round.</p>
+<p>The group members are therefore characterized by two parameters. The ﬁrst order reliability r i to make the right decision, and the second order reliability c i to assess the ﬁrst order reliability of the other group members.</p>
+<p>We assume that the ﬁrst order reliability is kept ﬁxed during the course of deliberation. It characterizes, in general terms, how good a certain group member is in making the right judgement. In the course of the deliberation, the quality of the judgement of the group member only goes up because she learns to better weigh the judgements of the other group members. That is, we assume that the second order reliabilities increase in the course of the deliberation because they learn to better judge the reliabilities of the other group members as the deliberation process reveals new information about their reliability (but not about the fact under consideration).</p>
+<p>The deliberation procedure we propose then works as follows. The group has to decide on the truth or falsity of a hypothesis H. Each group member assigns a certain probability to H. Then each group member casts a vote on the basis of this probability. Then each group member updates her probability on the basis of the votes of the other group members, weighted according to the estimated reliabilities as explained above. The procedure is iterated, and in each round the second order reliabilities are increased which leads to a more accurate estimation of the reliability of the votes of the other group members. After a number of rounds, this process converges.</p>
+<p>One disclaimer before we continue: we call the process we model here a deliberation as it (i) involves the change of belief of the group members in every round and as it (ii) leads to a consensus (as we will see).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_beta</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">linear_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span> 
+    <span class="n">max_x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">min_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">max_x</span> <span class="o">-</span> <span class="n">min_x</span><span class="p">)</span><span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">min_x</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">estimate_reliability</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">second_order_rel</span><span class="p">):</span> 
+    
+    <span class="k">if</span> <span class="n">second_order_rel</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">second_order_rel</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">rel</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">linear_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="o">*</span><span class="n">find_beta</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">second_order_rel</span><span class="p">)),</span> <span class="n">rel</span><span class="p">,</span> <span class="n">second_order_rel</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">estimate_reliability2</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">second_order_rel</span><span class="p">):</span> 
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rel</span> <span class="o">+</span> <span class="n">second_order_rel</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">rel</span> <span class="o">-</span> <span class="n">second_order_rel</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+
+<span class="n">cs</span> <span class="o">=</span> <span class="p">[</span><span class="n">_c</span> <span class="o">/</span> <span class="mi">20</span> <span class="k">for</span> <span class="n">_c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">21</span><span class="p">)]</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+<span class="n">rel</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">second_order_rel</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">estimate_reliability2</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">second_order_rel</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0]
+0.885796346790901
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">rel</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cs</span><span class="p">:</span> 
+    <span class="n">est_rels</span> <span class="o">=</span> <span class="p">[</span><span class="n">estimate_reliability</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">est_rels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],[</span><span class="n">rel</span><span class="p">,</span> <span class="n">rel</span><span class="p">],</span>  <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">lw</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde58598070&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Untitled_9_1.png" src="../_images/Untitled_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">rel</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cs</span><span class="p">:</span> 
+    <span class="n">est_rels</span> <span class="o">=</span> <span class="p">[</span><span class="n">estimate_reliability2</span><span class="p">(</span><span class="n">rel</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">c</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">est_rels</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],[</span><span class="n">rel</span><span class="p">,</span> <span class="n">rel</span><span class="p">],</span>  <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="n">lw</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde78b04130&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Untitled_10_1.png" src="../_images/Untitled_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">updated_second_order_reliability</span><span class="p">(</span><span class="n">int_rel2</span><span class="p">,</span> <span class="n">round_num</span><span class="p">,</span> <span class="n">max_rel2</span><span class="p">,</span> <span class="n">max_num_rounds</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="p">(((</span><span class="n">max_rel2</span> <span class="o">-</span> <span class="n">int_rel2</span><span class="p">)</span> <span class="o">*</span> <span class="n">round_num</span> <span class="o">/</span> <span class="n">max_num_rounds</span><span class="p">)</span> <span class="o">+</span> <span class="n">int_rel2</span><span class="p">)</span> <span class="k">if</span> <span class="n">round_num</span> <span class="o">&lt;=</span> <span class="n">max_num_rounds</span> <span class="k">else</span> <span class="n">max_rel2</span>
+    
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="n">max_num_rounds</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">init_rel2</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">max_rel2</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">)],</span> 
+         <span class="p">[</span><span class="n">updated_second_order_reliability</span><span class="p">(</span><span class="n">init_rel2</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">max_rel2</span><span class="p">,</span> <span class="n">max_num_rounds</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rounds</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde585d9250&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Untitled_11_1.png" src="../_images/Untitled_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_beta</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">linear_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span> 
+    <span class="n">max_x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">min_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">max_x</span> <span class="o">-</span> <span class="n">min_x</span><span class="p">)</span><span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">min_x</span>
+
+<span class="k">class</span> <span class="nc">Expert</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">rel2</span><span class="p">,</span> <span class="n">max_rel2</span><span class="p">,</span> <span class="n">max_rounds</span><span class="p">):</span>
+        
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">prior</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel</span> <span class="o">=</span> <span class="n">rel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_rel2</span> <span class="o">=</span> <span class="n">rel2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_rel2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_rel2</span> <span class="o">=</span> <span class="n">max_rel2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_rounds</span> <span class="o">=</span> <span class="n">max_rounds</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+    
+    <span class="k">def</span> <span class="nf">updated_second_order_reliability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_round</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="p">(((</span><span class="bp">self</span><span class="o">.</span><span class="n">max_rel2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_rel2</span><span class="p">)</span> <span class="o">*</span> <span class="n">d_round</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_rounds</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_rel2</span><span class="p">)</span> <span class="k">if</span> <span class="n">d_round</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_rounds</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_rel2</span>
+
+    <span class="k">def</span> <span class="nf">estimate_reliability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span> 
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">j</span><span class="o">.</span><span class="n">rel</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="n">linear_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="o">*</span><span class="n">find_beta</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">rel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span><span class="p">)),</span> <span class="n">j</span><span class="o">.</span><span class="n">rel</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">estimate_reliability2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span> 
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">.</span><span class="n">rel</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">.</span><span class="n">rel</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">bayes_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v_profile</span><span class="p">):</span>
+        
+        <span class="n">est_reliabilities</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">estimate_reliability</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+        <span class="n">likelihoods</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">est_reliabilities</span><span class="p">]</span>
+        <span class="n">exps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">vote</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+        
+        <span class="n">new_pr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">([</span><span class="n">r</span><span class="o">**</span><span class="n">e</span> <span class="k">for</span> <span class="n">r</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">likelihoods</span><span class="p">,</span> <span class="n">exps</span><span class="p">)]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">new_pr</span>
+        
+<span class="k">class</span> <span class="nc">DeliberationModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span> 
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                 <span class="n">num_experts</span><span class="p">,</span> 
+                 <span class="n">priors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">rels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">second_order_rels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                 <span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">=</span> <span class="n">num_experts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="k">for</span> <span class="n">e_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_experts</span><span class="p">):</span>
+            <span class="n">prior</span> <span class="o">=</span> <span class="n">priors</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">priors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">rel</span> <span class="o">=</span> <span class="n">rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.75</span>
+            <span class="n">rel2</span> <span class="o">=</span> <span class="n">second_order_rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">second_order_rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.6</span>
+            <span class="n">max_rel2</span> <span class="o">=</span> <span class="n">max_second_order_rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">max_second_order_rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">1.0</span>
+            <span class="n">max_rounds_for_rel2</span> <span class="o">=</span> <span class="n">max_rounds_for_rel2s</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">max_rounds_for_rel2s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">20</span>
+            
+            <span class="n">e</span> <span class="o">=</span> <span class="n">Expert</span><span class="p">(</span><span class="n">e_id</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">rel2</span><span class="p">,</span> <span class="n">max_rel2</span><span class="p">,</span> <span class="n">max_rounds_for_rel2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_group_opinion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">majority_vote</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">majority_vote</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">/</span> <span class="mi">2</span>
+    
+    <span class="k">def</span> <span class="nf">consensus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">([</span><span class="ow">not</span> <span class="n">e</span><span class="o">.</span><span class="n">vote</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span> 
+    
+    <span class="k">def</span> <span class="nf">consensus_opinion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">consensus</span><span class="p">():</span> 
+            <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span> 
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">return</span> <span class="kc">None</span>
+        
+    <span class="k">def</span> <span class="nf">agreement_in_beliefs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+        <span class="k">return</span> <span class="nb">all</span><span class="p">([</span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pr</span> <span class="o">-</span> <span class="n">e</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.01</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+    
+    <span class="k">def</span> <span class="nf">prob_majority_correct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ev</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>  <span class="n">num_trials</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span> 
+        
+        <span class="n">maj_correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span> 
+            <span class="n">votes</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">e</span><span class="o">.</span><span class="n">rel</span> <span class="k">if</span> <span class="n">ev</span> <span class="k">else</span> <span class="ow">not</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">e</span><span class="o">.</span><span class="n">rel</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">ev</span> <span class="ow">and</span> <span class="nb">sum</span><span class="p">(</span><span class="n">votes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span> 
+                <span class="n">maj_correct</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">ev</span> <span class="ow">and</span> <span class="nb">sum</span><span class="p">(</span><span class="n">votes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_experts</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span> 
+                <span class="n">maj_correct</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">maj_correct</span> <span class="o">/</span> <span class="n">num_trials</span>
+    
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delib_round</span><span class="p">):</span>
+        
+        <span class="c1"># each expert learns from the others</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span> 
+            <span class="n">e</span><span class="o">.</span><span class="n">bayes_update</span><span class="p">([</span><span class="n">other_e</span> <span class="k">for</span> <span class="n">other_e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">other_e</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">!=</span> <span class="n">e</span><span class="o">.</span><span class="n">unique_id</span><span class="p">])</span>
+
+        <span class="c1"># each expert updates their 2nd order reliability</span>
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span> 
+            <span class="n">e</span><span class="o">.</span><span class="n">updated_second_order_reliability</span><span class="p">(</span><span class="n">delib_round</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">consensus</span><span class="p">():</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">num_experts</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+<span class="n">second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+<span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+<span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+
+<span class="n">dmodel</span> <span class="o">=</span> <span class="n">DeliberationModel</span><span class="p">(</span><span class="n">num_experts</span><span class="p">,</span> 
+                           <span class="n">priors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                           <span class="n">rels</span> <span class="o">=</span> <span class="n">rels</span><span class="p">,</span>
+                           <span class="n">second_order_rels</span> <span class="o">=</span> <span class="n">second_order_rels</span><span class="p">,</span> 
+                           <span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="n">max_second_order_rels</span><span class="p">,</span>
+                           <span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="n">max_rounds_for_rel2s</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;group opinion&quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">init_group_opinion</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consnesus &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pr maj correct &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">prob_majority_correct</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consnesus opinon &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus_opinion</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;agreement_in_beliefs &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">agreement_in_beliefs</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">while</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">num_rounds</span><span class="p">:</span>
+    <span class="n">dmodel</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init group opinion&quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">init_group_opinion</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consnesus &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consnesus opinon &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus_opinion</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;agreement_in_beliefs &quot;</span><span class="p">,</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">agreement_in_beliefs</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8102352473214793
+True
+0.32337904403432327
+False
+0.06192220830986306
+False
+0.7316306169017103
+True
+0.14313257623147957
+False
+group opinion False
+consnesus  False
+pr maj correct  0.651
+consnesus opinon  None
+agreement_in_beliefs  False
+
+
+
+2
+0.4575223974196404
+False
+0.17519948784572992
+False
+0.028501466899084577
+False
+0.1931175053421493
+False
+0.031941935400544956
+False
+init group opinion False
+consnesus  True
+consnesus opinon  False
+agreement_in_beliefs  False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_experts</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span>  <span class="mi">6</span><span class="p">)</span>
+
+<span class="n">num_trials</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="n">ne</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;prob_agreement_beliefs&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> 
+        <span class="s2">&quot;prob_consensus_correct&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> 
+        <span class="s2">&quot;prob_maj_correct&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;avg_time_to_convergence&quot;</span><span class="p">:</span> <span class="kc">None</span>
+    <span class="p">}</span> 
+    <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="n">num_experts</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">num_experts</span><span class="p">):</span> 
+    <span class="n">rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">]</span> <span class="o">*</span> <span class="n">ne</span>
+    <span class="n">second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">]</span> <span class="o">*</span> <span class="n">ne</span>
+    <span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">]</span> <span class="o">*</span> <span class="n">ne</span>
+    <span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="o">*</span> <span class="n">ne</span>
+
+    <span class="n">num_agreement_in_beliefs</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">num_consensus_correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">prob_maj_correct</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">time_to_convergence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_trials</span><span class="p">):</span>
+        <span class="n">dmodel</span> <span class="o">=</span> <span class="n">DeliberationModel</span><span class="p">(</span><span class="n">ne</span><span class="p">,</span> 
+                                   <span class="n">priors</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+                                   <span class="n">rels</span> <span class="o">=</span> <span class="n">rels</span><span class="p">,</span>
+                                   <span class="n">second_order_rels</span> <span class="o">=</span> <span class="n">second_order_rels</span><span class="p">,</span> 
+                                   <span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="n">max_second_order_rels</span><span class="p">,</span>
+                                   <span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="n">max_rounds_for_rel2s</span><span class="p">)</span>
+
+        <span class="n">prob_maj_correct</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dmodel</span><span class="o">.</span><span class="n">prob_majority_correct</span><span class="p">())</span>
+        <span class="n">r</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">while</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">num_rounds</span><span class="p">:</span>
+            <span class="n">dmodel</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="k">if</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">agreement_in_beliefs</span><span class="p">():</span>
+            <span class="n">num_agreement_in_beliefs</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus</span><span class="p">()</span> <span class="ow">and</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">consensus_opinion</span><span class="p">():</span> 
+            <span class="n">time_to_convergence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">num_consensus_correct</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s2">&quot;prob_maj_correct&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">prob_maj_correct</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s2">&quot;prob_consensus_correct&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_consensus_correct</span> <span class="o">/</span> <span class="n">num_trials</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s2">&quot;prob_agreement_beliefs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_agreement_in_beliefs</span> <span class="o">/</span> <span class="n">num_trials</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s2">&quot;avg_time_to_convergence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">time_to_convergence</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "837805a8c255482d8101da158919b240", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">73</span><span class="n">b5bffc802b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="n">r</span><span class="o">=</span><span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">while</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">num_rounds</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">36</span>             <span class="n">dmodel</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>             <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> 
+
+<span class="nn">&lt;ipython-input-22-741d0bb94bd4&gt;</span> in <span class="ni">step</span><span class="nt">(self, delib_round)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="c1"># each expert learns from the others</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>             <span class="n">e</span><span class="o">.</span><span class="n">bayes_update</span><span class="p">([</span><span class="n">other_e</span> <span class="k">for</span> <span class="n">other_e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">other_e</span><span class="o">.</span><span class="n">unique_id</span> <span class="o">!=</span> <span class="n">e</span><span class="o">.</span><span class="n">unique_id</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> 
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="c1"># each expert updates their 2nd order reliability</span>
+
+<span class="nn">&lt;ipython-input-22-741d0bb94bd4&gt;</span> in <span class="ni">bayes_update</span><span class="nt">(self, v_profile)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">est_reliabilities</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">estimate_reliability</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="n">likelihoods</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">est_reliabilities</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">exps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">vote</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> 
+<span class="nn">     48         new_pr = self.pr / (self.pr + (1 - self.pr)*np.prod([r**e for r,e</span> in <span class="ni">zip</span><span class="nt">(likelihoods, exps)]))</span>
+
+<span class="nn">&lt;ipython-input-22-741d0bb94bd4&gt;</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">est_reliabilities</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">estimate_reliability</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="n">likelihoods</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">est_reliabilities</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">exps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">j</span><span class="o">.</span><span class="n">vote</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">v_profile</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> 
+<span class="nn">     48         new_pr = self.pr / (self.pr + (1 - self.pr)*np.prod([r**e for r,e</span> in <span class="ni">zip</span><span class="nt">(likelihoods, exps)]))</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.plot(num_experts, [data[ne][&quot;prob_maj_correct&quot;] for ne in num_experts], label=&quot;Prob M Correct&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">num_experts</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">ne</span><span class="p">][</span><span class="s2">&quot;prob_consensus_correct&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ne</span> <span class="ow">in</span> <span class="n">num_experts</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob D Correct&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fddf851c550&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Untitled_14_1.png" src="../_images/Untitled_14_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./belief-dynamics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Eric Pacuit<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
