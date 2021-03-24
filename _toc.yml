@@ -39,6 +39,7 @@
     - file: belief-dynamics/testimony     
     - file: belief-dynamics/epistemic-networks 
     - file: belief-dynamics/polarization 
+    - file: belief-dynamics/deliberation 
 - part: Preference Dynamics and Voting
   chapters: 
     - file: preference-aggregation/overview

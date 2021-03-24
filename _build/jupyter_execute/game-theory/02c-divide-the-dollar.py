@@ -416,3 +416,13 @@ for s in strats:
     plt.plot(list(df[str(s)]), lw=2, label = str(s))
     
 plt.legend(loc='best', bbox_to_anchor=[1.15,1]);
+
+
+## Further Reading
+
+1. J. McKenzie Alexander (2000). [Evolutionary Explanations of Distributive Justice](http://jmckalex.org/files/publications/evolutionary-explanations-of-distributive-justice.pdf),  Philosophy of Science, vol. 67, pp. 490 - 516
+
+2. J. McKenzie Alexander (2009). [Social Deliberation: Nash, Bayes, and the Partial Vindication of Gabriele Tarde](http://jmckalex.org/files/publications/social-deliberation.pdf), Episteme, 6(2), pp. 164 - 184.
+
+
+

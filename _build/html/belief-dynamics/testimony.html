@@ -48,6 +48,8 @@
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -207,6 +209,11 @@
    Polarization
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deliberation.html">
+   Deliberation
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -316,6 +323,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   Further Reading
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -326,7 +347,7 @@
   <div class="section" id="learning-from-testimony">
 <h1>Learning from Testimony<a class="headerlink" href="#learning-from-testimony" title="Permalink to this headline">¶</a></h1>
 <p>This section implements the simulation from:</p>
-<p>K. Zollman (2015). <a class="reference external" href="http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf">Modeling the social consequences of testimonial norms</a>, Philosophical Studies, 172, pp. 2371 - 2383(2015)</p>
+<p>K. Zollman (2015). <a class="reference external" href="http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf">Modeling the social consequences of testimonial norms</a>, Philosophical Studies, 172, pp. 2371 - 2383.</p>
 <p>Fix a large number of propositions that the individuals want to learn.  For each proposition <span class="math notranslate nohighlight">\(P\)</span>, an individual either believes <span class="math notranslate nohighlight">\(P\)</span>, disbelieves <span class="math notranslate nohighlight">\(P\)</span> (i.e., believes that <span class="math notranslate nohighlight">\(P\)</span> is false)  or suspends judgement about <span class="math notranslate nohighlight">\(P\)</span>.</p>
 <p>Each individual is endowed with an intrinsic reliability which determines how
 likely she is to believe true propositions and disbelieve false ones when she receives
@@ -963,6 +984,12 @@ evidence directly from the world.</p>
 <div class="cell_output docutils container">
 <img alt="../_images/testimony_10_0.png" src="../_images/testimony_10_0.png" />
 </div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<p>C. Mayo-Wilson (2014). <a class="reference external" href="https://link.springer.com/article/10.1007/s11229-013-0320-2">Reliability of testimonial norms in scientific communities</a>, Synthese, 191, pp. 55 - 78.</p>
+<p>C. Merdes, M. von Sydow and U. Hahn (2020). <a class="reference external" href="https://link.springer.com/content/pdf/10.1007/s11229-020-02595-2.pdf">Formal models of source reliability</a>, Synthese,
+<a class="reference external" href="https://doi.org/10.1007/s11229-020-02595-2">https://doi.org/10.1007/s11229-020-02595-2</a></p>
 </div>
 </div>
 

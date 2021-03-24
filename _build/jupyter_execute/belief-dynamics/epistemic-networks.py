@@ -135,7 +135,6 @@ class BGModel(Model):
         self.network = NetworkGrid(network)
         self.running = True
         
-        
         # Set up the agents
         agent_id = 0
         for n in network.nodes:
@@ -531,7 +530,6 @@ ax = sns.barplot(y="graph",
                orient='h')
 ax.set_ylabel("Graph Type")
 ax.set_xlabel("Probability of Successful Learning")
-#plt.legend(bbox_to_anchor=(1,1))
 plt.suptitle(f"Difficulty {difficulty}")
 plt.show();
 
@@ -541,6 +539,9 @@ plt.show();
 2. K. Zollman, (2010). [The Epistemic Benefit of Transient Diversity](http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_transient_diversity.pdf), Erkenntnis,  72, pp. 17 - 35. 
 3. K. Zollman (2011). [Social Network Structure and the Achievement of Consensus](http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_consensus.pdf),  Politics, Philosophy, and Economics 11, pp. 26 - 44. 
 4. S. Rosenstock, J. Bruner, and C. O'Connor (2017).  [In Epistemic Networks, Is Less Really More?](http://cailinoconnor.com/wp-content/uploads/2015/03/In_Epistemic_Networks_Is_Less_Really_Mor-FINAL-VERSION.pdf), Philosophy of Science. 
+
+5. J. Thoma (2015). [The Epistemic Division of Labor Revisited](http://eprints.lse.ac.uk/88129/), Philosophy of Science, 82(3)
+
 
 
 

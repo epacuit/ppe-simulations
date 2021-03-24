@@ -2,7 +2,7 @@
 
 This section implements the simulation from: 
 
-K. Zollman (2015). [Modeling the social consequences of testimonial norms](http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf), Philosophical Studies, 172, pp. 2371 - 2383(2015) 
+K. Zollman (2015). [Modeling the social consequences of testimonial norms](http://www.kevinzollman.com/uploads/5/0/3/6/50361245/zollman_-_modeling_the_social_consequence_of_testimonial_norms.pdf), Philosophical Studies, 172, pp. 2371 - 2383.
 
 
 Fix a large number of propositions that the individuals want to learn.  For each proposition $P$, an individual either believes $P$, disbelieves $P$ (i.e., believes that $P$ is false)  or suspends judgement about $P$. 
@@ -582,4 +582,13 @@ axs[0].legend(bbox_to_anchor=(1.15, 1.))
 plt.suptitle("Average Percent of Correct Beliefs")
 plt.tight_layout()
 plt.show();
+
+## Further Reading
+
+C. Mayo-Wilson (2014). [Reliability of testimonial norms in scientific communities](https://link.springer.com/article/10.1007/s11229-013-0320-2), Synthese, 191, pp. 55 - 78.
+
+C. Merdes, M. von Sydow and U. Hahn (2020). [Formal models of source reliability](https://link.springer.com/content/pdf/10.1007/s11229-020-02595-2.pdf), Synthese, 
+https://doi.org/10.1007/s11229-020-02595-2
+
+
 

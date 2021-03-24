@@ -454,3 +454,10 @@ p=interact_manual(display_plots,plot_type=widgets.Dropdown(
     ],
     value='4_opt_fixed_probs',
     description='Simulation:'))
+
+## Further Reading
+
+1. U. Hahn, M. von Sydow and C. Merdes (2018). [How Communication Can Make Voters Choose Less Well](https://onlinelibrary.wiley.com/doi/epdf/10.1111/tops.12401), Topics in Cognitive Science
+
+2. F. Dietrich and K. Spiekermann (2020). [Jury Theorems: a review](http://www.franzdietrich.net/Papers/DietrichSpiekermann-JuryTheorems.pdf),  In: M. Fricker et al. (eds.) The Routledge Handbook of Social Epistemology. New York and Abingdon: Routledge
+

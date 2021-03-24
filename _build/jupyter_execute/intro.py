@@ -162,6 +162,7 @@ belief-dynamics/cjt
 belief-dynamics/testimony
 belief-dynamics/epistemic-networks
 belief-dynamics/polarization
+belief-dynamics/deliberation
 ```
 
 

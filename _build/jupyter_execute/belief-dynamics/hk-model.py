@@ -352,3 +352,18 @@ Additional questions/modifications of the model:
 3. There is no strategizing or misinformation. 
 4. Experts are assumed to have beliefs about a single proposition. What happens when agents have beliefs (either qualitative or quantitative) about multiple propositions (that are possibly logically connected)? 
 5. What is the aim of deliberation?  Is it to only reach consensus?  Or do we also want accuracy? 
+
+## Further Reading 
+
+1. I. Douven and  A. Riegler (2010). [Extending the Hegselmann–Krause Model I](https://www.researchgate.net/publication/220245147_Extending_the_Hegselmann-Krause_Model_I#fullTextFileContent), 
+Logic Journal of the IGPL, 18:2, pp. 323 - 335.
+
+2. A. Riegler and I. Douven (2010) [Extending the Hegselmann–Krause model II](https://constructivist.info/riegler/pub/Riegler%20A.%20&%20Douven%20I.%20(2010)%20Extending%20the%20Hegselmann%E2%80%93Krause%20model%20II.pdf). In: Czarnecki T., Kijania-Placek K., Poller O. & Wolenski J. (eds.) The analytical way. College Publications: London, pp. 245–258.
+
+
+3. A. Riegler  and I. Douven  (2009). [Extending the Hegselmann–Krause model III: From single beliefs to complex belief states](https://constructivist.info/riegler/pub/Riegler%20A.%20&%20Douven%20I.%20(2009)%20Extending%20the%20Hegselmann%E2%80%93Krause%20model%20III.pdf), Episteme 6(2), pp. 145 - 163
+
+
+4. I. Douven and R.  Hegselmann (2021). [Mis- and disinformation in a bounded confidence model](https://www.sciencedirect.com/science/article/abs/pii/S0004370220301648?via%3Dihub), Artificial Intelligence, 291, 103415 (2021)
+
+

@@ -1,6 +1,6 @@
 # Mesa
 
-Mesa is a Python package that can be used to quickly create and analyze agent-based models. Its goal is to be a Python 3  alternative to other frameworks for creating agent-based simulations, such as [NetLogo](https://ccl.northwestern.edu/netlogo/), [Repast](https://repast.github.io/), and [MASON]. (https://cs.gmu.edu/~eclab/projects/mason/).
+Mesa is a Python package that can be used to quickly create and analyze agent-based models. Its goal is to be a Python 3  alternative to other frameworks for creating agent-based simulations, such as [NetLogo](https://ccl.northwestern.edu/netlogo/), [Repast](https://repast.github.io/), and [MASON](https://cs.gmu.edu/~eclab/projects/mason/).
 
 Consult the documentation for more information about Mesa: [https://mesa.readthedocs.io/en/master/](https://mesa.readthedocs.io/en/master/).
 

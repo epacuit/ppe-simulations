@@ -610,3 +610,16 @@ model_out = model.datacollector.get_model_vars_dataframe()
 model_out.plot();
 
 
+## Further Reading 
+
+1. M. Jackson and Y. Zenou (2014). [Games on Networks](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2136179),  In: Handbook of Game Theory Vol. 4, edited by Peyton Young and Shmuel Zamir, Elsevier Science.
+
+2. P. Forber and R. Smead (2014). [The evolution of fairness through spite](https://royalsocietypublishing.org/doi/pdf/10.1098/rspb.2013.2439), Proceedings of the Royal Society B: Biological Sciences 281 (1780).
+
+3. P. Forber and R. Smead (2014). [An Evolutionary Paradox for Prosocial Behavior](https://www.jstor.org/stable/43820827?seq=1), The Journal of Philosophy, 11:3, pp. 151 - 166
+
+4. J. McKenzie Alexander and P. Vanderschraaf (2005). [Follow the Leader: Local Interactions with Influence Neighborhoods](http://jmckalex.org/files/publications/follow-the-leader.pdf), Philosophy of Science, pp. 86 - 113.
+
+
+
+
