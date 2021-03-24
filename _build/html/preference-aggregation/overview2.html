@@ -48,6 +48,8 @@
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,7 +59,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Deliberation" href="../belief-dynamics/deliberation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -217,9 +218,9 @@
   Preference Dynamics and Voting
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
    Overview
   </a>
  </li>
@@ -263,7 +264,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/preference-aggregation/overview.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/preference-aggregation/overview2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -283,7 +284,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fpreference-aggregation/overview.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/epacuit/ppe-simulations/issues/new?title=Issue%20on%20page%20%2Fpreference-aggregation/overview2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -306,7 +307,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/preference-aggregation/overview.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/epacuit/ppe-simulations/blob/master/preference-aggregation/overview2.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -389,6 +390,24 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">99906</span><span class="n">ff59f9d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import the Profile class</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">voting.profiles</span> <span class="kn">import</span> <span class="n">Profile</span>
+
+<span class="o">~/</span><span class="n">Dropbox</span><span class="o">/</span><span class="n">teaching</span><span class="o">/</span><span class="n">ppe</span><span class="o">-</span><span class="n">simulation</span><span class="o">/</span><span class="n">notes</span><span class="o">/</span><span class="n">preference</span><span class="o">-</span><span class="n">aggregation</span><span class="o">/</span><span class="n">voting</span><span class="o">/</span><span class="n">profiles</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">jit</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tabulate&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -411,14 +430,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 6 voters in the profile.
-+---+---+---+
-| 1 | 2 | 3 |
-+---+---+---+
-| 0 | 2 | 1 |
-| 1 | 1 | 2 |
-| 2 | 0 | 0 |
-+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">b19c230fff81</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1">#2 voters with the ranking (2,1,0) and</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1">#3 voters with the ranking (1,2,0)num_cands = 3</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span><span class="o">=</span><span class="n">rcounts</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">prof</span><span class="o">.</span><span class="n">num_voters</span><span class="si">}</span><span class="s2"> voters in the profile.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -444,13 +465,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+
-| 1 | 2 | 3 |
-+---+---+---+
-| a | c | b |
-| b | b | c |
-| c | a | a |
-+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">0</span><span class="n">edb615b3713</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1">#3 voters with the ranking (1,2,0)num_cands = 3</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">cmap</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s2">&quot;c&quot;</span><span class="p">}</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">prof2</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span><span class="o">=</span><span class="n">rcounts</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># display prof2  - the header is the number of voters with each ranking</span>
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -493,27 +517,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+---+---+
-| 1 | 1 | 1 | 1 | 1 |
-+---+---+---+---+---+
-| 0 | 2 | 3 | 1 | 1 |
-| 1 | 3 | 1 | 2 | 3 |
-| 2 | 1 | 2 | 0 | 2 |
-| 3 | 0 | 0 | 3 | 0 |
-+---+---+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">6</span><span class="n">fbc97f9e2cb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-The candidates are [0, 1, 2, 3]
-support of 2 over 3:  3
-support of 3 over 2:  2
-Margin(2,3) =   1
-Margin(3,2) =   -1
-2 is majority preferred to 3 is  True
-3 is majority preferred to 2 is  False
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of voters that rank 2 in 1st place is  1
-The number of voters that rank 2 in 2nd place is  1
-The size of a strict majority of voters is  3
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -549,22 +562,16 @@ The size of a strict majority of voters is  3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+---+---+
-| 1 | 1 | 1 | 1 | 1 |
-+---+---+---+---+---+
-| 0 | 2 | 3 | 1 | 1 |
-| 1 | 3 | 1 | 2 | 3 |
-| 2 | 1 | 2 | 0 | 2 |
-| 3 | 0 | 0 | 3 | 0 |
-+---+---+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">798</span><span class="n">c1ebf6d40</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
-The plurality scores are  {0: 1, 1: 2, 2: 1, 3: 1}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Borda scores are  {0: 4, 1: 11, 2: 8, 3: 7}
-The Condorcet winner is  1
-The weak Condorcet winner is  [1]
-The Condorcet loser is  0
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -601,27 +608,18 @@ The Condorcet loser is  0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+---+---+
-| 1 | 1 | 1 | 1 | 1 |
-+---+---+---+---+---+
-| 0 | 2 | 3 | 1 | 1 |
-| 1 | 3 | 1 | 2 | 3 |
-| 2 | 1 | 2 | 0 | 2 |
-| 3 | 0 | 0 | 3 | 0 |
-+---+---+---+---+---+
-&lt;class &#39;networkx.classes.digraph.DiGraph&#39;&gt;
-The nodes are the candidates  [0, 1, 2, 3]
-The edges are the majority relations  [(1, 0), (1, 2), (1, 3), (2, 0), (2, 3), (3, 0)]
-The weights are the margins 
- Edge (1, 0): {&#39;weight&#39;: 3}
- Edge (1, 2): {&#39;weight&#39;: 3}
- Edge (1, 3): {&#39;weight&#39;: 1}
- Edge (2, 0): {&#39;weight&#39;: 3}
- Edge (2, 3): {&#39;weight&#39;: 1}
- Edge (3, 0): {&#39;weight&#39;: 1}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">fc312f4f9d63</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/overview_12_1.png" src="../_images/overview_12_1.png" />
 </div>
 </div>
 <div class="section" id="majority-cycle">
@@ -643,16 +641,18 @@ The weights are the margins
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+
-| 1 | 1 | 1 |
-+---+---+---+
-| 0 | 1 | 2 |
-| 1 | 2 | 0 |
-| 2 | 0 | 1 |
-+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">d301992144de</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/overview_14_1.png" src="../_images/overview_14_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -673,16 +673,18 @@ The weights are the margins
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+
-| 2 | 2 | 3 |
-+---+---+---+
-| 0 | 1 | 2 |
-| 1 | 2 | 0 |
-| 2 | 0 | 1 |
-+---+---+---+
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">2</span><span class="n">c6a47a2f3d9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span> <span class="o">=</span> <span class="n">rcounts</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
-<img alt="../_images/overview_15_1.png" src="../_images/overview_15_1.png" />
 </div>
 </div>
 </div>
@@ -698,6 +700,32 @@ The weights are the margins
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">8</span><span class="n">f3b14a3b80b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">voting.voting_methods</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># all_vms is an list of all the voting methods that have been implemented</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># all_vms_mg is a list of all voting methods that accept margin graphs as input</span>
+
+<span class="o">~/</span><span class="n">Dropbox</span><span class="o">/</span><span class="n">teaching</span><span class="o">/</span><span class="n">ppe</span><span class="o">-</span><span class="n">simulation</span><span class="o">/</span><span class="n">notes</span><span class="o">/</span><span class="n">preference</span><span class="o">-</span><span class="n">aggregation</span><span class="o">/</span><span class="n">voting</span><span class="o">/</span><span class="n">voting_methods</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s1"> </span>
+<span class="ne">----&gt; </span><span class="mi">9</span><span class="s1"> from voting.profiles import Profile, _borda_score, _find_updated_profile</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s1"> from voting.generate_profiles import generate_profile</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s1"> from itertools import permutations, product</span>
+
+<span class="s1">~/Dropbox/teaching/ppe-simulation/notes/preference-aggregation/voting/profiles.py in &lt;module&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s1"> from numba import jit</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s1"> import networkx as nx</span>
+<span class="ne">---&gt; </span><span class="mi">13</span><span class="s1"> from tabulate import tabulate</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s1"> import matplotlib.pyplot as plt</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s1"> </span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;tabulate&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -709,52 +737,24 @@ The weights are the margins
     <span class="n">coombs</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">vms</span><span class="p">:</span> 
+<span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">all_vms</span><span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="n">vm</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">vm</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+    
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plurality
-A plurality winnner a candidate that is ranked first by the most voters
-    
-Borda
-A Borda winner is a candidate with the larget Borda score. 
-    
-    The Borda score of the candidates is calculated as follows: If there are $m$ candidates, then 
-    the Borda score of candidate $c$ is \sum_{r=1}^{m (m - r) * Rank(c,r)$ where $Rank(c,r)$ is the 
-    number of voters that rank candidate $c$ in position $r$. 
-    
-PluralityWRunoff
-If there is a majority winner then that candidate is the plurality with runoff winner
-    If there is no majority winner, then hold a runoff with  the top two candidates: 
-    either two (or more candidates)  with the most first place votes or the candidate with 
-    the most first place votes and the candidate with the 2nd highest first place votes 
-    are ranked first by the fewest number of voters.    
-    
-    Note: If the candidates are all tied for the most first place votes, then all candidates are winners. 
-    
-Ranked Choice
-If there is a majority winner then that candidate is the ranked choice winner
-    If there is no majority winner, then remove all candidates that are ranked first by the fewest 
-    number of voters.  Continue removing candidates with the fewest number first-place votes until 
-    there is a candidate with a majority of first place votes.  
-    
-    Note: If there is  more than one candidate with the fewest number of first-place votes, then *all*
-    such candidates are removed from the profile. 
-    
-    Note: We typically refer to this method as &quot;Ranked Choice&quot;, but it also known as &quot;Hare&quot; or &quot;IRV&quot;
-    
-Coombs
-If there is a majority winner then that candidate is the Coombs winner
-    If there is no majority winner, then remove all candidates that are ranked last by the greatest 
-    number of voters.  Continue removing candidates with the most last-place votes until 
-    there is a candidate with a majority of first place votes.  
-    
-    Note: If there is  more than one candidate with the most number of last-place votes, then *all*
-    such candidates are removed from the profile. 
-    
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">4</span><span class="n">d03ba343888</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vms</span> <span class="o">=</span> <span class="p">[</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">plurality</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">borda</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">plurality_with_runoff</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">hare</span><span class="p">,</span>
+
+<span class="ne">NameError</span>: name &#39;plurality&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -779,23 +779,16 @@ If there is a majority winner then that candidate is the Coombs winner
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+---+---+
-| 1 | 1 | 1 | 1 | 1 |
-+---+---+---+---+---+
-| 0 | 2 | 3 | 1 | 1 |
-| 1 | 3 | 1 | 2 | 3 |
-| 2 | 1 | 2 | 0 | 2 |
-| 3 | 0 | 0 | 3 | 0 |
-+---+---+---+---+---+
-Plurality winners: [1]
-Borda winners: [1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PluralityWRunoff winners: [1]
-Ranked Choice winners: [1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coombs winners: [1]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">7</span><span class="n">cf85bf3dc5d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -814,20 +807,16 @@ Ranked Choice winners: [1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+
-| 2 | 2 | 1 |
-+---+---+---+
-| 0 | 1 | 2 |
-| 1 | 2 | 0 |
-| 2 | 0 | 1 |
-+---+---+---+
-Plurality winners: [0, 1]
-Borda winners: [1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PluralityWRunoff winners: [0]
-Ranked Choice winners: [0]
-Coombs winners: [1]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mf">54e190</span><span class="n">a65d18</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">num_cands</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span><span class="o">=</span><span class="n">rcounts</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+
+<span class="ne">NameError</span>: name &#39;Profile&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -835,11 +824,10 @@ Coombs winners: [1]
 </div>
 <div class="section" id="voting-method-tutorial">
 <h2>Voting Method Tutorial<a class="headerlink" href="#voting-method-tutorial" title="Permalink to this headline">¶</a></h2>
-<iframe width=800 height=800 src="https://voting-methods-tutorial.herokuapp.com/"></iframe></div>
+<iframe width=650 height=700 src="https://voting-methods-tutorial.herokuapp.com/"></iframe></div>
 <div class="section" id="online-voting-tools">
 <h2>Online Voting Tools<a class="headerlink" href="#online-voting-tools" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p><a class="reference external" href="https://voting-methods-tutorial.herokuapp.com">voting-methods-tutorial.herokuapp.com</a></p></li>
 <li><p><a class="reference external" href="https://www.preflib.org/">www.preflib.org</a></p></li>
 <li><p><a class="reference external" href="https://voting.ml/">voting.ml</a></p></li>
 <li><p><a class="reference external" href="http://www.robovote.org/">www.robovote.org</a></p></li>
@@ -878,7 +866,6 @@ Coombs winners: [1]
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../belief-dynamics/deliberation.html" title="previous page">Deliberation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
