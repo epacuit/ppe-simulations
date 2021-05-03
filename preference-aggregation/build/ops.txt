@@ -1,0 +1,830 @@
+def gen_urn(numvotes, replace, alts):
+    numvotes, replace :: int
+    alts :: list
+    r0, voteMap, r1, ReplaceVotes :: dict
+    r2 :: object
+    r3 :: str
+    r4 :: object
+    r5 :: ptr
+    r6 :: int64
+    r7 :: short_int
+    r8, r9 :: object
+    r10, ICsize, ReplaceSize, r11, x :: int
+    r12 :: int64
+    r13 :: bit
+    r14 :: int64
+    r15, r16, r17 :: bit
+    r18 :: bool
+    r19 :: bit
+    r20 :: object
+    r21 :: str
+    r22 :: object
+    r23 :: int
+    r24, r25, r26 :: object
+    r27, flip :: int
+    r28 :: int64
+    r29 :: bit
+    r30 :: int64
+    r31, r32, r33 :: bit
+    r34, tvote, r35, r36 :: object
+    r37, r38 :: int
+    r39 :: object
+    r40 :: int32
+    r41 :: bit
+    r42, r43 :: object
+    r44, r45 :: int
+    r46 :: object
+    r47 :: int32
+    r48 :: bit
+    r49, r50 :: int
+    r51 :: short_int
+    r52 :: int64
+    r53 :: short_int
+    r54 :: object
+    r55 :: tuple[bool, int, object]
+    r56 :: int
+    r57 :: bool
+    r58 :: object
+    r59, vote :: tuple
+    r60 :: object
+    r61, r62 :: int
+    r63 :: int64
+    r64, r65, r66 :: bit
+    r67, r68 :: object
+    r69, r70 :: int
+    r71 :: object
+    r72 :: int32
+    r73 :: bit
+    r74, r75 :: object
+    r76, r77 :: int
+    r78 :: object
+    r79 :: int32
+    r80 :: bit
+    r81 :: int
+    r82, r83 :: bit
+    r84 :: str
+    r85 :: object
+    r86 :: str
+    r87, r88, r89 :: object
+    r90 :: str
+    r91, r92 :: object
+    r93 :: int
+    r94 :: dict
+L0:
+    r0 = PyDict_New()
+    if is_error(r0) goto L48 (error at gen_urn:10) else goto L1
+L1:
+    voteMap = r0
+    r1 = PyDict_New()
+    if is_error(r1) goto L49 (error at gen_urn:11) else goto L2
+L2:
+    ReplaceVotes = r1
+    r2 = math :: module
+    r3 = load_global CPyStatic_unicode_9 :: static  ('factorial')
+    r4 = CPyObject_GetAttr(r2, r3)
+    if is_error(r4) goto L50 (error at gen_urn:13) else goto L3
+L3:
+    r5 = get_element_ptr alts ob_size :: PyVarObject
+    r6 = load_mem r5, alts :: int64*
+    r7 = r6 << 1
+    r8 = box(short_int, r7)
+    r9 = PyObject_CallFunctionObjArgs(r4, r8, 0)
+    dec_ref r4
+    dec_ref r8
+    if is_error(r9) goto L50 (error at gen_urn:13) else goto L4
+L4:
+    r10 = unbox(int, r9)
+    dec_ref r9
+    if is_error(r10) goto L50 (error at gen_urn:13) else goto L5
+L5:
+    ICsize = r10
+    ReplaceSize = 0
+    r11 = 0
+    inc_ref r11 :: int
+    x = r11
+    dec_ref x :: int
+L6:
+    r12 = r11 & 1
+    r13 = r12 == 0
+    r14 = numvotes & 1
+    r15 = r14 == 0
+    r16 = r13 & r15
+    if r16 goto L7 else goto L8 :: bool
+L7:
+    r17 = r11 < numvotes :: signed
+    r18 = r17
+    goto L9
+L8:
+    r19 = CPyTagged_IsLt_(r11, numvotes)
+    r18 = r19
+L9:
+    if r18 goto L10 else goto L51 :: bool
+L10:
+    r20 = random :: module
+    r21 = load_global CPyStatic_unicode_10 :: static  ('randint')
+    r22 = CPyObject_GetAttr(r20, r21)
+    if is_error(r22) goto L52 (error at gen_urn:20) else goto L11
+L11:
+    r23 = CPyTagged_Add(ICsize, ReplaceSize)
+    r24 = box(short_int, 2)
+    r25 = box(int, r23)
+    r26 = PyObject_CallFunctionObjArgs(r22, r24, r25, 0)
+    dec_ref r22
+    dec_ref r24
+    dec_ref r25
+    if is_error(r26) goto L52 (error at gen_urn:20) else goto L12
+L12:
+    r27 = unbox(int, r26)
+    dec_ref r26
+    if is_error(r27) goto L52 (error at gen_urn:20) else goto L13
+L13:
+    flip = r27
+    r28 = flip & 1
+    r29 = r28 != 0
+    if r29 goto L15 else goto L14 :: bool
+L14:
+    r30 = ICsize & 1
+    r31 = r30 != 0
+    if r31 goto L15 else goto L16 :: bool
+L15:
+    r32 = CPyTagged_IsLt_(ICsize, flip)
+    if r32 goto L25 else goto L53 :: bool
+L16:
+    r33 = flip <= ICsize :: signed
+    if r33 goto L53 else goto L25 :: bool
+L17:
+    r34 = gen_ic_vote(alts)
+    if is_error(r34) goto L52 (error at gen_urn:25) else goto L18
+L18:
+    tvote = r34
+    r35 = box(short_int, 0)
+    r36 = CPyDict_Get(voteMap, tvote, r35)
+    dec_ref r35
+    if is_error(r36) goto L54 (error at gen_urn:26) else goto L19
+L19:
+    r37 = unbox(int, r36)
+    dec_ref r36
+    if is_error(r37) goto L54 (error at gen_urn:26) else goto L20
+L20:
+    r38 = CPyTagged_Add(r37, 2)
+    dec_ref r37 :: int
+    r39 = box(int, r38)
+    r40 = CPyDict_SetItem(voteMap, tvote, r39)
+    dec_ref r39
+    r41 = r40 >= 0 :: signed
+    if not r41 goto L54 (error at gen_urn:26) else goto L21 :: bool
+L21:
+    r42 = box(short_int, 0)
+    r43 = CPyDict_Get(ReplaceVotes, tvote, r42)
+    dec_ref r42
+    if is_error(r43) goto L54 (error at gen_urn:27) else goto L22
+L22:
+    r44 = unbox(int, r43)
+    dec_ref r43
+    if is_error(r44) goto L54 (error at gen_urn:27) else goto L23
+L23:
+    r45 = CPyTagged_Add(r44, replace)
+    dec_ref r44 :: int
+    r46 = box(int, r45)
+    r47 = CPyDict_SetItem(ReplaceVotes, tvote, r46)
+    dec_ref tvote
+    dec_ref r46
+    r48 = r47 >= 0 :: signed
+    if not r48 goto L52 (error at gen_urn:27) else goto L24 :: bool
+L24:
+    r49 = CPyTagged_Add(ReplaceSize, replace)
+    dec_ref ReplaceSize :: int
+    ReplaceSize = r49
+    goto L46
+L25:
+    r50 = CPyTagged_Subtract(flip, ICsize)
+    dec_ref flip :: int
+    flip = r50
+    r51 = 0
+    r52 = PyDict_Size(ReplaceVotes)
+    r53 = r52 << 1
+    r54 = CPyDict_GetKeysIter(ReplaceVotes)
+    if is_error(r54) goto L55 (error at gen_urn:35) else goto L26
+L26:
+    r55 = CPyDict_NextKey(r54, r51)
+    r56 = r55[1]
+    r51 = r56
+    r57 = r55[0]
+    if r57 goto L27 else goto L56 :: bool
+L27:
+    r58 = r55[2]
+    dec_ref r55
+    r59 = cast(tuple, r58)
+    if is_error(r59) goto L57 (error at gen_urn:35) else goto L28
+L28:
+    vote = r59
+    r60 = CPyDict_GetItem(ReplaceVotes, vote)
+    if is_error(r60) goto L58 (error at gen_urn:37) else goto L29
+L29:
+    r61 = unbox(int, r60)
+    dec_ref r60
+    if is_error(r61) goto L58 (error at gen_urn:37) else goto L30
+L30:
+    r62 = CPyTagged_Subtract(flip, r61)
+    dec_ref flip :: int
+    dec_ref r61 :: int
+    flip = r62
+    r63 = flip & 1
+    r64 = r63 != 0
+    if r64 goto L31 else goto L32 :: bool
+L31:
+    r65 = CPyTagged_IsLt_(0, flip)
+    if r65 goto L59 else goto L60 :: bool
+L32:
+    r66 = flip <= 0 :: signed
+    if r66 goto L60 else goto L59 :: bool
+L33:
+    r67 = box(short_int, 0)
+    r68 = CPyDict_Get(voteMap, vote, r67)
+    dec_ref r67
+    if is_error(r68) goto L61 (error at gen_urn:40) else goto L34
+L34:
+    r69 = unbox(int, r68)
+    dec_ref r68
+    if is_error(r69) goto L61 (error at gen_urn:40) else goto L35
+L35:
+    r70 = CPyTagged_Add(r69, 2)
+    dec_ref r69 :: int
+    r71 = box(int, r70)
+    r72 = CPyDict_SetItem(voteMap, vote, r71)
+    dec_ref r71
+    r73 = r72 >= 0 :: signed
+    if not r73 goto L61 (error at gen_urn:40) else goto L36 :: bool
+L36:
+    r74 = box(short_int, 0)
+    r75 = CPyDict_Get(ReplaceVotes, vote, r74)
+    dec_ref r74
+    if is_error(r75) goto L61 (error at gen_urn:41) else goto L37
+L37:
+    r76 = unbox(int, r75)
+    dec_ref r75
+    if is_error(r76) goto L61 (error at gen_urn:41) else goto L38
+L38:
+    r77 = CPyTagged_Add(r76, replace)
+    dec_ref r76 :: int
+    r78 = box(int, r77)
+    r79 = CPyDict_SetItem(ReplaceVotes, vote, r78)
+    dec_ref vote
+    dec_ref r78
+    r80 = r79 >= 0 :: signed
+    if not r80 goto L52 (error at gen_urn:41) else goto L39 :: bool
+L39:
+    r81 = CPyTagged_Add(ReplaceSize, replace)
+    dec_ref ReplaceSize :: int
+    ReplaceSize = r81
+    goto L46
+L40:
+    r82 = CPyDict_CheckSize(ReplaceVotes, r53)
+    if not r82 goto L57 (error at gen_urn:35) else goto L26 :: bool
+L41:
+    r83 = CPy_NoErrOccured()
+    if not r83 goto L52 (error at gen_urn:35) else goto L42 :: bool
+L42:
+    r84 = load_global CPyStatic_unicode_11 :: static  ('We Have a problem... replace fell through....')
+    r85 = builtins :: module
+    r86 = load_global CPyStatic_unicode_12 :: static  ('print')
+    r87 = CPyObject_GetAttr(r85, r86)
+    if is_error(r87) goto L52 (error at gen_urn:45) else goto L43
+L43:
+    r88 = PyObject_CallFunctionObjArgs(r87, r84, 0)
+    dec_ref r87
+    if is_error(r88) goto L52 (error at gen_urn:45) else goto L62
+L44:
+    r89 = builtins :: module
+    r90 = load_global CPyStatic_unicode_13 :: static  ('exit')
+    r91 = CPyObject_GetAttr(r89, r90)
+    if is_error(r91) goto L52 (error at gen_urn:46) else goto L45
+L45:
+    r92 = PyObject_CallFunctionObjArgs(r91, 0)
+    dec_ref r91
+    if is_error(r92) goto L52 (error at gen_urn:46) else goto L63
+L46:
+    r93 = CPyTagged_Add(r11, 2)
+    dec_ref r11 :: int
+    inc_ref r93 :: int
+    r11 = r93
+    x = r93
+    dec_ref x :: int
+    goto L6
+L47:
+    return voteMap
+L48:
+    r94 = <error> :: dict
+    return r94
+L49:
+    dec_ref voteMap
+    goto L48
+L50:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    goto L48
+L51:
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    goto L47
+L52:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    goto L48
+L53:
+    dec_ref flip :: int
+    goto L17
+L54:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    dec_ref tvote
+    goto L48
+L55:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    dec_ref flip :: int
+    goto L48
+L56:
+    dec_ref flip :: int
+    dec_ref r54
+    dec_ref r55
+    goto L41
+L57:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    dec_ref flip :: int
+    dec_ref r54
+    goto L48
+L58:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    dec_ref flip :: int
+    dec_ref r54
+    dec_ref vote
+    goto L48
+L59:
+    dec_ref vote
+    goto L40
+L60:
+    dec_ref flip :: int
+    dec_ref r54
+    goto L33
+L61:
+    dec_ref voteMap
+    dec_ref ReplaceVotes
+    dec_ref ICsize :: int
+    dec_ref ReplaceSize :: int
+    dec_ref r11 :: int
+    dec_ref vote
+    goto L48
+L62:
+    dec_ref r88
+    goto L44
+L63:
+    dec_ref r92
+    goto L46
+
+def gen_ic_vote(alts):
+    alts, r0, options, r1, vote :: list
+    r2 :: ptr
+    r3 :: int64
+    r4 :: short_int
+    r5 :: bit
+    r6 :: object
+    r7 :: str
+    r8 :: object
+    r9 :: ptr
+    r10 :: int64
+    r11 :: short_int
+    r12 :: int
+    r13, r14, r15 :: object
+    r16 :: int
+    r17 :: object
+    r18 :: int
+    r19 :: object
+    r20 :: int32
+    r21 :: bit
+    r22 :: tuple
+    r23 :: object
+L0:
+    r0 = PySequence_List(alts)
+    if is_error(r0) goto L12 (error at gen_ic_vote:55) else goto L1
+L1:
+    options = r0
+    r1 = PyList_New(0)
+    if is_error(r1) goto L13 (error at gen_ic_vote:56) else goto L2
+L2:
+    vote = r1
+L3:
+    r2 = get_element_ptr options ob_size :: PyVarObject
+    r3 = load_mem r2, options :: int64*
+    r4 = r3 << 1
+    r5 = r4 > 0 :: signed
+    if r5 goto L4 else goto L14 :: bool
+L4:
+    r6 = random :: module
+    r7 = load_global CPyStatic_unicode_10 :: static  ('randint')
+    r8 = CPyObject_GetAttr(r6, r7)
+    if is_error(r8) goto L15 (error at gen_ic_vote:59) else goto L5
+L5:
+    r9 = get_element_ptr options ob_size :: PyVarObject
+    r10 = load_mem r9, options :: int64*
+    r11 = r10 << 1
+    r12 = CPyTagged_Subtract(r11, 2)
+    r13 = box(short_int, 0)
+    r14 = box(int, r12)
+    r15 = PyObject_CallFunctionObjArgs(r8, r13, r14, 0)
+    dec_ref r8
+    dec_ref r13
+    dec_ref r14
+    if is_error(r15) goto L15 (error at gen_ic_vote:59) else goto L6
+L6:
+    r16 = unbox(int, r15)
+    dec_ref r15
+    if is_error(r16) goto L15 (error at gen_ic_vote:59) else goto L7
+L7:
+    r17 = CPyList_Pop(options, r16)
+    dec_ref r16 :: int
+    if is_error(r17) goto L15 (error at gen_ic_vote:59) else goto L8
+L8:
+    r18 = unbox(int, r17)
+    dec_ref r17
+    if is_error(r18) goto L15 (error at gen_ic_vote:59) else goto L9
+L9:
+    r19 = box(int, r18)
+    r20 = PyList_Append(vote, r19)
+    dec_ref r19
+    r21 = r20 >= 0 :: signed
+    if not r21 goto L15 (error at gen_ic_vote:59) else goto L3 :: bool
+L10:
+    r22 = PyList_AsTuple(vote)
+    dec_ref vote
+    if is_error(r22) goto L12 (error at gen_ic_vote:60) else goto L11
+L11:
+    return r22
+L12:
+    r23 = <error> :: object
+    return r23
+L13:
+    dec_ref options
+    goto L12
+L14:
+    dec_ref options
+    goto L10
+L15:
+    dec_ref options
+    dec_ref vote
+    goto L12
+
+def __top_level__():
+    r0, r1 :: object
+    r2 :: bit
+    r3 :: str
+    r4, r5, r6 :: object
+    r7 :: bit
+    r8 :: str
+    r9, r10 :: object
+    r11 :: dict
+    r12 :: str
+    r13 :: object
+    r14 :: str
+    r15 :: int32
+    r16 :: bit
+    r17 :: str
+    r18 :: object
+    r19 :: str
+    r20 :: int32
+    r21 :: bit
+    r22 :: str
+    r23 :: object
+    r24 :: str
+    r25 :: int32
+    r26 :: bit
+    r27 :: str
+    r28 :: object
+    r29 :: str
+    r30 :: int32
+    r31 :: bit
+    r32 :: dict
+    r33, r34 :: object
+    r35 :: bit
+    r36 :: str
+    r37 :: object
+    r38 :: dict
+    r39 :: str
+    r40 :: object
+    r41 :: str
+    r42 :: int32
+    r43 :: bit
+    r44 :: dict
+    r45, r46 :: object
+    r47 :: bit
+    r48 :: str
+    r49 :: object
+    r50 :: dict
+    r51 :: str
+    r52 :: object
+    r53 :: str
+    r54 :: int32
+    r55 :: bit
+    r56 :: dict
+    r57, r58 :: object
+    r59 :: bit
+    r60 :: str
+    r61 :: object
+    r62 :: dict
+    r63 :: str
+    r64 :: object
+    r65 :: str
+    r66 :: int32
+    r67 :: bit
+    r68 :: object
+    r69 :: str
+    r70, r71 :: object
+    r72 :: float
+    r73 :: dict
+    r74 :: str
+    r75 :: int32
+    r76 :: bit
+    r77 :: list
+    r78, r79, r80, r81 :: object
+    r82, r83, r84, r85, r86 :: ptr
+    r87 :: dict
+    r88 :: object
+    r89 :: str
+    r90, r91, r92 :: object
+    r93 :: str
+    r94, r95 :: object
+    r96 :: float
+    r97 :: dict
+    r98 :: str
+    r99 :: object
+    r100 :: float
+    r101 :: object
+    r102 :: float
+    r103 :: object
+    r104 :: str
+    r105, r106 :: object
+    r107 :: None
+L0:
+    r0 = builtins :: module
+    r1 = load_address _Py_NoneStruct
+    r2 = r0 != r1
+    if r2 goto L3 else goto L1 :: bool
+L1:
+    r3 = load_global CPyStatic_unicode_0 :: static  ('builtins')
+    r4 = PyImport_Import(r3)
+    if is_error(r4) goto L47 (error at <module>:-1) else goto L2
+L2:
+    builtins = r4 :: module
+    dec_ref r4
+L3:
+    r5 = typing :: module
+    r6 = load_address _Py_NoneStruct
+    r7 = r5 != r6
+    if r7 goto L6 else goto L4 :: bool
+L4:
+    r8 = load_global CPyStatic_unicode_1 :: static  ('typing')
+    r9 = PyImport_Import(r8)
+    if is_error(r9) goto L47 (error at <module>:1) else goto L5
+L5:
+    typing = r9 :: module
+    dec_ref r9
+L6:
+    r10 = typing :: module
+    r11 = generate_urn.globals :: static
+    r12 = load_global CPyStatic_unicode_2 :: static  ('List')
+    r13 = CPyObject_GetAttr(r10, r12)
+    if is_error(r13) goto L47 (error at <module>:1) else goto L7
+L7:
+    r14 = load_global CPyStatic_unicode_2 :: static  ('List')
+    r15 = CPyDict_SetItem(r11, r14, r13)
+    dec_ref r13
+    r16 = r15 >= 0 :: signed
+    if not r16 goto L47 (error at <module>:1) else goto L8 :: bool
+L8:
+    r17 = load_global CPyStatic_unicode_3 :: static  ('Any')
+    r18 = CPyObject_GetAttr(r10, r17)
+    if is_error(r18) goto L47 (error at <module>:1) else goto L9
+L9:
+    r19 = load_global CPyStatic_unicode_3 :: static  ('Any')
+    r20 = CPyDict_SetItem(r11, r19, r18)
+    dec_ref r18
+    r21 = r20 >= 0 :: signed
+    if not r21 goto L47 (error at <module>:1) else goto L10 :: bool
+L10:
+    r22 = load_global CPyStatic_unicode_4 :: static  ('Dict')
+    r23 = CPyObject_GetAttr(r10, r22)
+    if is_error(r23) goto L47 (error at <module>:1) else goto L11
+L11:
+    r24 = load_global CPyStatic_unicode_4 :: static  ('Dict')
+    r25 = CPyDict_SetItem(r11, r24, r23)
+    dec_ref r23
+    r26 = r25 >= 0 :: signed
+    if not r26 goto L47 (error at <module>:1) else goto L12 :: bool
+L12:
+    r27 = load_global CPyStatic_unicode_5 :: static  ('Tuple')
+    r28 = CPyObject_GetAttr(r10, r27)
+    if is_error(r28) goto L47 (error at <module>:1) else goto L13
+L13:
+    r29 = load_global CPyStatic_unicode_5 :: static  ('Tuple')
+    r30 = CPyDict_SetItem(r11, r29, r28)
+    dec_ref r28
+    r31 = r30 >= 0 :: signed
+    if not r31 goto L47 (error at <module>:1) else goto L14 :: bool
+L14:
+    r32 = generate_urn.globals :: static
+    r33 = math :: module
+    r34 = load_address _Py_NoneStruct
+    r35 = r33 != r34
+    if r35 goto L17 else goto L15 :: bool
+L15:
+    r36 = load_global CPyStatic_unicode_6 :: static  ('math')
+    r37 = PyImport_Import(r36)
+    if is_error(r37) goto L47 (error at <module>:3) else goto L16
+L16:
+    math = r37 :: module
+    dec_ref r37
+L17:
+    r38 = PyImport_GetModuleDict()
+    r39 = load_global CPyStatic_unicode_6 :: static  ('math')
+    r40 = CPyDict_GetItem(r38, r39)
+    if is_error(r40) goto L47 (error at <module>:3) else goto L18
+L18:
+    r41 = load_global CPyStatic_unicode_6 :: static  ('math')
+    r42 = CPyDict_SetItem(r32, r41, r40)
+    dec_ref r40
+    r43 = r42 >= 0 :: signed
+    if not r43 goto L47 (error at <module>:3) else goto L19 :: bool
+L19:
+    r44 = generate_urn.globals :: static
+    r45 = random :: module
+    r46 = load_address _Py_NoneStruct
+    r47 = r45 != r46
+    if r47 goto L22 else goto L20 :: bool
+L20:
+    r48 = load_global CPyStatic_unicode_7 :: static  ('random')
+    r49 = PyImport_Import(r48)
+    if is_error(r49) goto L47 (error at <module>:4) else goto L21
+L21:
+    random = r49 :: module
+    dec_ref r49
+L22:
+    r50 = PyImport_GetModuleDict()
+    r51 = load_global CPyStatic_unicode_7 :: static  ('random')
+    r52 = CPyDict_GetItem(r50, r51)
+    if is_error(r52) goto L47 (error at <module>:4) else goto L23
+L23:
+    r53 = load_global CPyStatic_unicode_7 :: static  ('random')
+    r54 = CPyDict_SetItem(r44, r53, r52)
+    dec_ref r52
+    r55 = r54 >= 0 :: signed
+    if not r55 goto L47 (error at <module>:4) else goto L24 :: bool
+L24:
+    r56 = generate_urn.globals :: static
+    r57 = time :: module
+    r58 = load_address _Py_NoneStruct
+    r59 = r57 != r58
+    if r59 goto L27 else goto L25 :: bool
+L25:
+    r60 = load_global CPyStatic_unicode_8 :: static  ('time')
+    r61 = PyImport_Import(r60)
+    if is_error(r61) goto L47 (error at <module>:5) else goto L26
+L26:
+    time = r61 :: module
+    dec_ref r61
+L27:
+    r62 = PyImport_GetModuleDict()
+    r63 = load_global CPyStatic_unicode_8 :: static  ('time')
+    r64 = CPyDict_GetItem(r62, r63)
+    if is_error(r64) goto L47 (error at <module>:5) else goto L28
+L28:
+    r65 = load_global CPyStatic_unicode_8 :: static  ('time')
+    r66 = CPyDict_SetItem(r56, r65, r64)
+    dec_ref r64
+    r67 = r66 >= 0 :: signed
+    if not r67 goto L47 (error at <module>:5) else goto L29 :: bool
+L29:
+    r68 = time :: module
+    r69 = load_global CPyStatic_unicode_8 :: static  ('time')
+    r70 = CPyObject_GetAttr(r68, r69)
+    if is_error(r70) goto L47 (error at <module>:63) else goto L30
+L30:
+    r71 = PyObject_CallFunctionObjArgs(r70, 0)
+    dec_ref r70
+    if is_error(r71) goto L47 (error at <module>:63) else goto L31
+L31:
+    r72 = cast(float, r71)
+    if is_error(r72) goto L47 (error at <module>:63) else goto L32
+L32:
+    r73 = generate_urn.globals :: static
+    r74 = load_global CPyStatic_unicode_14 :: static  ('t0')
+    r75 = CPyDict_SetItem(r73, r74, r72)
+    dec_ref r72
+    r76 = r75 >= 0 :: signed
+    if not r76 goto L47 (error at <module>:63) else goto L33 :: bool
+L33:
+    r77 = PyList_New(4)
+    if is_error(r77) goto L47 (error at <module>:64) else goto L34
+L34:
+    r78 = box(short_int, 0)
+    r79 = box(short_int, 2)
+    r80 = box(short_int, 4)
+    r81 = box(short_int, 6)
+    r82 = get_element_ptr r77 ob_item :: PyListObject
+    r83 = load_mem r82, r77 :: ptr*
+    set_mem r83, r78, r77 :: builtins.object*
+    r84 = r83 + 8
+    set_mem r84, r79, r77 :: builtins.object*
+    r85 = r83 + 16
+    set_mem r85, r80, r77 :: builtins.object*
+    r86 = r83 + 24
+    set_mem r86, r81, r77 :: builtins.object*
+    r87 = gen_urn(20, 10, r77)
+    dec_ref r77
+    if is_error(r87) goto L47 (error at <module>:64) else goto L35
+L35:
+    r88 = builtins :: module
+    r89 = load_global CPyStatic_unicode_12 :: static  ('print')
+    r90 = CPyObject_GetAttr(r88, r89)
+    if is_error(r90) goto L48 (error at <module>:64) else goto L36
+L36:
+    r91 = PyObject_CallFunctionObjArgs(r90, r87, 0)
+    dec_ref r90
+    dec_ref r87
+    if is_error(r91) goto L47 (error at <module>:64) else goto L49
+L37:
+    r92 = time :: module
+    r93 = load_global CPyStatic_unicode_8 :: static  ('time')
+    r94 = CPyObject_GetAttr(r92, r93)
+    if is_error(r94) goto L47 (error at <module>:65) else goto L38
+L38:
+    r95 = PyObject_CallFunctionObjArgs(r94, 0)
+    dec_ref r94
+    if is_error(r95) goto L47 (error at <module>:65) else goto L39
+L39:
+    r96 = cast(float, r95)
+    if is_error(r96) goto L47 (error at <module>:65) else goto L40
+L40:
+    r97 = generate_urn.globals :: static
+    r98 = load_global CPyStatic_unicode_14 :: static  ('t0')
+    r99 = CPyDict_GetItem(r97, r98)
+    if is_error(r99) goto L50 (error at <module>:65) else goto L41
+L41:
+    r100 = cast(float, r99)
+    if is_error(r100) goto L50 (error at <module>:65) else goto L42
+L42:
+    r101 = PyNumber_Subtract(r96, r100)
+    dec_ref r96
+    dec_ref r100
+    if is_error(r101) goto L47 (error at <module>:65) else goto L43
+L43:
+    r102 = cast(float, r101)
+    if is_error(r102) goto L47 (error at <module>:65) else goto L44
+L44:
+    r103 = builtins :: module
+    r104 = load_global CPyStatic_unicode_12 :: static  ('print')
+    r105 = CPyObject_GetAttr(r103, r104)
+    if is_error(r105) goto L51 (error at <module>:65) else goto L45
+L45:
+    r106 = PyObject_CallFunctionObjArgs(r105, r102, 0)
+    dec_ref r105
+    dec_ref r102
+    if is_error(r106) goto L47 (error at <module>:65) else goto L52
+L46:
+    return 1
+L47:
+    r107 = <error> :: None
+    return r107
+L48:
+    dec_ref r87
+    goto L47
+L49:
+    dec_ref r91
+    goto L37
+L50:
+    dec_ref r96
+    goto L47
+L51:
+    dec_ref r102
+    goto L47
+L52:
+    dec_ref r106
+    goto L46

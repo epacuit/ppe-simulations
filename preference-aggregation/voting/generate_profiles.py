@@ -52,15 +52,22 @@ def create_rankings_mallows_two_rankings(num_voters, cmap, phi, ref=None):
     if ref == None:
         ref, refc = gen_impartial_culture_strict(1, cmap)
     ref1 = ref[0]
-    
+    print("ref1", ref1)
     # reverse the ref1 ranking
     _rankings = [sorted(list(r.items()), key=lambda _r: _r[1]) for r in ref]
     _ranking= [[_cr[0] for _cr in _crs] for _crs in _rankings] [0]
+    print(_ranking)
     _ranking.reverse()
+    print(_ranking)
     ref2 = {c:cidx+1 for cidx,c in enumerate(_ranking)}
-
+    print(ref2)
+    print("num_voters", num_voters)
+    print("cmap", cmap)
+    print("phis", [phi, phi])
+    print([ref1, ref2])
     _rmaps, rcount = gen_mallows(num_voters, cmap, [0.5, 0.5], [phi, phi], [ref1, ref2])
     
+    print(ref1, ref2)
     # fix candidate names so that they range from 0 to num_cands-1 
     # the preflib gen_mallows function returns candidate maps where candidates
     # are named 1...num_cands

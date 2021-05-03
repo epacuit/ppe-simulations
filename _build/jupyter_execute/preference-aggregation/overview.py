@@ -9,9 +9,13 @@ E. Pacuit (2019). [Voting Methods](https://plato.stanford.edu/entries/voting-met
 
 * $V$ is a finite set of voters.
 * $X$ is a (typically finite) set of alternatives, or candidates.
-* A relation $P$ on $X$ is a **linear order** if it is transitive (for all $x,y,z\in X$, if $x\mathrel{P} y$ and $y\mathrel{P} z$, then $x\mathrel{P} z$, irreflexive (there is no $x\in X$ with $x\mathrel{P}$), and complete (for all $x,y\in X$, either $x\mathrel{P} y$ or $y\mathrel{P} x$.   
+* A relation $P$ on $X$ is a **linear order** if it is
+    * asymmetric: for all $x,y\in X$, if  $x\mathrel{P} y$ then it is not the case that $y\mathrel{P} x$, 
+    * transitive: for all $x,y,z\in X$, if $x\mathrel{P} y$ and $y\mathrel{P} z$, then $x\mathrel{P} z$, 
+    * complete: for all $x,y\in X$, either $x\mathrel{P} y$ or $y\mathrel{P} x$.
+* When $x\mathrel{P} y$, we say that "$x$ is strictly preferred to $y$", or that "$x$ is ranked above $y$".
 * $\mathcal{L}(X)$ is the set of all linear orders over the set $X$.
-* A **profile** for $X$ and $V$ is a function $\mathbf{P}$ assigning to $i\in V$ a linear order $\mathbf{P}_i$ on $X$. So, $a\mathbf{P}_ib$ means that voter $i$ strictly prefers candidate $a$ to $b$, or $a$ is ranked above $b$. Let $X(\mathbf{P})$ be the candidates in $\mathbf{P}$ and $V(\mathbf{P})$ the voters in $\mathbf{P}$. 
+* A **profile** for $X$ and $V$ is a function $\mathbf{P}$ assigning to $i\in V$ a linear order $\mathbf{P}_i$ on $X$. So, $a\mathrel{\mathbf{P}_i}b$ means that voter $i$ strictly prefers candidate $a$ to $b$, or that voter $i$ ranks  $a$  above $b$. Let $X(\mathbf{P})$ be the candidates in $\mathbf{P}$ and $V(\mathbf{P})$ the voters in $\mathbf{P}$. 
 * For a profile $\mathbf{P}$ and candidates $x,y\in X(\mathbf{P})$, the **margin for $x$ over $y$** is $$Margin_{\mathbf{P}}(x,y) = |\{i\mid x\mathrel{\mathbf{P}_i} y\}| -  |\{i\mid y\mathrel{\mathbf{P}_i} x\}|$$
 
 
@@ -25,10 +29,10 @@ rankings = [
     (2, 1, 0), 
     (1, 2, 0)
 ]
-rcounts = [1, 2, 3] 
+rcounts = [1, 3, 2] 
 #1 voter with the ranking (0,1,2),
-#2 voters with the ranking (2,1,0) and 
-#3 voters with the ranking (1,2,0)num_cands = 3
+#3 voters with the ranking (2,1,0) and 
+#2 voters with the ranking (1,2,0)num_cands = 3
 prof = Profile(rankings, num_cands, rcounts=rcounts)
 print(f"There are {prof.num_voters} voters in the profile.")
 
@@ -40,7 +44,7 @@ rankings = [
     (2, 1, 0), 
     (1, 2, 0)
 ]
-rcounts = [1, 2, 3] 
+rcounts = [1, 3, 2] 
 #1 voter with the ranking (0,1,2),
 #2 voters with the ranking (2,1,0) and 
 #3 voters with the ranking (1,2,0)num_cands = 3
@@ -171,6 +175,26 @@ prof.display()
 prof.display_margin_graph()
 
 
+rankings = [
+    (1, 0, 3, 2), 
+    (0, 1, 3, 2), 
+    (3, 0, 2, 1), 
+    (0, 3, 2, 1), 
+    (2, 1, 0, 3), 
+    (1, 3, 2, 0), 
+    (2, 3, 0, 1), 
+    (3, 2, 0, 1)
+]
+
+rcounts = [2, 1, 1, 1, 3, 1, 1, 1]
+num_cands = 4
+prof = Profile(rankings, num_cands, rcounts = rcounts)
+
+prof.display()
+
+prof.display_margin_graph()
+
+
 ## Voting Methods
 
 A **voting method** is a function $F$ mapping profiles (in the domain of $F$) to non-empty set of candidates:  $\varnothing \neq F(\mathbf{P})\subseteq X(\mathbf{P})$
@@ -184,7 +208,6 @@ from voting.voting_methods import *
 vms = [
     plurality, 
     borda,
-    plurality_with_runoff,
     hare,
     coombs,
 ]
@@ -207,7 +230,7 @@ prof = Profile(rankings, num_cands)
 prof.display()
 
 for vm in vms: 
-    print(f"{vm.name} winners: {vm(prof)}")
+    print(f"{vm.name}: {vm(prof)}")
 
 
 rankings = [(0,1,2), (1,2,0), (2,0,1)]
@@ -217,13 +240,8 @@ prof = Profile(rankings, num_cands, rcounts=rcounts)
 prof.display()
 
 for vm in vms: 
-    print(f"{vm.name} winners: {vm(prof)}")
+    print(f"{vm.name}: {vm(prof)}")
 
-
-## Voting Method Tutorial
-
-
-<iframe width=800 height=800 src="https://voting-methods-tutorial.herokuapp.com/"></iframe>
 
 ## Online Voting Tools
 
@@ -232,11 +250,7 @@ for vm in vms:
 1. [www.preflib.org](https://www.preflib.org/)
 2. [voting.ml](https://voting.ml/)
 3. [www.robovote.org](http://www.robovote.org/)
-4. [civs.cs.cornell.edu/](https://civs.cs.cornell.edu/)
+4. [civs.cs.cornell.edu](https://civs.cs.cornell.edu/)
 3. [www.fairvote.org](https://www.fairvote.org/)
 5. [SF Open Source Voting (osvtac.github.io)](https://osvtac.github.io)
-
-
-
-
 

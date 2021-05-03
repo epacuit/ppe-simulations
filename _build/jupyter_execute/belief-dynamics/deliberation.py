@@ -322,8 +322,8 @@ class DeliberationModel(Model):
         self.running = True
         
         for e_id in range(num_experts):
-            prior = priors[e_id] if priors is not None else np.random.uniform(0,1)
             rel = rels[e_id] if rels is not None else 0.75
+            prior = priors[e_id] if priors is not None else rel
             rel2 = second_order_rels[e_id] if second_order_rels is not None else 0.6
             max_rel2 = max_second_order_rels[e_id] if max_second_order_rels is not None else 1.0
             max_rounds_for_rel2 = max_rounds_for_rel2s[e_id] if max_rounds_for_rel2s is not None else 20
@@ -375,14 +375,17 @@ class DeliberationModel(Model):
         for e in self.schedule.agents: 
             e.updated_second_order_reliability(delib_round)
         
-        if self.consensus() and delib_round > 1: 
+        for e in self.schedule.agents:
+            e.vote()
+        
+        if self.consensus(): 
             self.running = False
             
 
 num_experts = 2
 num_rounds = 6
 
-priors = [0.4]*num_experts
+priors = [0.5]*num_experts
 rels = [0.4] * num_experts
 second_order_rels = [1.0] * num_experts
 max_second_order_rels = [1.0] * num_experts
@@ -414,6 +417,7 @@ while dmodel.running and r < num_rounds:
 print(f"After {r} rounds: \n")
 
 for e in dmodel.schedule.agents:
+    
     print(f"{e.unique_id} pr is {e.pr}")
     print(f"\tvote is {e.vote()}")
     
@@ -426,10 +430,11 @@ print("Is there agreement in beliefs? ", dmodel.agreement_in_beliefs())
 num_experts = 9
 num_rounds = 20
 
-priors = None #[0.2, 0.55, 0.55, 0.55, 0.55] 
+#priors = None #[0.2, 0.55, 0.55, 0.55, 0.55] 
 rels = [0.4] * num_experts
+priors = rels
 second_order_rels = [0.6] * num_experts
-max_second_order_rels = [1.0] * num_experts
+max_second_order_rels = [0.8] * num_experts
 max_rounds_for_rel2s = [10] * num_experts
 
 dmodel = DeliberationModel(num_experts, 
@@ -453,6 +458,7 @@ print("\n\n")
 r = 0 
 while dmodel.running and r < num_rounds:
     dmodel.step(r)
+    print([a.pr for a in dmodel.schedule.agents])
     r+= 1
 
 print(f"After {r} rounds: \n")
@@ -475,7 +481,7 @@ H. Ding and M. Pivato (2021). [Deliberation and epistemic democracy](https://pap
 
 ### The agent/group opinions
 
-* There is a set $N$ if agents.
+* There is a set $N$ of agents.
 * In the simplest setting, there are two states $1$ and $-1$ (one of which is the "true state" and the agents receive two types of evidence (positive evidence favoring $1$ and negative evidence favoring $-1$).  
 * The true state is unknown.
 * The agents receives informative signals of this state, i.e., the *evidence* which is either private or public.
@@ -500,7 +506,7 @@ $$Maj^t = \mathrm{sgn}\left (\sum_{i\in N} s_i^t\right )$$
 
 During deliberation, agents *disclose* some of their private evidence, turning it into public evidence, to modify the beliefs of the other agents.   The key assumption is: 
 
-* It is easy for agents to learn their peers’ opinions during each round of deliberation, simply by asking them yes/no questions or holding a straw vote. But it is not possible for agents to learn the underlying beliefs of their peers. (See Section 4 for a model with belief disclosure.) 
+* It is easy for agents to learn their peers’ opinions during each round of deliberation, simply by asking them yes/no questions or holding a straw vote. But it is not possible for agents to learn the underlying beliefs of their peers.  
 * It is diﬃcult to learn what evidence---or even how much evidence---their peers have to justify these opinions.
 * An agent will not "disclose" their evidence (i.e. explain these facts and arguments) unless she has an incentive to do so. 
 * Each agent wants the collective decision to be correct. At any time during deliberation, the agent believes that her current opinion is correct; thus, she seeks to persuade other group members to agree with her current opinion.   She will disclose evidence only if it advances this goal: 
@@ -684,7 +690,7 @@ potential_evidence = [2, 4, 6, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
 N=5
 delib_protocol = "Parallel"
 max_delib_rounds = len(potential_evidence) + 5
-dmodel = DeliberationModel(N, potential_evidence, delib_protocol, None, num_options=2)
+dmodel = DeliberationModel(N, potential_evidence, delib_protocol, None)
 
 dmodel.evidence = []
 dmodel.schedule.agents[0].evidence = [2]

@@ -48,6 +48,8 @@
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,6 +59,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Probability Models" href="probmodels.html" />
     <link rel="prev" title="Deliberation" href="../belief-dynamics/deliberation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -223,6 +226,21 @@
    Overview
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probmodels.html">
+   Generating Preferences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polls-deliberation.html">
+   Polls and Deliberation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="grading-jury-theorem.html">
+   Grading Jury Theorem
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -348,11 +366,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#voting-method-tutorial">
-   Voting Method Tutorial
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#online-voting-tools">
    Online Voting Tools
   </a>
@@ -377,9 +390,16 @@
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(V\)</span> is a finite set of voters.</p></li>
 <li><p><span class="math notranslate nohighlight">\(X\)</span> is a (typically finite) set of alternatives, or candidates.</p></li>
-<li><p>A relation <span class="math notranslate nohighlight">\(P\)</span> on <span class="math notranslate nohighlight">\(X\)</span> is a <strong>linear order</strong> if it is transitive (for all <span class="math notranslate nohighlight">\(x,y,z\in X\)</span>, if <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span> and <span class="math notranslate nohighlight">\(y\mathrel{P} z\)</span>, then <span class="math notranslate nohighlight">\(x\mathrel{P} z\)</span>, irreflexive (there is no <span class="math notranslate nohighlight">\(x\in X\)</span> with <span class="math notranslate nohighlight">\(x\mathrel{P}\)</span>), and complete (for all <span class="math notranslate nohighlight">\(x,y\in X\)</span>, either <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span> or <span class="math notranslate nohighlight">\(y\mathrel{P} x\)</span>.</p></li>
+<li><p>A relation <span class="math notranslate nohighlight">\(P\)</span> on <span class="math notranslate nohighlight">\(X\)</span> is a <strong>linear order</strong> if it is</p>
+<ul>
+<li><p>asymmetric: for all <span class="math notranslate nohighlight">\(x,y\in X\)</span>, if  <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span> then it is not the case that <span class="math notranslate nohighlight">\(y\mathrel{P} x\)</span>,</p></li>
+<li><p>transitive: for all <span class="math notranslate nohighlight">\(x,y,z\in X\)</span>, if <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span> and <span class="math notranslate nohighlight">\(y\mathrel{P} z\)</span>, then <span class="math notranslate nohighlight">\(x\mathrel{P} z\)</span>,</p></li>
+<li><p>complete: for all <span class="math notranslate nohighlight">\(x,y\in X\)</span>, either <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span> or <span class="math notranslate nohighlight">\(y\mathrel{P} x\)</span>.</p></li>
+</ul>
+</li>
+<li><p>When <span class="math notranslate nohighlight">\(x\mathrel{P} y\)</span>, we say that “<span class="math notranslate nohighlight">\(x\)</span> is strictly preferred to <span class="math notranslate nohighlight">\(y\)</span>”, or that “<span class="math notranslate nohighlight">\(x\)</span> is ranked above <span class="math notranslate nohighlight">\(y\)</span>”.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{L}(X)\)</span> is the set of all linear orders over the set <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
-<li><p>A <strong>profile</strong> for <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is a function <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> assigning to <span class="math notranslate nohighlight">\(i\in V\)</span> a linear order <span class="math notranslate nohighlight">\(\mathbf{P}_i\)</span> on <span class="math notranslate nohighlight">\(X\)</span>. So, <span class="math notranslate nohighlight">\(a\mathbf{P}_ib\)</span> means that voter <span class="math notranslate nohighlight">\(i\)</span> strictly prefers candidate <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, or <span class="math notranslate nohighlight">\(a\)</span> is ranked above <span class="math notranslate nohighlight">\(b\)</span>. Let <span class="math notranslate nohighlight">\(X(\mathbf{P})\)</span> be the candidates in <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> and <span class="math notranslate nohighlight">\(V(\mathbf{P})\)</span> the voters in <span class="math notranslate nohighlight">\(\mathbf{P}\)</span>.</p></li>
+<li><p>A <strong>profile</strong> for <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is a function <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> assigning to <span class="math notranslate nohighlight">\(i\in V\)</span> a linear order <span class="math notranslate nohighlight">\(\mathbf{P}_i\)</span> on <span class="math notranslate nohighlight">\(X\)</span>. So, <span class="math notranslate nohighlight">\(a\mathrel{\mathbf{P}_i}b\)</span> means that voter <span class="math notranslate nohighlight">\(i\)</span> strictly prefers candidate <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, or that voter <span class="math notranslate nohighlight">\(i\)</span> ranks  <span class="math notranslate nohighlight">\(a\)</span>  above <span class="math notranslate nohighlight">\(b\)</span>. Let <span class="math notranslate nohighlight">\(X(\mathbf{P})\)</span> be the candidates in <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> and <span class="math notranslate nohighlight">\(V(\mathbf{P})\)</span> the voters in <span class="math notranslate nohighlight">\(\mathbf{P}\)</span>.</p></li>
 <li><p>For a profile <span class="math notranslate nohighlight">\(\mathbf{P}\)</span> and candidates <span class="math notranslate nohighlight">\(x,y\in X(\mathbf{P})\)</span>, the <strong>margin for <span class="math notranslate nohighlight">\(x\)</span> over <span class="math notranslate nohighlight">\(y\)</span></strong> is $<span class="math notranslate nohighlight">\(Margin_{\mathbf{P}}(x,y) = |\{i\mid x\mathrel{\mathbf{P}_i} y\}| -  |\{i\mid y\mathrel{\mathbf{P}_i} x\}|\)</span>$</p></li>
 </ul>
 <div class="cell docutils container">
@@ -398,10 +418,10 @@
     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> 
     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> 
+<span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> 
 <span class="c1">#1 voter with the ranking (0,1,2),</span>
-<span class="c1">#2 voters with the ranking (2,1,0) and </span>
-<span class="c1">#3 voters with the ranking (1,2,0)num_cands = 3</span>
+<span class="c1">#3 voters with the ranking (2,1,0) and </span>
+<span class="c1">#2 voters with the ranking (1,2,0)num_cands = 3</span>
 <span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span><span class="o">=</span><span class="n">rcounts</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There are </span><span class="si">{</span><span class="n">prof</span><span class="o">.</span><span class="n">num_voters</span><span class="si">}</span><span class="s2"> voters in the profile.&quot;</span><span class="p">)</span>
 
@@ -413,7 +433,7 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 6 voters in the profile.
 +---+---+---+
-| 1 | 2 | 3 |
+| 1 | 3 | 2 |
 +---+---+---+
 | 0 | 2 | 1 |
 | 1 | 1 | 2 |
@@ -430,7 +450,7 @@
     <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> 
     <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">]</span>
-<span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> 
+<span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> 
 <span class="c1">#1 voter with the ranking (0,1,2),</span>
 <span class="c1">#2 voters with the ranking (2,1,0) and </span>
 <span class="c1">#3 voters with the ranking (1,2,0)num_cands = 3</span>
@@ -445,7 +465,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+
-| 1 | 2 | 3 |
+| 1 | 3 | 2 |
 +---+---+---+
 | a | c | b |
 | b | b | c |
@@ -685,6 +705,43 @@ The weights are the margins
 <img alt="../_images/overview_15_1.png" src="../_images/overview_15_1.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rankings</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">rcounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">num_cands</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">prof</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">rankings</span><span class="p">,</span> <span class="n">num_cands</span><span class="p">,</span> <span class="n">rcounts</span> <span class="o">=</span> <span class="n">rcounts</span><span class="p">)</span>
+
+<span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+
+<span class="n">prof</span><span class="o">.</span><span class="n">display_margin_graph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---+---+---+---+---+---+---+---+
+| 2 | 1 | 1 | 1 | 3 | 1 | 1 | 1 |
++---+---+---+---+---+---+---+---+
+| 1 | 0 | 3 | 0 | 2 | 1 | 2 | 3 |
+| 0 | 1 | 0 | 3 | 1 | 3 | 3 | 2 |
+| 3 | 3 | 2 | 2 | 0 | 2 | 0 | 0 |
+| 2 | 2 | 1 | 1 | 3 | 0 | 1 | 1 |
++---+---+---+---+---+---+---+---+
+</pre></div>
+</div>
+<img alt="../_images/overview_16_1.png" src="../_images/overview_16_1.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="voting-methods">
@@ -704,7 +761,6 @@ The weights are the margins
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vms</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">plurality</span><span class="p">,</span> 
     <span class="n">borda</span><span class="p">,</span>
-    <span class="n">plurality_with_runoff</span><span class="p">,</span>
     <span class="n">hare</span><span class="p">,</span>
     <span class="n">coombs</span><span class="p">,</span>
 <span class="p">]</span>
@@ -725,15 +781,6 @@ A Borda winner is a candidate with the larget Borda score.
     The Borda score of the candidates is calculated as follows: If there are $m$ candidates, then 
     the Borda score of candidate $c$ is \sum_{r=1}^{m (m - r) * Rank(c,r)$ where $Rank(c,r)$ is the 
     number of voters that rank candidate $c$ in position $r$. 
-    
-PluralityWRunoff
-If there is a majority winner then that candidate is the plurality with runoff winner
-    If there is no majority winner, then hold a runoff with  the top two candidates: 
-    either two (or more candidates)  with the most first place votes or the candidate with 
-    the most first place votes and the candidate with the 2nd highest first place votes 
-    are ranked first by the fewest number of voters.    
-    
-    Note: If the candidates are all tied for the most first place votes, then all candidates are winners. 
     
 Ranked Choice
 If there is a majority winner then that candidate is the ranked choice winner
@@ -774,7 +821,7 @@ If there is a majority winner then that candidate is the Coombs winner
 <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">vms</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vm</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> winners: </span><span class="si">{</span><span class="n">vm</span><span class="p">(</span><span class="n">prof</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vm</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">vm</span><span class="p">(</span><span class="n">prof</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -787,15 +834,14 @@ If there is a majority winner then that candidate is the Coombs winner
 | 2 | 1 | 2 | 0 | 2 |
 | 3 | 0 | 0 | 3 | 0 |
 +---+---+---+---+---+
-Plurality winners: [1]
-Borda winners: [1]
+Plurality: [1]
+Borda: [1]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PluralityWRunoff winners: [1]
-Ranked Choice winners: [1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ranked Choice: [1]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coombs winners: [1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coombs: [1]
 </pre></div>
 </div>
 </div>
@@ -809,7 +855,7 @@ Ranked Choice winners: [1]
 <span class="n">prof</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">vm</span> <span class="ow">in</span> <span class="n">vms</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vm</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> winners: </span><span class="si">{</span><span class="n">vm</span><span class="p">(</span><span class="n">prof</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vm</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">vm</span><span class="p">(</span><span class="n">prof</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -821,21 +867,15 @@ Ranked Choice winners: [1]
 | 1 | 2 | 0 |
 | 2 | 0 | 1 |
 +---+---+---+
-Plurality winners: [0, 1]
-Borda winners: [1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PluralityWRunoff winners: [0]
-Ranked Choice winners: [0]
-Coombs winners: [1]
+Plurality: [0, 1]
+Borda: [1]
+Ranked Choice: [0]
+Coombs: [1]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="voting-method-tutorial">
-<h2>Voting Method Tutorial<a class="headerlink" href="#voting-method-tutorial" title="Permalink to this headline">¶</a></h2>
-<iframe width=800 height=800 src="https://voting-methods-tutorial.herokuapp.com/"></iframe></div>
 <div class="section" id="online-voting-tools">
 <h2>Online Voting Tools<a class="headerlink" href="#online-voting-tools" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -843,7 +883,7 @@ Coombs winners: [1]
 <li><p><a class="reference external" href="https://www.preflib.org/">www.preflib.org</a></p></li>
 <li><p><a class="reference external" href="https://voting.ml/">voting.ml</a></p></li>
 <li><p><a class="reference external" href="http://www.robovote.org/">www.robovote.org</a></p></li>
-<li><p><a class="reference external" href="https://civs.cs.cornell.edu/">civs.cs.cornell.edu/</a></p></li>
+<li><p><a class="reference external" href="https://civs.cs.cornell.edu/">civs.cs.cornell.edu</a></p></li>
 <li><p><a class="reference external" href="https://www.fairvote.org/">www.fairvote.org</a></p></li>
 <li><p><a class="reference external" href="https://osvtac.github.io">SF Open Source Voting (osvtac.github.io)</a></p></li>
 </ol>
@@ -879,6 +919,7 @@ Coombs winners: [1]
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../belief-dynamics/deliberation.html" title="previous page">Deliberation</a>
+    <a class='right-next' id="next-link" href="probmodels.html" title="next page">Probability Models</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

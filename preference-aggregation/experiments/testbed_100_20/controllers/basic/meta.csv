@@ -1,0 +1,5 @@
+key,value
+num_voters,100
+num_candidates,20
+num_families,30
+num_elections,800

@@ -172,4 +172,7 @@ belief-dynamics/deliberation
 :caption: Preference Dynamics and Voting
 
 Overview <preference-aggregation/overview>
+Generating Preferences <preference-aggregation/probmodels>
+Polls and Deliberation <preference-aggregation/polls-deliberation>
+Grading Jury Theorem <preference-aggregation/grading-jury-theorem>
 ```

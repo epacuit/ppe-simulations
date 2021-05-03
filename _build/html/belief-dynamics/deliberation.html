@@ -226,6 +226,21 @@
    Overview
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/probmodels.html">
+   Generating Preferences
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/polls-deliberation.html">
+   Polls and Deliberation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../preference-aggregation/grading-jury-theorem.html">
+   Grading Jury Theorem
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -804,8 +819,8 @@ $<span class="math notranslate nohighlight">\(x_{ij}^k = \frac{1-r_{ij}^k}{r_{ij
         <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
         
         <span class="k">for</span> <span class="n">e_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_experts</span><span class="p">):</span>
-            <span class="n">prior</span> <span class="o">=</span> <span class="n">priors</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">priors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">rel</span> <span class="o">=</span> <span class="n">rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.75</span>
+            <span class="n">prior</span> <span class="o">=</span> <span class="n">priors</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">priors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">rel</span>
             <span class="n">rel2</span> <span class="o">=</span> <span class="n">second_order_rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">second_order_rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.6</span>
             <span class="n">max_rel2</span> <span class="o">=</span> <span class="n">max_second_order_rels</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">max_second_order_rels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">1.0</span>
             <span class="n">max_rounds_for_rel2</span> <span class="o">=</span> <span class="n">max_rounds_for_rel2s</span><span class="p">[</span><span class="n">e_id</span><span class="p">]</span> <span class="k">if</span> <span class="n">max_rounds_for_rel2s</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">20</span>
@@ -857,7 +872,10 @@ $<span class="math notranslate nohighlight">\(x_{ij}^k = \frac{1-r_{ij}^k}{r_{ij
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span> 
             <span class="n">e</span><span class="o">.</span><span class="n">updated_second_order_reliability</span><span class="p">(</span><span class="n">delib_round</span><span class="p">)</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">consensus</span><span class="p">()</span> <span class="ow">and</span> <span class="n">delib_round</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> 
+        <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">vote</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">consensus</span><span class="p">():</span> 
             <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
             
 </pre></div>
@@ -869,7 +887,7 @@ $<span class="math notranslate nohighlight">\(x_{ij}^k = \frac{1-r_{ij}^k}{r_{ij
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_experts</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">6</span>
 
-<span class="n">priors</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">]</span><span class="o">*</span><span class="n">num_experts</span>
+<span class="n">priors</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">]</span><span class="o">*</span><span class="n">num_experts</span>
 <span class="n">rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
 <span class="n">second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
 <span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
@@ -901,6 +919,7 @@ $<span class="math notranslate nohighlight">\(x_{ij}^k = \frac{1-r_{ij}^k}{r_{ij
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> rounds: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+    
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">unique_id</span><span class="si">}</span><span class="s2"> pr is </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">pr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">vote is </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">vote</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     
@@ -912,29 +931,29 @@ $<span class="math notranslate nohighlight">\(x_{ij}^k = \frac{1-r_{ij}^k}{r_{ij
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 pr is 0.4
-	vote is False
-1 pr is 0.4
-	vote is False
-
-Initial group opinion False
-Is there consensus?  True
-The consensus opinion is  False
-Is there agreement in beliefs?  True
-The probability that the majority is correct:  0.149
-
-
-
-After 3 rounds: 
-
-0 pr is 0.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 pr is 0.5
 	vote is True
 1 pr is 0.5
 	vote is True
 
-Initial group opinion False
+Initial group opinion True
 Is there consensus?  True
 The consensus opinion is  True
+Is there agreement in beliefs?  True
+The probability that the majority is correct:  0.148
+
+
+
+After 1 rounds: 
+
+0 pr is 0.4
+	vote is False
+1 pr is 0.4
+	vote is False
+
+Initial group opinion True
+Is there consensus?  True
+The consensus opinion is  False
 Is there agreement in beliefs?  True
 </pre></div>
 </div>
@@ -945,10 +964,11 @@ Is there agreement in beliefs?  True
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_experts</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">num_rounds</span> <span class="o">=</span> <span class="mi">20</span>
 
-<span class="n">priors</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#[0.2, 0.55, 0.55, 0.55, 0.55] </span>
+<span class="c1">#priors = None #[0.2, 0.55, 0.55, 0.55, 0.55] </span>
 <span class="n">rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+<span class="n">priors</span> <span class="o">=</span> <span class="n">rels</span>
 <span class="n">second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
-<span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
+<span class="n">max_second_order_rels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
 <span class="n">max_rounds_for_rel2s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_experts</span>
 
 <span class="n">dmodel</span> <span class="o">=</span> <span class="n">DeliberationModel</span><span class="p">(</span><span class="n">num_experts</span><span class="p">,</span> 
@@ -972,6 +992,7 @@ Is there agreement in beliefs?  True
 <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">while</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">num_rounds</span><span class="p">:</span>
     <span class="n">dmodel</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">pr</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
     <span class="n">r</span><span class="o">+=</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;After </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> rounds: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -988,57 +1009,58 @@ Is there agreement in beliefs?  True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 pr is 0.1477352278915881
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 pr is 0.4
 	vote is False
-1 pr is 0.923155977197588
-	vote is True
-2 pr is 0.3324912339094275
+1 pr is 0.4
 	vote is False
-3 pr is 0.928927547229079
-	vote is True
-4 pr is 0.696054761066168
-	vote is True
-5 pr is 0.6364589137590702
-	vote is True
-6 pr is 0.04134347775749447
+2 pr is 0.4
 	vote is False
-7 pr is 0.35400923873174883
+3 pr is 0.4
 	vote is False
-8 pr is 0.1499017824914063
+4 pr is 0.4
 	vote is False
-
-Initial group opinion False
-Is there consensus?  False
-The consensus opinion is  None
-Is there agreement in beliefs?  False
-The probability that the majority is correct:  0.279
-
-
-
-After 20 rounds: 
-
-0 pr is 9.22469767489276e-05
+5 pr is 0.4
 	vote is False
-1 pr is 1.1487785752423038e-11
+6 pr is 0.4
 	vote is False
-2 pr is 0.9999999994994477
-	vote is True
-3 pr is 0.0333061218459864
+7 pr is 0.4
 	vote is False
-4 pr is 0.9916380814305513
-	vote is True
-5 pr is 0.9998125464993137
-	vote is True
-6 pr is 6.061240152539278e-08
-	vote is False
-7 pr is 0.9999999902343539
-	vote is True
-8 pr is 0.005541647878681465
+8 pr is 0.4
 	vote is False
 
 Initial group opinion False
-Is there consensus?  False
-The consensus opinion is  None
+Is there consensus?  True
+The consensus opinion is  False
+Is there agreement in beliefs?  True
+The probability that the majority is correct:  0.259
+
+
+
+[0.9995849924409302, 0.9999884829117391, 0.9907087573378671, 0.9873744886246204, 0.9348143575497266, 0.9822681785871835, 0.6166641230970344, 0.9807093861709946, 0.9434230627248874]
+After 1 rounds: 
+
+0 pr is 0.9995849924409302
+	vote is True
+1 pr is 0.9999884829117391
+	vote is True
+2 pr is 0.9907087573378671
+	vote is True
+3 pr is 0.9873744886246204
+	vote is True
+4 pr is 0.9348143575497266
+	vote is True
+5 pr is 0.9822681785871835
+	vote is True
+6 pr is 0.6166641230970344
+	vote is True
+7 pr is 0.9807093861709946
+	vote is True
+8 pr is 0.9434230627248874
+	vote is True
+
+Initial group opinion False
+Is there consensus?  True
+The consensus opinion is  True
 Is there agreement in beliefs?  False
 </pre></div>
 </div>
@@ -1053,7 +1075,7 @@ Is there agreement in beliefs?  False
 <div class="section" id="the-agent-group-opinions">
 <h3>The agent/group opinions<a class="headerlink" href="#the-agent-group-opinions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>There is a set <span class="math notranslate nohighlight">\(N\)</span> if agents.</p></li>
+<li><p>There is a set <span class="math notranslate nohighlight">\(N\)</span> of agents.</p></li>
 <li><p>In the simplest setting, there are two states <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(-1\)</span> (one of which is the “true state” and the agents receive two types of evidence (positive evidence favoring <span class="math notranslate nohighlight">\(1\)</span> and negative evidence favoring <span class="math notranslate nohighlight">\(-1\)</span>).</p></li>
 <li><p>The true state is unknown.</p></li>
 <li><p>The agents receives informative signals of this state, i.e., the <em>evidence</em> which is either private or public.</p></li>
@@ -1075,7 +1097,7 @@ Is there agreement in beliefs?  False
 <h3>Evidence disclosure<a class="headerlink" href="#evidence-disclosure" title="Permalink to this headline">¶</a></h3>
 <p>During deliberation, agents <em>disclose</em> some of their private evidence, turning it into public evidence, to modify the beliefs of the other agents.   The key assumption is:</p>
 <ul class="simple">
-<li><p>It is easy for agents to learn their peers’ opinions during each round of deliberation, simply by asking them yes/no questions or holding a straw vote. But it is not possible for agents to learn the underlying beliefs of their peers. (See Section 4 for a model with belief disclosure.)</p></li>
+<li><p>It is easy for agents to learn their peers’ opinions during each round of deliberation, simply by asking them yes/no questions or holding a straw vote. But it is not possible for agents to learn the underlying beliefs of their peers.</p></li>
 <li><p>It is diﬃcult to learn what evidence—or even how much evidence—their peers have to justify these opinions.</p></li>
 <li><p>An agent will not “disclose” their evidence (i.e. explain these facts and arguments) unless she has an incentive to do so.</p></li>
 <li><p>Each agent wants the collective decision to be correct. At any time during deliberation, the agent believes that her current opinion is correct; thus, she seeks to persuade other group members to agree with her current opinion.   She will disclose evidence only if it advances this goal:</p>
@@ -1258,7 +1280,7 @@ the true state.’</p>
 <span class="n">N</span><span class="o">=</span><span class="mi">5</span>
 <span class="n">delib_protocol</span> <span class="o">=</span> <span class="s2">&quot;Parallel&quot;</span>
 <span class="n">max_delib_rounds</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">potential_evidence</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="n">dmodel</span> <span class="o">=</span> <span class="n">DeliberationModel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">potential_evidence</span><span class="p">,</span> <span class="n">delib_protocol</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">num_options</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dmodel</span> <span class="o">=</span> <span class="n">DeliberationModel</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">potential_evidence</span><span class="p">,</span> <span class="n">delib_protocol</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
 <span class="n">dmodel</span><span class="o">.</span><span class="n">evidence</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">evidence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -1290,7 +1312,7 @@ the true state.’</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">15</span><span class="n">ff33c2e0df</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">decd0cdf9331</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">evidence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">evidence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
 <span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">dmodel</span><span class="o">.</span><span class="n">correct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fromiter</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">all_ev</span><span class="p">],</span> <span class="nb">int</span><span class="p">)))</span>
@@ -1329,97 +1351,190 @@ the true state.’</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All evidence range(0, 5)
-The true state is 1 
+The true state is 0 
 
-0 vote is 0
+0 vote is -1
 	vote based on personal evidence is 0
-	personal evidence is [2, 4, 1, 3]
-	disclosed evidence is [1]
+	personal evidence is [2, 1]
+	disclosed evidence is []
 1 vote is 0
 	vote based on personal evidence is 0
-	personal evidence is []
-	disclosed evidence is []
+	personal evidence is [3, 2, 4, 1]
+	disclosed evidence is [2]
 2 vote is 0
 	vote based on personal evidence is 0
 	personal evidence is []
 	disclosed evidence is []
-3 vote is 0
-	vote based on personal evidence is -1
-	personal evidence is [1]
-	disclosed evidence is [1]
-4 vote is 0
+3 vote is -1
 	vote based on personal evidence is 0
-	personal evidence is [4, 1]
-	disclosed evidence is [1]
-5 vote is 1
-	vote based on personal evidence is 1
-	personal evidence is [2, 4, 1, 0]
+	personal evidence is [1, 2]
 	disclosed evidence is []
-6 vote is 0
+4 vote is 0
 	vote based on personal evidence is 0
 	personal evidence is []
 	disclosed evidence is []
-7 vote is 0
+5 vote is 0
+	vote based on personal evidence is 1
+	personal evidence is [2]
+	disclosed evidence is [2]
+6 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 4, 1, 2]
+	disclosed evidence is [2]
+7 vote is -1
 	vote based on personal evidence is -1
-	personal evidence is [1]
-	disclosed evidence is [1]
-8 vote is 0
-	vote based on personal evidence is 1
-	personal evidence is [4, 1, 2]
-	disclosed evidence is [1]
-9 vote is 0
-	vote based on personal evidence is 1
-	personal evidence is [4, 2]
+	personal evidence is [1, 3]
 	disclosed evidence is []
-Public evidence  [1, 4, 3, 2, 1, 1, 1, 1, 1]
-Number of neutral agents 5
-Majority opinion  1
+8 vote is -1
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is []
+9 vote is -1
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is []
+Public evidence  [3, 2, 2, 2]
+Number of neutral agents 6
+Majority opinion  -1
 Deliberation round  1
 
 0 vote is 0
 	vote based on personal evidence is 0
-	personal evidence is [2, 4, 1, 3]
-	disclosed evidence is [1, 3]
+	personal evidence is [2, 1]
+	disclosed evidence is []
 1 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 2, 4, 1]
+	disclosed evidence is [2, 4]
+2 vote is 1
 	vote based on personal evidence is 0
 	personal evidence is []
 	disclosed evidence is []
+3 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [1, 2]
+	disclosed evidence is [2]
+4 vote is 1
+	vote based on personal evidence is 0
+	personal evidence is []
+	disclosed evidence is []
+5 vote is 1
+	vote based on personal evidence is 1
+	personal evidence is [2]
+	disclosed evidence is [2]
+6 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 4, 1, 2]
+	disclosed evidence is [2, 4]
+7 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3]
+	disclosed evidence is []
+8 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2]
+9 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2]
+Public evidence  [3, 2, 2, 2, 4, 2, 4, 2, 2]
+Number of neutral agents 6
+Majority opinion  -1
+Deliberation round  2
+
+0 vote is
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0
+	vote based on personal evidence is 0
+	personal evidence is [2, 1]
+	disclosed evidence is [1]
+1 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 2, 4, 1]
+	disclosed evidence is [2, 4, 3]
 2 vote is 0
 	vote based on personal evidence is 0
 	personal evidence is []
 	disclosed evidence is []
 3 vote is 0
-	vote based on personal evidence is -1
-	personal evidence is [1]
-	disclosed evidence is [1]
-4 vote is 0
 	vote based on personal evidence is 0
-	personal evidence is [4, 1]
-	disclosed evidence is [1]
-5 vote is 1
-	vote based on personal evidence is 1
-	personal evidence is [2, 4, 1, 0]
-	disclosed evidence is []
-6 vote is 0
+	personal evidence is [1, 2]
+	disclosed evidence is [2, 1]
+4 vote is 0
 	vote based on personal evidence is 0
 	personal evidence is []
 	disclosed evidence is []
+5 vote is 0
+	vote based on personal evidence is 1
+	personal evidence is [2]
+	disclosed evidence is [2]
+6 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 4, 1, 2]
+	disclosed evidence is [2, 4, 1]
 7 vote is 0
 	vote based on personal evidence is -1
-	personal evidence is [1]
-	disclosed evidence is [1]
+	personal evidence is [1, 3]
+	disclosed evidence is [3]
 8 vote is 0
-	vote based on personal evidence is 1
-	personal evidence is [4, 1, 2]
-	disclosed evidence is [1]
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2, 3]
 9 vote is 0
-	vote based on personal evidence is 1
-	personal evidence is [4, 2]
-	disclosed evidence is []
-Public evidence  [1, 4, 3, 2, 1, 1, 1, 1, 1, 3]
-Number of neutral agents 5
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2, 1]
+Public evidence  [3, 2, 2, 2, 4, 2, 4, 2, 2, 1, 3, 1, 1, 3, 3, 1]
+Number of neutral agents 6
 Majority opinion  1
-Deliberation round  2
+Deliberation round  3
+
+0 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [2, 1]
+	disclosed evidence is [1]
+1 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 2, 4, 1]
+	disclosed evidence is [2, 4, 3]
+2 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is []
+	disclosed evidence is []
+3 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [1, 2]
+	disclosed evidence is [2, 1]
+4 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is []
+	disclosed evidence is []
+5 vote is 0
+	vote based on personal evidence is 1
+	personal evidence is [2]
+	disclosed evidence is [2]
+6 vote is 0
+	vote based on personal evidence is 0
+	personal evidence is [3, 4, 1, 2]
+	disclosed evidence is [2, 4, 1]
+7 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3]
+	disclosed evidence is [3]
+8 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2, 3]
+9 vote is 0
+	vote based on personal evidence is -1
+	personal evidence is [1, 3, 2]
+	disclosed evidence is [2, 1]
+Public evidence  [3, 2, 2, 2, 4, 2, 4, 2, 2, 1, 3, 1, 1, 3, 3, 1]
+Number of neutral agents 6
+Majority opinion  0
+Deliberation round  4
 </pre></div>
 </div>
 </div>

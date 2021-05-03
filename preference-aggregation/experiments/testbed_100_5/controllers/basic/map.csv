@@ -1,0 +1,32 @@
+family_size,election_model,param_1,param_2,color,alpha,label,show,marker
+15, impartial_culture, 0, 0, black, 1, Impartial Culture,t,o
+15, iac, 0, 0, pink, 0.7, IAC,t,o
+30, 1d_interval, 0, 0, DarkGreen, 1, 1D Interval,t,o
+30, 2d_square, 0, 0, Green, 1, 2D Square,t,o
+30, 3d_cube, 0, 0, ForestGreen, 0.7, 3D Cube,t,o
+30, 5d_cube, 0, 0, MediumSeaGreen, 1, 5D Cube,t,o
+30, 10d_cube, 0, 0, MediumSeaGreen, 0.6, 10D Cube,t,o
+30, 20d_cube, 0, 0, MediumSeaGreen, 0.2, 20D Cube,t,o
+30, 2d_sphere, 0, 0, black, 0.2, 2D Sphere,t,o
+30, 3d_sphere, 0, 0, black, 0.4, 3D Sphere,t,o
+30, 5d_sphere, 0, 0, black, 0.6, 5D Sphere,t,o
+30, spoc_conitzer, 0, 0, DarkRed, 0.7, SPOC,t,o
+30, single_crossing, 0, 0, purple, 0.6, Single Crossing,t,o
+30, conitzer, 0, 0, LimeGreen, 1, Conitzer SP,t,o
+30, walsh, 0, 0, OliveDrab, 1, Walsh SP,t,o
+30, urn_model, 0.5, 0, OrangeRed, 1, Urn model 0.5,t,o
+30, urn_model, 0.2, 0, DarkOrange, 1, Urn model 0.2,t,o
+30, urn_model, 0.1, 0, Orange, 1, Urn model 0.1,t,o
+30, urn_model, 0.05, 0, Gold, 1, Urn model 0.05,t,o
+30, urn_model, 0.02, 0, Yellow, 1, Urn model 0.02,t,o
+30, urn_model, 0.01, 0, Yellow, 0.5, Urn model 0.01,t,o
+20, mallows, 0.999, 0, DarkBlue, 1, Mallows 0.999,t,o
+20, mallows, 0.99, 0, DarkBlue, 0.9, Mallows 0.99,t,o
+20, mallows, 0.95, 0, DarkBlue, 0.8, Mallows 0.95,t,o
+20, mallows, 0.75, 0, MediumBlue, 1, Mallows 0.75,t,o
+20, mallows, 0.5, 0, Blue, 1, Mallows 0.5,t,o
+20, mallows, 0.25, 0, Blue, 0.7, Mallows 0.25,t,o
+20, mallows, 0.1, 0, DodgerBlue, 1, Mallows 0.1,t,o
+20, mallows, 0.05, 0, SkyBlue, 1, Mallows 0.05,t,o
+20, mallows, 0.01, 0, LightBlue, 1, Mallows 0.01,t,o
+20, mallows, 0.001, 0, PaleTurquoise, 1, Mallows 0.001,t,o

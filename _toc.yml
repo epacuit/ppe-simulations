@@ -44,3 +44,9 @@
   chapters: 
     - file: preference-aggregation/overview
       title: Overview
+    - file: preference-aggregation/probmodels
+      title: Generating Preferences
+    - file: preference-aggregation/polls-deliberation
+      title: Polls and Deliberation
+    - file: preference-aggregation/grading-jury-theorem
+      title: Grading Jury Theorem
